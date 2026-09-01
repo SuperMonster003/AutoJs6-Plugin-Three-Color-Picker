@@ -1,0 +1,156 @@
+<!--suppress HtmlDeprecatedAttribute, HttpUrlsUsage -->
+
+<div align="center">
+  <p><img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/docs/images/icon.svg?raw=true" alt="Screen Color Picker icon" border="0" width="128" /></p>
+  <p>使用適合觸控操作的浮動取色器擷取螢幕任何位置的顏色</p>
+  <p>
+    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker?label=Release"/></a>
+    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker?label=Issues"/></a>
+    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/license/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker?label=License"/></a>
+  </p>
+</div>
+
+******
+
+### 語言
+
+README 目前提供以下語言:
+
+- [简体中文 [zh-Hans]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-zh-Hans.md)
+- 繁體中文 (香港) [zh-Hant-HK] # 目前
+- [繁體中文 (台灣) [zh-Hant-TW]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-zh-Hant-TW.md)
+- [English [en]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-en.md)
+- [Français [fr]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-fr.md)
+- [Español [es]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-es.md)
+- [日本語 [ja]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-ja.md)
+- [한국어 [ko]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-ko.md)
+- [Русский [ru]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-ru.md)
+- [العربية [ar]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-ar.md)
+
+******
+
+### 簡介
+
+Screen Color Picker 是一款為觸控螢幕設計的本機螢幕取色工具. 浮動取色器會顯示放大樣本, 座標和多種顏色格式, 讓手指操作保持直接清晰.
+
+同一個 APK 可從桌面獨立啟動, 亦可由 AutoJs6 自動探索為側拉抽屜中的第三個擴充工具. 獨立模式毋須安裝 AutoJs6.
+
+******
+
+### 功能
+
+- 雙入口: 從桌面獨立使用, 或作為 AutoJs6 擴充工具使用
+- 觸控最佳化: 浮動目標和放大樣本協助精確選取像素
+- 即時資料: 同時顯示螢幕座標, HEX, RGB 和 HSL
+- 多格式複製: 選擇 HEX, RGB 或 HSL 並複製目前顏色值
+- 可控生命週期: 從主頁, 浮動介面, 通知或主程式工具開關停止
+- 完全離線: 不上載螢幕內容, 不保留螢幕截圖記錄
+
+******
+
+### 獨立使用
+
+毋須 AutoJs6 的使用步驟:
+
+1. 從系統啟動器開啟 Screen Color Picker.
+2. 按下啟動螢幕取色, 並按照說明允許顯示在其他應用程式上層.
+3. 在系統提示中允許本次螢幕擷取.
+4. 切換到要取色的應用程式, 點按浮動目標凍結螢幕, 然後在靜止畫面上拖動十字準星.
+5. 複製所需格式, 或隨時停止取色器.
+
+******
+
+### 作為 AutoJs6 工具使用
+
+安裝後 AutoJs6 會透過正式外掛契約自動探索它:
+
+1. 安裝外掛 APK. 毋須先開啟桌面入口.
+2. 開啟 AutoJs6 側拉抽屜並找到擴充工具.
+3. 啟用預設關閉的螢幕取色項目.
+4. 首次使用時完成浮層和螢幕擷取授權.
+5. 關閉抽屜開關, 使用浮動介面或通知操作即可停止.
+
+******
+
+### 權限和私隱
+
+所有螢幕處理均在裝置本機完成, 並只會在使用者明確啟動後運行.
+
+- 螢幕擷取: Android 每次均會顯示系統授權介面
+- 顯示在其他應用程式上層: 只用於可觸控的浮動取色介面
+- 前景服務和通知: 讓進行中的擷取保持可見並可停止
+- 剪貼簿: 只在使用者按下複製時寫入所選顏色
+- 網絡和儲存空間: 不申請網絡或共用儲存空間權限
+
+拒絕懸浮視窗或螢幕擷取權限會安全取消啟動. 拒絕通知權限時會顯示提示, 但啟動仍會繼續.
+
+******
+
+### 兼容性
+
+獨立模式與外掛模式有不同的最低要求.
+
+| 模式 | 最低要求 |
+|---|---|
+| 獨立 App | Android 7.0 (API 24) or later |
+| AutoJs6 擴充工具 | AutoJs6 versionCode 5278 or later |
+
+******
+
+### 外掛契約
+
+以下資料供主程式與外掛開發者核對. Binder 服務與 Wake Activity 受 org.autojs.permission.PLUGIN 保護, 桌面入口不受此權限限制.
+
+```text
+application id: io.github.supermonster003.autojs6.plugin.screencolorpicker
+plugin id / engine / category: screen-color-picker
+variant: default
+service action: org.autojs.plugin.SCREEN_COLOR_PICKER
+wake action: org.autojs.plugin.action.WAKE
+binder: org.autojs.plugin.screencolorpicker.api.IScreenColorPickerPlugin
+contract version: 1
+minimum host versionCode: 5278
+native libraries: none
+```
+
+******
+
+### 發行歷史
+
+#### v1.0.0
+
+_2026/09/01_
+
+- `新增` 同一個 APK 可從系統啟動器獨立運行, 亦可作為 AutoJs6 的螢幕取色擴充工具使用
+- `新增` 提供適合觸控螢幕的浮動取色器, 並同時顯示放大取樣, 座標, HEX, RGB 和 HSL
+- `新增` 提供 contract v1 Binder 介面, 包含 getInfo, getState, getStartPendingIntent 和 stop
+- `新增` 提供 10 種語言的本機介面和文件, 所有取色處理完全離線完成
+- `改善` 明確處理懸浮視窗, 螢幕擷取, 前景服務和通知權限流程, 並可隨時停止
+- `改善` 支援 AutoJs6 Wake 協議和最低宿主版本 5278, 並加入 CI 與文件漂移檢查
+
+[查看完整 CHANGELOG](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-zh-Hant-HK.md)
+
+******
+
+### 建構
+
+使用倉庫隨附的 Gradle Wrapper 和 JDK 21 執行測試, 建構 debug APK 與 instrumentation APK, 然後執行 lint.
+
+```powershell
+.\gradlew.bat :app:testDebugUnitTest :app:assembleDebug :app:assembleDebugAndroidTest :app:lintDebug
+```
+
+README, 外掛說明和 changelog 由 JSON 文案來源產生. 修改來源後執行以下兩個指令.
+
+```powershell
+py .python/generate_markdown.py
+py .python/generate_markdown.py --check
+```
+
+******
+
+### 授權條款
+
+專案程式碼採用 Mozilla Public License 2.0 授權.
+
+[LICENSE](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/LICENSE)

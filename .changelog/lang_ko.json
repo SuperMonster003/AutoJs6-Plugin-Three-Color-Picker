@@ -1,0 +1,22 @@
+{
+  "changelog_label_hint": "안내",
+  "changelog_label_feature": "추가",
+  "changelog_label_fix": "수정",
+  "changelog_label_improvement": "개선",
+  "changelog_label_dependency": "의존성",
+  "$data": {
+    "v1.0.0": {
+      "released_date": "2026/09/01",
+      "feature": [
+        "같은 APK를 런처에서 독립 실행하거나 AutoJs6의 화면 색상 선택기 확장 도구로 사용할 수 있습니다",
+        "확대 샘플, 좌표, HEX, RGB, HSL을 보여 주는 터치 친화적 플로팅 선택기를 사용할 수 있습니다",
+        "getInfo, getState, getStartPendingIntent, stop을 포함한 contract v1 Binder 인터페이스를 제공합니다",
+        "10개 언어의 로컬 인터페이스와 문서를 제공하며 색상 처리는 완전히 오프라인으로 수행됩니다"
+      ],
+      "improvement": [
+        "오버레이, 화면 캡처, 포그라운드 서비스, 알림 권한 흐름을 중지 작업과 함께 명시적으로 처리합니다",
+        "AutoJs6 Wake 프로토콜과 최소 호스트 버전 5278을 지원하고 CI 및 문서 드리프트 검사를 추가했습니다"
+      ]
+    }
+  }
+}

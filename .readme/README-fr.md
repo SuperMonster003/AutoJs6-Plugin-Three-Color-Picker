@@ -1,0 +1,156 @@
+<!--suppress HtmlDeprecatedAttribute, HttpUrlsUsage -->
+
+<div align="center">
+  <p><img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/docs/images/icon.svg?raw=true" alt="Screen Color Picker icon" border="0" width="128" /></p>
+  <p>Échantillonne les couleurs partout sur l'écran avec un sélecteur flottant tactile</p>
+  <p>
+    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker?label=Release"/></a>
+    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker?label=Issues"/></a>
+    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/license/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker?label=License"/></a>
+  </p>
+</div>
+
+******
+
+### Langues
+
+Le README est disponible dans les langues suivantes:
+
+- [简体中文 [zh-Hans]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-zh-Hans.md)
+- [繁體中文 (香港) [zh-Hant-HK]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-zh-Hant-HK.md)
+- [繁體中文 (台灣) [zh-Hant-TW]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-zh-Hant-TW.md)
+- [English [en]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-en.md)
+- Français [fr] # actuel
+- [Español [es]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-es.md)
+- [日本語 [ja]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-ja.md)
+- [한국어 [ko]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-ko.md)
+- [Русский [ru]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-ru.md)
+- [العربية [ar]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-ar.md)
+
+******
+
+### Introduction
+
+Screen Color Picker est un outil local de prélèvement de couleur conçu pour les écrans tactiles. Son sélecteur flottant affiche un échantillon agrandi, les coordonnées et plusieurs formats de couleur avec une interaction directe et claire.
+
+Le même APK fonctionne seul depuis le lanceur ou est découvert par AutoJs6 comme troisième outil étendu du tiroir. Le mode autonome ne nécessite pas AutoJs6.
+
+******
+
+### Fonctions
+
+- Deux entrées: utilisation autonome depuis le lanceur ou comme outil étendu AutoJs6
+- Optimisé pour le tactile: une cible flottante et un échantillon agrandi aident à sélectionner un pixel précis
+- Données immédiates: affiche ensemble les coordonnées, HEX, RGB et HSL
+- Copie multiformat: choisissez HEX, RGB ou HSL et copiez la valeur de couleur actuelle
+- Cycle de vie contrôlé: arrêtez depuis l'accueil, l'interface flottante, la notification ou l'interrupteur hôte
+- Entièrement hors ligne: le contenu de l'écran n'est jamais envoyé et aucun historique de capture n'est conservé
+
+******
+
+### Utilisation autonome
+
+Utilisez le sélecteur sans AutoJs6:
+
+1. Ouvrez Screen Color Picker depuis le lanceur système.
+2. Touchez Démarrer le sélecteur et suivez l'explication pour autoriser l'affichage sur les autres applications.
+3. Autorisez la capture actuelle dans la demande du système Android.
+4. Passez dans l'application à échantillonner, touchez la cible flottante pour figer l'écran, puis faites glisser le réticule sur la capture.
+5. Copiez le format souhaité ou arrêtez le sélecteur à tout moment.
+
+******
+
+### Utilisation comme outil AutoJs6
+
+Après installation AutoJs6 découvre l'application au moyen du contrat officiel du plugin:
+
+1. Installez l'APK du plugin. Il n'est pas nécessaire d'ouvrir son entrée du lanceur.
+2. Ouvrez le tiroir AutoJs6 et trouvez les outils étendus.
+3. Activez Screen Color Picker, désactivé par défaut.
+4. Acceptez la superposition et la capture d'écran lors de la première utilisation.
+5. Désactivez l'interrupteur, utilisez l'interface flottante ou l'action de notification pour arrêter.
+
+******
+
+### Autorisations et confidentialité
+
+Tout le traitement de l'écran reste local sur l'appareil et ne commence qu'après une action explicite de l'utilisateur.
+
+- Capture d'écran: Android présente un écran de consentement pour chaque session
+- Affichage sur les autres applications: utilisé uniquement pour le sélecteur flottant tactile
+- Service au premier plan et notification: rendent une capture active visible et facile à arrêter
+- Presse-papiers: écrit uniquement lorsque l'utilisateur touche une action de copie
+- Réseau et stockage: aucune autorisation réseau ou de stockage partagé n'est demandée
+
+Le refus de l'affichage superposé ou de la capture d'écran annule le démarrage en toute sécurité. Le refus des notifications affiche un avertissement, puis le démarrage continue.
+
+******
+
+### Compatibilité
+
+Les modes autonome et plugin ont des exigences minimales différentes.
+
+| Mode | Exigence minimale |
+|---|---|
+| Application autonome | Android 7.0 (API 24) or later |
+| Outil étendu AutoJs6 | AutoJs6 versionCode 5278 or later |
+
+******
+
+### Contrat du plugin
+
+Les détails suivants concernent les développeurs de l'hôte et du plugin. Le service Binder et Wake Activity sont protégés par org.autojs.permission.PLUGIN, tandis que l'entrée du lanceur ne dépend pas de cette autorisation.
+
+```text
+application id: io.github.supermonster003.autojs6.plugin.screencolorpicker
+plugin id / engine / category: screen-color-picker
+variant: default
+service action: org.autojs.plugin.SCREEN_COLOR_PICKER
+wake action: org.autojs.plugin.action.WAKE
+binder: org.autojs.plugin.screencolorpicker.api.IScreenColorPickerPlugin
+contract version: 1
+minimum host versionCode: 5278
+native libraries: none
+```
+
+******
+
+### Historique des versions
+
+#### v1.0.0
+
+_2026/09/01_
+
+- `Ajout` Exécutez le même APK depuis le lanceur ou utilisez-le comme outil étendu Sélecteur de couleur d'écran dans AutoJs6
+- `Ajout` Utilisez un sélecteur flottant tactile avec aperçu agrandi, coordonnées, HEX, RGB et HSL
+- `Ajout` Utilisez l'interface Binder contract v1 avec getInfo, getState, getStartPendingIntent et stop
+- `Ajout` Utilisez l'interface locale et la documentation en 10 langues avec un traitement des couleurs entièrement hors ligne
+- `Amélioration` Gérez explicitement les autorisations de superposition, capture d'écran, service de premier plan et notification avec une action d'arrêt
+- `Amélioration` Prenez en charge le protocole Wake d'AutoJs6 et la version hôte minimale 5278 avec CI et contrôle de dérive de la documentation
+
+[Voir le CHANGELOG complet](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-fr.md)
+
+******
+
+### Construction
+
+Utilisez le Gradle Wrapper inclus et JDK 21 pour exécuter les tests, construire les APK de débogage et d'instrumentation, puis lancer lint.
+
+```powershell
+.\gradlew.bat :app:testDebugUnitTest :app:assembleDebug :app:assembleDebugAndroidTest :app:lintDebug
+```
+
+Les README, instructions du plugin et changelog sont générés depuis des sources JSON. Après une modification exécutez les deux commandes suivants.
+
+```powershell
+py .python/generate_markdown.py
+py .python/generate_markdown.py --check
+```
+
+******
+
+### Licence
+
+Le code du projet est distribué sous Mozilla Public License 2.0.
+
+[LICENSE](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/LICENSE)

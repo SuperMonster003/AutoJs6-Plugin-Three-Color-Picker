@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="clipboard_label_color">屏幕颜色</string>
+    <string name="content_desc_color_picker_bubble">浮动屏幕取色器</string>
+    <string name="notification_action_stop">停止</string>
+    <string name="notification_channel_screen_color_picker">屏幕取色</string>
+    <string name="notification_text_screen_color_picker">浮动取色器已可在屏幕上取色</string>
+    <string name="notification_title_screen_color_picker">屏幕取色正在运行</string>
+    <string name="plugin_description">使用适合触摸操作的浮动取色器获取屏幕任意位置的颜色</string>
+    <string name="text_active">运行中</string>
+    <string name="text_capture_failed">无法捕获屏幕. 请重试.</string>
+    <string name="text_color_copied">已复制颜色 %1$s</string>
+    <string name="text_color_picker_home_description">选取屏幕上的任意像素, 并以 HEX, RGB 或 HSL 格式复制颜色.</string>
+    <string name="text_color_picker_start_failed">无法启动取色器. 请重试.</string>
+    <string name="text_coordinates">X %1$d   Y %2$d</string>
+    <string name="text_copy">复制</string>
+    <string name="text_floating_picker_ready">浮动取色器已就绪</string>
+    <string name="text_hex_format">HEX  %1$s</string>
+    <string name="text_hsl_format">HSL  %1$s°, %2$s%%, %3$s%%</string>
+    <string name="text_inactive">未运行</string>
+    <string name="text_notification_permission_denied">通知已关闭. 取色器仍会运行, 但状态通知可能会被隐藏.</string>
+    <string name="text_overlay_permission_explanation">允许显示在其他应用上层, 取色时取色器便可停留在手指下方.</string>
+    <string name="text_overlay_permission_required">需要显示在其他应用上层的权限</string>
+    <string name="text_picker_instruction">点按浮动目标冻结屏幕, 然后在静止画面上拖动十字准星.</string>
+    <string name="text_refresh">刷新</string>
+    <string name="text_return_to_bubble">返回取色器</string>
+    <string name="text_rgb_format">RGB  %1$d, %2$d, %3$d</string>
+    <string name="text_screen_capture_permission_denied">未授予屏幕捕获权限</string>
+    <string name="text_start_color_picker">启动屏幕取色</string>
+    <string name="text_starting">正在启动</string>
+    <string name="text_stop_color_picker">停止屏幕取色</string>
+    <string name="text_stopping">正在停止</string>
+</resources>

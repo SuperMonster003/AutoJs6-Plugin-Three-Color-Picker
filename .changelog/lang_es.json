@@ -1,0 +1,22 @@
+{
+  "changelog_label_hint": "Aviso",
+  "changelog_label_feature": "Añadido",
+  "changelog_label_fix": "Corregido",
+  "changelog_label_improvement": "Mejorado",
+  "changelog_label_dependency": "Dependencia",
+  "$data": {
+    "v1.0.0": {
+      "released_date": "2026/09/01",
+      "feature": [
+        "Ejecuta el mismo APK desde el iniciador o úsalo como la herramienta extendida Selector de color de pantalla de AutoJs6",
+        "Usa un selector flotante táctil con muestra ampliada, coordenadas, HEX, RGB y HSL",
+        "Usa la interfaz Binder contract v1 con getInfo, getState, getStartPendingIntent y stop",
+        "Usa la interfaz local y la documentación en 10 idiomas con procesamiento de color totalmente sin conexión"
+      ],
+      "improvement": [
+        "Gestiona de forma explícita los permisos de superposición, captura de pantalla, servicio en primer plano y notificación con una acción de detención",
+        "Admite el protocolo Wake de AutoJs6 y la versión mínima 5278 del anfitrión con CI y comprobaciones de cambios en la documentación"
+      ]
+    }
+  }
+}

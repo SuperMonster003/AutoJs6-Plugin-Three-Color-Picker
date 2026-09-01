@@ -1,0 +1,22 @@
+{
+  "changelog_label_hint": "تلميح",
+  "changelog_label_feature": "إضافة",
+  "changelog_label_fix": "إصلاح",
+  "changelog_label_improvement": "تحسين",
+  "changelog_label_dependency": "اعتماد",
+  "$data": {
+    "v1.0.0": {
+      "released_date": "2026/09/01",
+      "feature": [
+        "شغل ملف APK نفسه بصورة مستقلة من المشغل أو استخدمه كأداة موسعة لاختيار لون الشاشة في AutoJs6",
+        "استخدم أداة اختيار عائمة مناسبة للمس مع عينة مكبرة وإحداثيات وصيغ HEX وRGB وHSL",
+        "استخدم واجهة Binder من contract v1 مع getInfo وgetState وgetStartPendingIntent وstop",
+        "استخدم الواجهة المحلية والوثائق بعشر لغات مع معالجة الألوان دون اتصال بالكامل"
+      ],
+      "improvement": [
+        "تعامل بوضوح مع أذونات التراكب والتقاط الشاشة والخدمة الأمامية والإشعارات مع إجراء للإيقاف",
+        "ادعم بروتوكول AutoJs6 Wake والحد الأدنى لإصدار المضيف 5278 مع CI وفحوصات انحراف الوثائق"
+      ]
+    }
+  }
+}

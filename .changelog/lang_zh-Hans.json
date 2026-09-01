@@ -1,0 +1,22 @@
+{
+  "changelog_label_hint": "提示",
+  "changelog_label_feature": "新增",
+  "changelog_label_fix": "修复",
+  "changelog_label_improvement": "优化",
+  "changelog_label_dependency": "依赖",
+  "$data": {
+    "v1.0.0": {
+      "released_date": "2026/09/01",
+      "feature": [
+        "同一个 APK 可从系统启动器独立运行, 也可作为 AutoJs6 的屏幕取色扩展工具使用",
+        "提供适合触摸屏的浮动取色器, 并同时显示放大采样, 坐标, HEX, RGB 和 HSL",
+        "提供 contract v1 Binder 接口, 包含 getInfo, getState, getStartPendingIntent 和 stop",
+        "提供 10 种语言的本地界面和文档, 所有取色处理完全离线完成"
+      ],
+      "improvement": [
+        "明确处理悬浮窗, 屏幕捕获, 前台服务和通知权限流程, 并可随时停止",
+        "支持 AutoJs6 Wake 协议和最低宿主版本 5278, 并加入 CI 与文档漂移检查"
+      ]
+    }
+  }
+}

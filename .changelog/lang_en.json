@@ -1,0 +1,22 @@
+{
+  "changelog_label_hint": "Hint",
+  "changelog_label_feature": "Added",
+  "changelog_label_fix": "Fixed",
+  "changelog_label_improvement": "Improved",
+  "changelog_label_dependency": "Dependency",
+  "$data": {
+    "v1.0.0": {
+      "released_date": "2026/09/01",
+      "feature": [
+        "Run the same APK independently from the launcher or as the AutoJs6 Screen Color Picker extended tool",
+        "Use a touch-friendly floating picker with a magnified sample, coordinates, HEX, RGB, and HSL",
+        "Use the contract v1 Binder interface with getInfo, getState, getStartPendingIntent, and stop",
+        "Use the local interface and documentation in 10 languages with fully offline color processing"
+      ],
+      "improvement": [
+        "Handle overlay, screen capture, foreground service, and notification permission flows explicitly with a stop action",
+        "Support the AutoJs6 Wake protocol and minimum host version 5278 with CI and documentation drift checks"
+      ]
+    }
+  }
+}

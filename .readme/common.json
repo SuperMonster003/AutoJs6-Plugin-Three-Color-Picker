@@ -1,0 +1,19 @@
+{
+  "repo_url": "https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker",
+  "repo_slug": "SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker",
+  "icon_url": "https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/docs/images/icon.svg?raw=true",
+  "license_url": "https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/LICENSE",
+  "application_id": "io.github.supermonster003.autojs6.plugin.screencolorpicker",
+  "plugin_id": "screen-color-picker",
+  "plugin_engine": "screen-color-picker",
+  "plugin_variant": "default",
+  "service_action": "org.autojs.plugin.SCREEN_COLOR_PICKER",
+  "service_category": "screen-color-picker",
+  "wake_action": "org.autojs.plugin.action.WAKE",
+  "binder_interface": "org.autojs.plugin.screencolorpicker.api.IScreenColorPickerPlugin",
+  "contract_version": "1",
+  "required_host_version": "5278",
+  "min_android_version": "7.0",
+  "min_sdk": "24",
+  "target_sdk": "36"
+}

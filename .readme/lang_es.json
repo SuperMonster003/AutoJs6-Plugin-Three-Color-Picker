@@ -1,0 +1,62 @@
+{
+  "$name": "Español",
+  "current": "actual",
+  "synopsis": "Toma colores de cualquier parte de la pantalla con un selector flotante táctil",
+  "h_languages": "Idiomas",
+  "p_languages": "El README está disponible en los siguientes idiomas",
+  "h_introduction": "Introducción",
+  "p_introduction": "Screen Color Picker es una herramienta local de muestreo de color diseñada para pantallas táctiles. Su selector flotante muestra una muestra ampliada, coordenadas y varios formatos de color con una interacción directa y clara.",
+  "p_dual_mode": "El mismo APK funciona de forma independiente desde el lanzador o es descubierto por AutoJs6 como la tercera herramienta ampliada de su panel. El modo independiente no requiere AutoJs6.",
+  "h_features": "Funciones",
+  "features": [
+    "Dos entradas: uso independiente desde el lanzador o como herramienta ampliada de AutoJs6",
+    "Optimizado para el tacto: un objetivo flotante y una muestra ampliada ayudan a seleccionar un píxel exacto",
+    "Datos inmediatos: consulta coordenadas de pantalla, HEX, RGB y HSL juntos",
+    "Copia en varios formatos: elige HEX, RGB o HSL y copia el valor de color actual",
+    "Ciclo de vida controlado: detén desde la pantalla principal, la interfaz flotante, la notificación o el interruptor del host",
+    "Totalmente sin conexión: el contenido de la pantalla no se sube y no se conserva un historial de capturas"
+  ],
+  "h_standalone": "Uso independiente",
+  "p_standalone": "Usa el selector sin AutoJs6",
+  "standalone_steps": [
+    "Abre Screen Color Picker desde el lanzador del sistema.",
+    "Pulsa Iniciar selector de color y sigue la explicación para permitir mostrar sobre otras aplicaciones.",
+    "Permite la captura de pantalla actual en el aviso del sistema Android.",
+    "Cambia a la aplicación que quieras muestrear, pulsa el objetivo flotante para congelar la pantalla y arrastra la retícula sobre la captura.",
+    "Copia el formato deseado o detén el selector en cualquier momento."
+  ],
+  "h_host": "Uso como herramienta de AutoJs6",
+  "p_host": "Tras la instalación AutoJs6 descubre la aplicación mediante el contrato formal del plugin",
+  "host_steps": [
+    "Instala el APK del plugin. No necesitas abrir primero la entrada del lanzador.",
+    "Abre el panel de AutoJs6 y busca Herramientas ampliadas.",
+    "Activa Screen Color Picker, que está desactivado de forma predeterminada.",
+    "Completa el consentimiento de superposición y captura de pantalla en el primer uso.",
+    "Desactiva el interruptor, usa la interfaz flotante o la acción de notificación para detener."
+  ],
+  "h_privacy": "Permisos y privacidad",
+  "p_privacy": "Todo el procesamiento de pantalla ocurre localmente en el dispositivo y comienza solo tras una acción explícita del usuario.",
+  "privacy_points": [
+    "Captura de pantalla: Android muestra un consentimiento del sistema para cada sesión",
+    "Mostrar sobre otras aplicaciones: se usa solo para el selector flotante táctil",
+    "Servicio en primer plano y notificación: mantienen una captura activa visible y fácil de detener",
+    "Portapapeles: se escribe solo cuando el usuario pulsa una acción de copia",
+    "Red y almacenamiento: no se solicita permiso de red ni de almacenamiento compartido"
+  ],
+  "p_permission_note": "Rechazar el permiso para mostrar sobre otras apps o capturar la pantalla cancela el inicio de forma segura. Si rechazas las notificaciones, se muestra un aviso y el inicio continúa.",
+  "h_compatibility": "Compatibilidad",
+  "p_compatibility": "Los modos independiente y plugin tienen requisitos mínimos diferentes.",
+  "th_mode": "Modo",
+  "th_requirement": "Requisito mínimo",
+  "td_standalone": "Aplicación independiente",
+  "td_plugin": "Herramienta ampliada de AutoJs6",
+  "h_contract": "Contrato del plugin",
+  "p_contract": "Los siguientes datos son para desarrolladores del host y del plugin. El servicio Binder y Wake Activity están protegidos por org.autojs.permission.PLUGIN, mientras que la entrada del lanzador no está limitada por ese permiso.",
+  "h_release_history": "Historial de versiones",
+  "text_full_changelog": "Ver el CHANGELOG completo",
+  "h_build": "Compilación",
+  "p_build": "Usa el Gradle Wrapper incluido y JDK 21 para ejecutar pruebas, compilar los APK de depuración e instrumentación y después ejecutar lint.",
+  "p_docs_generation": "Los README, las instrucciones del plugin y los changelog se generan desde fuentes JSON. Tras editar una fuente ejecuta los dos comandos siguientes.",
+  "h_license": "Licencia",
+  "p_license": "El código del proyecto se distribuye bajo Mozilla Public License 2.0."
+}

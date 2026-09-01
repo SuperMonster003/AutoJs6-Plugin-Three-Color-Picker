@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="clipboard_label_color">Couleur de l\'écran</string>
+    <string name="content_desc_color_picker_bubble">Sélecteur flottant de couleur d\'écran</string>
+    <string name="notification_action_stop">Arrêter</string>
+    <string name="notification_channel_screen_color_picker">Sélecteur de couleur d\'écran</string>
+    <string name="notification_text_screen_color_picker">Le sélecteur flottant est prêt à échantillonner l\'écran</string>
+    <string name="notification_title_screen_color_picker">Le sélecteur de couleur d\'écran est actif</string>
+    <string name="plugin_description">Échantillonne les couleurs partout sur l\'écran avec un sélecteur flottant tactile</string>
+    <string name="text_active">Actif</string>
+    <string name="text_capture_failed">Impossible de capturer l\'écran. Réessayez.</string>
+    <string name="text_color_copied">Couleur %1$s copiée</string>
+    <string name="text_color_picker_home_description">Échantillonnez un pixel à l\'écran et copiez sa couleur en HEX, RGB ou HSL.</string>
+    <string name="text_color_picker_start_failed">Impossible de démarrer le sélecteur de couleur. Réessayez.</string>
+    <string name="text_coordinates">X %1$d   Y %2$d</string>
+    <string name="text_copy">Copier</string>
+    <string name="text_floating_picker_ready">Le sélecteur flottant est prêt</string>
+    <string name="text_hex_format">HEX  %1$s</string>
+    <string name="text_hsl_format">HSL  %1$s°, %2$s%%, %3$s%%</string>
+    <string name="text_inactive">Inactif</string>
+    <string name="text_notification_permission_denied">Les notifications sont désactivées. Le sélecteur continuera de fonctionner, mais sa notification d\'état peut être masquée.</string>
+    <string name="text_overlay_permission_explanation">Autorisez l\'affichage sur les autres applications afin de garder le sélecteur sous votre doigt pendant l\'échantillonnage.</string>
+    <string name="text_overlay_permission_required">L\'affichage sur les autres applications est requis</string>
+    <string name="text_picker_instruction">Touchez la cible flottante pour figer l\'écran, puis faites glisser le réticule sur la capture.</string>
+    <string name="text_refresh">Actualiser</string>
+    <string name="text_return_to_bubble">Retourner au sélecteur</string>
+    <string name="text_rgb_format">RGB  %1$d, %2$d, %3$d</string>
+    <string name="text_screen_capture_permission_denied">L\'autorisation de capture d\'écran n\'a pas été accordée</string>
+    <string name="text_start_color_picker">Démarrer le sélecteur</string>
+    <string name="text_starting">Démarrage</string>
+    <string name="text_stop_color_picker">Arrêter le sélecteur</string>
+    <string name="text_stopping">Arrêt</string>
+</resources>
