@@ -62,13 +62,14 @@ Use the picker without AutoJs6:
 
 ### Use as an AutoJs6 tool
 
-After installation AutoJs6 discovers the app through the formal plugin contract:
+After installation AutoJs6 discovers the app through the formal plugin contract and shows its drawer tool only while the plugin is enabled in Plugin Center:
 
 1. Install the plugin APK. You do not need to open its launcher entry first.
-2. Open the AutoJs6 drawer and find Extended tools.
-3. Enable the Screen Color Picker entry, which is off by default.
+2. Open AutoJs6 Plugin Center and make sure Screen Color Picker is enabled. Authorize the plugin if prompted.
+3. Open the AutoJs6 drawer. Screen Color Picker appears as the third Extended tools entry, with its runtime switch off by default.
 4. Complete overlay and screen capture consent on first use.
 5. Turn off the drawer switch, use the floating UI, or use the notification action to stop.
+6. Disabling the plugin in Plugin Center hides the drawer entry. Re-enable the plugin to restore it.
 
 ******
 
@@ -116,6 +117,13 @@ native libraries: none
 ******
 
 ### Release history
+
+#### v1.0.1
+
+_2026/09/01_
+
+- `Fixed` Prevent a ThemeEnforcement crash by giving Material buttons created from the service/application Context an explicit Material theme
+- `Fixed` Show the AutoJs6 drawer tool only while the plugin is enabled in Plugin Center, and restore it after re-enabling
 
 #### v1.0.0
 

@@ -26,13 +26,14 @@
     "Copy the desired format or stop the picker at any time."
   ],
   "h_host": "Use as an AutoJs6 tool",
-  "p_host": "After installation AutoJs6 discovers the app through the formal plugin contract",
+  "p_host": "After installation AutoJs6 discovers the app through the formal plugin contract and shows its drawer tool only while the plugin is enabled in Plugin Center",
   "host_steps": [
     "Install the plugin APK. You do not need to open its launcher entry first.",
-    "Open the AutoJs6 drawer and find Extended tools.",
-    "Enable the Screen Color Picker entry, which is off by default.",
+    "Open AutoJs6 Plugin Center and make sure Screen Color Picker is enabled. Authorize the plugin if prompted.",
+    "Open the AutoJs6 drawer. Screen Color Picker appears as the third Extended tools entry, with its runtime switch off by default.",
     "Complete overlay and screen capture consent on first use.",
-    "Turn off the drawer switch, use the floating UI, or use the notification action to stop."
+    "Turn off the drawer switch, use the floating UI, or use the notification action to stop.",
+    "Disabling the plugin in Plugin Center hides the drawer entry. Re-enable the plugin to restore it."
   ],
   "h_privacy": "Permissions and privacy",
   "p_privacy": "All screen processing happens locally on the device and starts only after an explicit user action.",

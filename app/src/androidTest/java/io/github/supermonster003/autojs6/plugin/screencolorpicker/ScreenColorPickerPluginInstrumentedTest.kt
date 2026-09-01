@@ -14,6 +14,10 @@ import android.graphics.Color
 import android.os.Build
 import android.os.IBinder
 import android.provider.Settings
+import android.util.TypedValue
+import android.view.ContextThemeWrapper
+import android.view.View
+import android.view.ViewGroup
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
@@ -25,6 +29,7 @@ import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import com.google.android.material.button.MaterialButton
 import org.autojs.plugin.screencolorpicker.api.IScreenColorPickerPlugin
 import org.autojs.plugin.screencolorpicker.api.ScreenColorPickerContract
 import org.autojs.plugin.screencolorpicker.api.ScreenColorPickerStates
@@ -182,6 +187,39 @@ class ScreenColorPickerPluginInstrumentedTest {
     }
 
     @Test
+    fun pickerScreenLayoutAppliesMaterialThemeToApplicationContext() {
+        var pickerView: View? = null
+        var bitmap: android.graphics.Bitmap? = null
+
+        try {
+            instrumentation.runOnMainSync {
+                bitmap = android.graphics.Bitmap.createBitmap(2, 2, android.graphics.Bitmap.Config.ARGB_8888)
+                pickerView = createThemedPickerScreenLayout(
+                    context = requireNotNull(context.applicationContext),
+                    bitmap = requireNotNull(bitmap),
+                )
+            }
+
+            val view = requireNotNull(pickerView)
+            assertTrue(view.context is ContextThemeWrapper)
+            val materialThemeMarker = TypedValue()
+            assertTrue(
+                view.context.theme.resolveAttribute(
+                    com.google.android.material.R.attr.isMaterialTheme,
+                    materialThemeMarker,
+                    true,
+                ),
+            )
+            assertTrue(materialThemeMarker.data != 0)
+            assertEquals(4, view.descendants().count { it is MaterialButton })
+        } finally {
+            instrumentation.runOnMainSync {
+                bitmap?.takeUnless(android.graphics.Bitmap::isRecycled)?.recycle()
+            }
+        }
+    }
+
+    @Test
     fun manifestKeepsLauncherWakeAndCaptureComponentsAtRequiredBoundaries() {
         val packageInfo = context.packageManager.packageInfo()
         val activities = packageInfo.activities.orEmpty().associateBy(ActivityInfo::name)
@@ -285,6 +323,15 @@ class ScreenColorPickerPluginInstrumentedTest {
         val deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(3)
         while (api.state != ScreenColorPickerStates.INACTIVE && System.nanoTime() < deadline) {
             Thread.sleep(25)
+        }
+    }
+
+    private fun View.descendants(): Sequence<View> = sequence {
+        if (this@descendants !is ViewGroup) return@sequence
+        for (index in 0 until childCount) {
+            val child = getChildAt(index)
+            yield(child)
+            yieldAll(child.descendants())
         }
     }
 

@@ -5,6 +5,13 @@
   "changelog_label_improvement": "Amélioration",
   "changelog_label_dependency": "Dépendance",
   "$data": {
+    "v1.0.1": {
+      "released_date": "2026/09/01",
+      "fix": [
+        "Éviter le plantage ThemeEnforcement en appliquant explicitement un thème Material aux boutons Material créés depuis le Context de service/application",
+        "N'afficher l'outil du tiroir AutoJs6 que lorsque le plugin est activé dans le Centre de plugins, puis le restaurer après réactivation"
+      ]
+    },
     "v1.0.0": {
       "released_date": "2026/09/01",
       "feature": [

@@ -4,6 +4,13 @@
 
 ******
 
+# v1.0.1
+
+_2026/09/01_
+
+- `Corregido` Evitar el bloqueo de ThemeEnforcement al aplicar un tema Material explícito a los botones Material creados desde el Context del servicio/aplicación
+- `Corregido` Mostrar la herramienta del panel de AutoJs6 solo mientras el plugin esté activado en el Centro de plugins y restaurarla al volver a activarlo
+
 # v1.0.0
 
 _2026/09/01_

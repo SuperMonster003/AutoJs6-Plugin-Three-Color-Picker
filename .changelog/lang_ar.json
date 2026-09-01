@@ -5,6 +5,13 @@
   "changelog_label_improvement": "تحسين",
   "changelog_label_dependency": "اعتماد",
   "$data": {
+    "v1.0.1": {
+      "released_date": "2026/09/01",
+      "fix": [
+        "منع تعطل ThemeEnforcement بتطبيق سمة Material صراحة على أزرار Material المنشأة من Context الخدمة/التطبيق",
+        "عرض أداة اللوحة الجانبية في AutoJs6 فقط عند تمكين المكون الإضافي في مركز المكونات الإضافية واستعادتها بعد إعادة تمكينه"
+      ]
+    },
     "v1.0.0": {
       "released_date": "2026/09/01",
       "feature": [

@@ -62,13 +62,14 @@ Utilisez le sélecteur sans AutoJs6:
 
 ### Utilisation comme outil AutoJs6
 
-Après installation AutoJs6 découvre l'application au moyen du contrat officiel du plugin:
+Après installation AutoJs6 découvre l'application au moyen du contrat officiel du plugin et n'affiche son outil dans le tiroir que lorsque le plugin est activé dans le Centre de plugins:
 
 1. Installez l'APK du plugin. Il n'est pas nécessaire d'ouvrir son entrée du lanceur.
-2. Ouvrez le tiroir AutoJs6 et trouvez les outils étendus.
-3. Activez Screen Color Picker, désactivé par défaut.
+2. Ouvrez le Centre de plugins d'AutoJs6 et vérifiez que Screen Color Picker est activé. Autorisez le plugin si demandé.
+3. Ouvrez le tiroir AutoJs6. Screen Color Picker apparaît comme troisième outil étendu, avec son interrupteur d'exécution désactivé par défaut.
 4. Acceptez la superposition et la capture d'écran lors de la première utilisation.
 5. Désactivez l'interrupteur, utilisez l'interface flottante ou l'action de notification pour arrêter.
+6. La désactivation du plugin dans le Centre de plugins masque l'entrée du tiroir. Réactivez le plugin pour la restaurer.
 
 ******
 
@@ -116,6 +117,13 @@ native libraries: none
 ******
 
 ### Historique des versions
+
+#### v1.0.1
+
+_2026/09/01_
+
+- `Correction` Éviter le plantage ThemeEnforcement en appliquant explicitement un thème Material aux boutons Material créés depuis le Context de service/application
+- `Correction` N'afficher l'outil du tiroir AutoJs6 que lorsque le plugin est activé dans le Centre de plugins, puis le restaurer après réactivation
 
 #### v1.0.0
 

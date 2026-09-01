@@ -5,6 +5,13 @@
   "changelog_label_improvement": "改善",
   "changelog_label_dependency": "相依項目",
   "$data": {
+    "v1.0.1": {
+      "released_date": "2026/09/01",
+      "fix": [
+        "為使用 Service/application Context 建立的 Material 按鈕明確套用 Material 主題, 避免 ThemeEnforcement 崩潰",
+        "只在外掛中心啟用外掛時顯示 AutoJs6 抽屜工具, 重新啟用後自動恢復"
+      ]
+    },
     "v1.0.0": {
       "released_date": "2026/09/01",
       "feature": [

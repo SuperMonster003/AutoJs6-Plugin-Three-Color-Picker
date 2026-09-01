@@ -5,6 +5,13 @@
   "changelog_label_improvement": "Improved",
   "changelog_label_dependency": "Dependency",
   "$data": {
+    "v1.0.1": {
+      "released_date": "2026/09/01",
+      "fix": [
+        "Prevent a ThemeEnforcement crash by giving Material buttons created from the service/application Context an explicit Material theme",
+        "Show the AutoJs6 drawer tool only while the plugin is enabled in Plugin Center, and restore it after re-enabling"
+      ]
+    },
     "v1.0.0": {
       "released_date": "2026/09/01",
       "feature": [
