@@ -26,13 +26,14 @@
     "Copiez le format souhaité ou arrêtez le sélecteur à tout moment."
   ],
   "h_host": "Utilisation comme outil AutoJs6",
-  "p_host": "Après installation AutoJs6 découvre l'application au moyen du contrat officiel du plugin",
+  "p_host": "Après installation AutoJs6 découvre l'application au moyen du contrat officiel du plugin et n'affiche son outil dans le tiroir que lorsque le plugin est activé dans le Centre de plugins",
   "host_steps": [
     "Installez l'APK du plugin. Il n'est pas nécessaire d'ouvrir son entrée du lanceur.",
-    "Ouvrez le tiroir AutoJs6 et trouvez les outils étendus.",
-    "Activez Screen Color Picker, désactivé par défaut.",
+    "Ouvrez le Centre de plugins d'AutoJs6 et vérifiez que Screen Color Picker est activé. Autorisez le plugin si demandé.",
+    "Ouvrez le tiroir AutoJs6. Screen Color Picker apparaît comme troisième outil étendu, avec son interrupteur d'exécution désactivé par défaut.",
     "Acceptez la superposition et la capture d'écran lors de la première utilisation.",
-    "Désactivez l'interrupteur, utilisez l'interface flottante ou l'action de notification pour arrêter."
+    "Désactivez l'interrupteur, utilisez l'interface flottante ou l'action de notification pour arrêter.",
+    "La désactivation du plugin dans le Centre de plugins masque l'entrée du tiroir. Réactivez le plugin pour la restaurer."
   ],
   "h_privacy": "Autorisations et confidentialité",
   "p_privacy": "Tout le traitement de l'écran reste local sur l'appareil et ne commence qu'après une action explicite de l'utilisateur.",

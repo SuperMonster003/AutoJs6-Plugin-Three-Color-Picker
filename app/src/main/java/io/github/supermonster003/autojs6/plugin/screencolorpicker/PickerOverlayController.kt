@@ -16,6 +16,7 @@ import android.graphics.SweepGradient
 import android.graphics.drawable.GradientDrawable
 import android.os.Build
 import android.view.Choreographer
+import android.view.ContextThemeWrapper
 import android.view.Gravity
 import android.view.MotionEvent
 import android.view.View
@@ -49,7 +50,7 @@ internal class PickerOverlayController(
     private val bubbleMargin = appContext.dp(10)
     private val bubbleParams = overlayParams(bubbleSize, bubbleSize, focusable = false)
     private var bubbleAttached = false
-    private var pickerView: PickerScreenLayout? = null
+    private var pickerView: View? = null
     private var frozenBitmap: Bitmap? = null
     private var refreshRetainedBitmap: Bitmap? = null
 
@@ -109,7 +110,7 @@ internal class PickerOverlayController(
     private fun showPicker(bitmap: Bitmap) {
         removePicker(recycle = true)
         frozenBitmap = bitmap
-        val view = PickerScreenLayout(
+        val view = createThemedPickerScreenLayout(
             context = appContext,
             bitmap = bitmap,
             onCopy = ::copyColor,
@@ -261,6 +262,30 @@ internal class PickerOverlayController(
 }
 
 private data class ColorSample(val x: Int, val y: Int, val color: Int, val touchX: Float, val touchY: Float)
+
+/**
+ * Builds the full-screen overlay with an explicit Material theme.
+ *
+ * Overlay views are owned by a service and therefore start from an application Context rather
+ * than an Activity. An application Context does not reliably expose the manifest Activity theme
+ * on every Android release/OEM, while MaterialButton enforces that theme during construction.
+ * Keeping the wrapper at this boundary also protects future Material children added to the panel.
+ */
+internal fun createThemedPickerScreenLayout(
+    context: Context,
+    bitmap: Bitmap,
+    onCopy: (String) -> Unit = {},
+    onRefresh: () -> Unit = {},
+    onReturn: () -> Unit = {},
+    onStop: () -> Unit = {},
+): View = PickerScreenLayout(
+    context = ContextThemeWrapper(context, R.style.Theme_ScreenColorPicker),
+    bitmap = bitmap,
+    onCopy = onCopy,
+    onRefresh = onRefresh,
+    onReturn = onReturn,
+    onStop = onStop,
+)
 
 private class PickerBubbleView(context: Context) : View(context) {
     var onDrag: (Float, Float) -> Unit = { _, _ -> }

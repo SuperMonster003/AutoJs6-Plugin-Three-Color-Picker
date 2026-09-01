@@ -11,10 +11,11 @@ Screen Color Picker est un outil local de prélèvement de couleur conçu pour l
 ### Utilisation comme outil AutoJs6
 
 1. Installez l'APK du plugin. Il n'est pas nécessaire d'ouvrir son entrée du lanceur.
-2. Ouvrez le tiroir AutoJs6 et trouvez les outils étendus.
-3. Activez Screen Color Picker, désactivé par défaut.
+2. Ouvrez le Centre de plugins d'AutoJs6 et vérifiez que Screen Color Picker est activé. Autorisez le plugin si demandé.
+3. Ouvrez le tiroir AutoJs6. Screen Color Picker apparaît comme troisième outil étendu, avec son interrupteur d'exécution désactivé par défaut.
 4. Acceptez la superposition et la capture d'écran lors de la première utilisation.
 5. Désactivez l'interrupteur, utilisez l'interface flottante ou l'action de notification pour arrêter.
+6. La désactivation du plugin dans le Centre de plugins masque l'entrée du tiroir. Réactivez le plugin pour la restaurer.
 
 ### Autorisations et confidentialité
 

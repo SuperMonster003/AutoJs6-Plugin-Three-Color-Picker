@@ -4,6 +4,13 @@
 
 ******
 
+# v1.0.1
+
+_2026/09/01_
+
+- `Correction` Éviter le plantage ThemeEnforcement en appliquant explicitement un thème Material aux boutons Material créés depuis le Context de service/application
+- `Correction` N'afficher l'outil du tiroir AutoJs6 que lorsque le plugin est activé dans le Centre de plugins, puis le restaurer après réactivation
+
 # v1.0.0
 
 _2026/09/01_

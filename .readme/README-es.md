@@ -62,13 +62,14 @@ Usa el selector sin AutoJs6:
 
 ### Uso como herramienta de AutoJs6
 
-Tras la instalación AutoJs6 descubre la aplicación mediante el contrato formal del plugin:
+Tras la instalación AutoJs6 descubre la aplicación mediante el contrato formal del plugin y solo muestra su herramienta en el panel mientras el plugin está activado en el Centro de plugins:
 
 1. Instala el APK del plugin. No necesitas abrir primero la entrada del lanzador.
-2. Abre el panel de AutoJs6 y busca Herramientas ampliadas.
-3. Activa Screen Color Picker, que está desactivado de forma predeterminada.
+2. Abre el Centro de plugins de AutoJs6 y comprueba que Screen Color Picker esté activado. Autoriza el plugin si se solicita.
+3. Abre el panel de AutoJs6. Screen Color Picker aparece como la tercera entrada de Herramientas ampliadas, con su interruptor de ejecución desactivado de forma predeterminada.
 4. Completa el consentimiento de superposición y captura de pantalla en el primer uso.
 5. Desactiva el interruptor, usa la interfaz flotante o la acción de notificación para detener.
+6. Desactivar el plugin en el Centro de plugins oculta la entrada del panel. Vuelve a activarlo para restaurarla.
 
 ******
 
@@ -116,6 +117,13 @@ native libraries: none
 ******
 
 ### Historial de versiones
+
+#### v1.0.1
+
+_2026/09/01_
+
+- `Corregido` Evitar el bloqueo de ThemeEnforcement al aplicar un tema Material explícito a los botones Material creados desde el Context del servicio/aplicación
+- `Corregido` Mostrar la herramienta del panel de AutoJs6 solo mientras el plugin esté activado en el Centro de plugins y restaurarla al volver a activarlo
 
 #### v1.0.0
 

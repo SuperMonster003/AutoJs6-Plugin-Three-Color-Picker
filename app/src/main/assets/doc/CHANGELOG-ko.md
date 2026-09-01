@@ -4,6 +4,13 @@
 
 ******
 
+# v1.0.1
+
+_2026/09/01_
+
+- `수정` Service/application Context에서 Material 버튼을 만들 때 명시적인 Material 테마를 적용하여 ThemeEnforcement 비정상 종료를 방지
+- `수정` 플러그인 센터에서 플러그인이 활성화된 동안에만 AutoJs6 서랍 도구를 표시하고 다시 활성화하면 복원
+
 # v1.0.0
 
 _2026/09/01_

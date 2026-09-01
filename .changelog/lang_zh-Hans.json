@@ -5,6 +5,13 @@
   "changelog_label_improvement": "优化",
   "changelog_label_dependency": "依赖",
   "$data": {
+    "v1.0.1": {
+      "released_date": "2026/09/01",
+      "fix": [
+        "为使用 Service/application Context 创建的 Material 按钮显式应用 Material 主题, 避免 ThemeEnforcement 崩溃",
+        "仅在插件中心启用插件时显示 AutoJs6 抽屉工具, 重新启用后自动恢复"
+      ]
+    },
     "v1.0.0": {
       "released_date": "2026/09/01",
       "feature": [
