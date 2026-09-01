@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="clipboard_label_color">螢幕顏色</string>
+    <string name="content_desc_color_picker_bubble">浮動螢幕取色器</string>
+    <string name="notification_action_stop">停止</string>
+    <string name="notification_channel_screen_color_picker">螢幕取色</string>
+    <string name="notification_text_screen_color_picker">浮動取色器已可在螢幕上取色</string>
+    <string name="notification_title_screen_color_picker">螢幕取色正在運行</string>
+    <string name="plugin_description">使用適合觸控操作的浮動取色器擷取螢幕任何位置的顏色</string>
+    <string name="text_active">運行中</string>
+    <string name="text_capture_failed">無法擷取螢幕. 請再試一次.</string>
+    <string name="text_color_copied">已複製顏色 %1$s</string>
+    <string name="text_color_picker_home_description">選取螢幕上的任何像素, 並以 HEX, RGB 或 HSL 格式複製顏色.</string>
+    <string name="text_color_picker_start_failed">無法啟動取色器. 請再試一次.</string>
+    <string name="text_coordinates">X %1$d   Y %2$d</string>
+    <string name="text_copy">複製</string>
+    <string name="text_floating_picker_ready">浮動取色器已準備好</string>
+    <string name="text_hex_format">HEX  %1$s</string>
+    <string name="text_hsl_format">HSL  %1$s°, %2$s%%, %3$s%%</string>
+    <string name="text_inactive">未運行</string>
+    <string name="text_notification_permission_denied">通知已關閉. 取色器仍會運行, 但狀態通知可能會被隱藏.</string>
+    <string name="text_overlay_permission_explanation">允許顯示在其他應用程式上層, 取色時取色器便可停留在手指下方.</string>
+    <string name="text_overlay_permission_required">需要顯示在其他應用程式上層的權限</string>
+    <string name="text_picker_instruction">點按浮動目標凍結螢幕, 然後在靜止畫面上拖動十字準星.</string>
+    <string name="text_refresh">重新整理</string>
+    <string name="text_return_to_bubble">返回取色器</string>
+    <string name="text_rgb_format">RGB  %1$d, %2$d, %3$d</string>
+    <string name="text_screen_capture_permission_denied">未授予螢幕擷取權限</string>
+    <string name="text_start_color_picker">啟動螢幕取色</string>
+    <string name="text_starting">正在啟動</string>
+    <string name="text_stop_color_picker">停止螢幕取色</string>
+    <string name="text_stopping">正在停止</string>
+</resources>

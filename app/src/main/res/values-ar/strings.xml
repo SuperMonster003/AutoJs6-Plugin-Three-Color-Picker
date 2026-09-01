@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="clipboard_label_color">لون الشاشة</string>
+    <string name="content_desc_color_picker_bubble">منتقي ألوان الشاشة العائم</string>
+    <string name="notification_action_stop">إيقاف</string>
+    <string name="notification_channel_screen_color_picker">منتقي ألوان الشاشة</string>
+    <string name="notification_text_screen_color_picker">المنتقي العائم جاهز لأخذ عينة من الشاشة</string>
+    <string name="notification_title_screen_color_picker">منتقي ألوان الشاشة نشط</string>
+    <string name="plugin_description">يلتقط الألوان من أي مكان على الشاشة باستخدام منتقي عائم مناسب للمس</string>
+    <string name="text_active">نشط</string>
+    <string name="text_capture_failed">تعذر التقاط الشاشة. حاول مرة أخرى.</string>
+    <string name="text_color_copied">تم نسخ اللون %1$s</string>
+    <string name="text_color_picker_home_description">اختر أي بكسل على الشاشة وانسخ لونه بصيغة HEX أو RGB أو HSL.</string>
+    <string name="text_color_picker_start_failed">تعذر تشغيل منتقي الألوان. حاول مرة أخرى.</string>
+    <string name="text_coordinates">X %1$d   Y %2$d</string>
+    <string name="text_copy">نسخ</string>
+    <string name="text_floating_picker_ready">المنتقي العائم جاهز</string>
+    <string name="text_hex_format">HEX  %1$s</string>
+    <string name="text_hsl_format">HSL  %1$s°, %2$s%%, %3$s%%</string>
+    <string name="text_inactive">غير نشط</string>
+    <string name="text_notification_permission_denied">الإشعارات متوقفة. سيستمر المنتقي في العمل, ولكن قد يكون إشعار حالته مخفيا.</string>
+    <string name="text_overlay_permission_explanation">اسمح بالظهور فوق التطبيقات الأخرى ليبقى المنتقي تحت إصبعك أثناء أخذ عينة من الشاشة.</string>
+    <string name="text_overlay_permission_required">يلزم السماح بالظهور فوق التطبيقات الأخرى</string>
+    <string name="text_picker_instruction">اضغط الهدف العائم لتجميد الشاشة, ثم اسحب مؤشر التقاطع فوق اللقطة.</string>
+    <string name="text_refresh">تحديث</string>
+    <string name="text_return_to_bubble">العودة إلى المنتقي</string>
+    <string name="text_rgb_format">RGB  %1$d, %2$d, %3$d</string>
+    <string name="text_screen_capture_permission_denied">لم يتم منح إذن التقاط الشاشة</string>
+    <string name="text_start_color_picker">تشغيل منتقي الألوان</string>
+    <string name="text_starting">جار التشغيل</string>
+    <string name="text_stop_color_picker">إيقاف منتقي الألوان</string>
+    <string name="text_stopping">جار الإيقاف</string>
+</resources>

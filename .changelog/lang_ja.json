@@ -1,0 +1,22 @@
+{
+  "changelog_label_hint": "ヒント",
+  "changelog_label_feature": "追加",
+  "changelog_label_fix": "修正",
+  "changelog_label_improvement": "改善",
+  "changelog_label_dependency": "依存関係",
+  "$data": {
+    "v1.0.0": {
+      "released_date": "2026/09/01",
+      "feature": [
+        "同じ APK をランチャーから単独で実行するか, AutoJs6 の画面カラーピッカー拡張ツールとして使用できます",
+        "拡大サンプル, 座標, HEX, RGB, HSL を表示するタッチ向けフローティングピッカーを使用できます",
+        "getInfo, getState, getStartPendingIntent, stop を持つ contract v1 Binder インターフェースを使用できます",
+        "10 言語のローカル UI とドキュメントを利用でき, 色処理は完全にオフラインで行われます"
+      ],
+      "improvement": [
+        "オーバーレイ, 画面キャプチャ, フォアグラウンドサービス, 通知の権限フローを停止操作付きで明示的に処理します",
+        "AutoJs6 Wake プロトコルと最小ホストバージョン 5278 に対応し, CI とドキュメント差分検査を追加しました"
+      ]
+    }
+  }
+}

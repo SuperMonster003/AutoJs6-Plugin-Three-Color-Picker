@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="clipboard_label_color">Color de pantalla</string>
+    <string name="content_desc_color_picker_bubble">Selector flotante de color de pantalla</string>
+    <string name="notification_action_stop">Detener</string>
+    <string name="notification_channel_screen_color_picker">Selector de color de pantalla</string>
+    <string name="notification_text_screen_color_picker">El selector flotante está listo para tomar muestras de la pantalla</string>
+    <string name="notification_title_screen_color_picker">El selector de color de pantalla está activo</string>
+    <string name="plugin_description">Toma colores de cualquier parte de la pantalla con un selector flotante táctil</string>
+    <string name="text_active">Activo</string>
+    <string name="text_capture_failed">No se pudo capturar la pantalla. Inténtalo de nuevo.</string>
+    <string name="text_color_copied">Color %1$s copiado</string>
+    <string name="text_color_picker_home_description">Toma cualquier píxel de la pantalla y copia su color como HEX, RGB o HSL.</string>
+    <string name="text_color_picker_start_failed">No se pudo iniciar el selector de color. Inténtalo de nuevo.</string>
+    <string name="text_coordinates">X %1$d   Y %2$d</string>
+    <string name="text_copy">Copiar</string>
+    <string name="text_floating_picker_ready">El selector flotante está listo</string>
+    <string name="text_hex_format">HEX  %1$s</string>
+    <string name="text_hsl_format">HSL  %1$s°, %2$s%%, %3$s%%</string>
+    <string name="text_inactive">Inactivo</string>
+    <string name="text_notification_permission_denied">Las notificaciones están desactivadas. El selector seguirá funcionando, pero su notificación de estado puede quedar oculta.</string>
+    <string name="text_overlay_permission_explanation">Permite mostrar sobre otras aplicaciones para mantener el selector bajo el dedo mientras tomas una muestra de la pantalla.</string>
+    <string name="text_overlay_permission_required">Se requiere mostrar sobre otras aplicaciones</string>
+    <string name="text_picker_instruction">Pulsa el objetivo flotante para congelar la pantalla y arrastra la retícula sobre la captura.</string>
+    <string name="text_refresh">Actualizar</string>
+    <string name="text_return_to_bubble">Volver al selector</string>
+    <string name="text_rgb_format">RGB  %1$d, %2$d, %3$d</string>
+    <string name="text_screen_capture_permission_denied">No se concedió el permiso de captura de pantalla</string>
+    <string name="text_start_color_picker">Iniciar selector de color</string>
+    <string name="text_starting">Iniciando</string>
+    <string name="text_stop_color_picker">Detener selector de color</string>
+    <string name="text_stopping">Deteniendo</string>
+</resources>
