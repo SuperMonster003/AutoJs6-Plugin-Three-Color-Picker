@@ -1,12 +1,12 @@
-Screen Color Picker is a local color sampling tool designed for touchscreens. Its floating picker shows a magnified sample, coordinates, and several color formats while keeping finger interaction direct and clear.
+Screen Color Picker is a local color sampling tool designed for touchscreens. Its floating picker pairs a draggable target ring with a live magnifier that shows a magnified pixel grid, the current color, and exact coordinates while keeping finger interaction direct and clear.
 
 ### Standalone use
 
 1. Open Screen Color Picker from the system launcher.
 2. Tap Start color picker and follow the explanation to allow display over other apps.
 3. Allow the current screen capture in the Android system prompt.
-4. Switch to the app you want to sample, tap the floating target to freeze the screen, then drag the crosshair over the snapshot.
-5. Copy the desired format or stop the picker at any time.
+4. Switch to the app you want to sample, drag the target ring to the desired pixel, then slide on the magnifier disc to fine-tune.
+5. Tap the color or coordinate text on the magnifier to copy it, long-press the color text to switch formats, or stop the picker at any time.
 
 ### Use as an AutoJs6 tool
 

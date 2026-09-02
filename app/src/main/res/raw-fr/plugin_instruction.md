@@ -1,12 +1,12 @@
-Screen Color Picker est un outil local de prélèvement de couleur conçu pour les écrans tactiles. Son sélecteur flottant affiche un échantillon agrandi, les coordonnées et plusieurs formats de couleur avec une interaction directe et claire.
+Screen Color Picker est un outil local de prélèvement de couleur conçu pour les écrans tactiles. Son sélecteur flottant associe un anneau cible déplaçable à une loupe en temps réel qui affiche une grille de pixels agrandie, la couleur actuelle et les coordonnées exactes, avec une interaction directe et claire.
 
 ### Utilisation autonome
 
 1. Ouvrez Screen Color Picker depuis le lanceur système.
 2. Touchez Démarrer le sélecteur et suivez l'explication pour autoriser l'affichage sur les autres applications.
 3. Autorisez la capture actuelle dans la demande du système Android.
-4. Passez dans l'application à échantillonner, touchez la cible flottante pour figer l'écran, puis faites glisser le réticule sur la capture.
-5. Copiez le format souhaité ou arrêtez le sélecteur à tout moment.
+4. Passez dans l'application à échantillonner, faites glisser l'anneau cible jusqu'au pixel souhaité, puis glissez sur le disque de la loupe pour affiner.
+5. Touchez le texte de couleur ou de coordonnées sur la loupe pour le copier, appuyez longuement sur le texte de couleur pour changer de format, ou arrêtez le sélecteur à tout moment.
 
 ### Utilisation comme outil AutoJs6
 

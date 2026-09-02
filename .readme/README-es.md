@@ -31,7 +31,7 @@ El README está disponible en los siguientes idiomas:
 
 ### Introducción
 
-Screen Color Picker es una herramienta local de muestreo de color diseñada para pantallas táctiles. Su selector flotante muestra una muestra ampliada, coordenadas y varios formatos de color con una interacción directa y clara.
+Screen Color Picker es una herramienta local de muestreo de color diseñada para pantallas táctiles. Su selector flotante combina un anillo objetivo arrastrable con una lupa en tiempo real que muestra una cuadrícula de píxeles ampliada, el color actual y las coordenadas exactas, con una interacción directa y clara.
 
 El mismo APK funciona de forma independiente desde el lanzador o es descubierto por AutoJs6 como la tercera herramienta ampliada de su panel. El modo independiente no requiere AutoJs6.
 
@@ -40,9 +40,9 @@ El mismo APK funciona de forma independiente desde el lanzador o es descubierto 
 ### Funciones
 
 - Dos entradas: uso independiente desde el lanzador o como herramienta ampliada de AutoJs6
-- Optimizado para el tacto: un objetivo flotante y una muestra ampliada ayudan a seleccionar un píxel exacto
-- Datos inmediatos: consulta coordenadas de pantalla, HEX, RGB y HSL juntos
-- Copia en varios formatos: elige HEX, RGB o HSL y copia el valor de color actual
+- Optimizado para el tacto: arrastra el anillo objetivo para movimientos amplios y desliza sobre la lupa para el ajuste fino
+- Datos inmediatos: la lupa muestra en tiempo real el color muestreado y sus coordenadas
+- Copia flexible: copia el color como HEX o RGB (solo valores numéricos si lo prefieres) o copia las coordenadas
 - Ciclo de vida controlado: detén desde la pantalla principal, la interfaz flotante, la notificación o el interruptor del host
 - Totalmente sin conexión: el contenido de la pantalla no se sube y no se conserva un historial de capturas
 
@@ -55,8 +55,8 @@ Usa el selector sin AutoJs6:
 1. Abre Screen Color Picker desde el lanzador del sistema.
 2. Pulsa Iniciar selector de color y sigue la explicación para permitir mostrar sobre otras aplicaciones.
 3. Permite la captura de pantalla actual en el aviso del sistema Android.
-4. Cambia a la aplicación que quieras muestrear, pulsa el objetivo flotante para congelar la pantalla y arrastra la retícula sobre la captura.
-5. Copia el formato deseado o detén el selector en cualquier momento.
+4. Cambia a la aplicación que quieras muestrear, arrastra el anillo objetivo hasta el píxel deseado y desliza sobre el disco de la lupa para afinar.
+5. Pulsa el texto de color o de coordenadas en la lupa para copiarlo, mantén pulsado el texto de color para cambiar de formato o detén el selector en cualquier momento.
 
 ******
 
