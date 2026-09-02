@@ -14,10 +14,7 @@ import android.graphics.Color
 import android.os.Build
 import android.os.IBinder
 import android.provider.Settings
-import android.util.TypedValue
-import android.view.ContextThemeWrapper
 import android.view.View
-import android.view.ViewGroup
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
@@ -29,7 +26,6 @@ import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import com.google.android.material.button.MaterialButton
 import org.autojs.plugin.screencolorpicker.api.IScreenColorPickerPlugin
 import org.autojs.plugin.screencolorpicker.api.ScreenColorPickerContract
 import org.autojs.plugin.screencolorpicker.api.ScreenColorPickerStates
@@ -46,6 +42,8 @@ import java.nio.ByteBuffer
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.atomic.AtomicInteger
+import kotlin.math.cos
+import kotlin.math.sin
 
 @RunWith(AndroidJUnit4::class)
 class ScreenColorPickerPluginInstrumentedTest {
@@ -187,36 +185,48 @@ class ScreenColorPickerPluginInstrumentedTest {
     }
 
     @Test
-    fun pickerScreenLayoutAppliesMaterialThemeToApplicationContext() {
-        var pickerView: View? = null
-        var bitmap: android.graphics.Bitmap? = null
-
-        try {
-            instrumentation.runOnMainSync {
-                bitmap = android.graphics.Bitmap.createBitmap(2, 2, android.graphics.Bitmap.Config.ARGB_8888)
-                pickerView = createThemedPickerScreenLayout(
-                    context = requireNotNull(context.applicationContext),
-                    bitmap = requireNotNull(bitmap),
-                )
-            }
-
-            val view = requireNotNull(pickerView)
-            assertTrue(view.context is ContextThemeWrapper)
-            val materialThemeMarker = TypedValue()
-            assertTrue(
-                view.context.theme.resolveAttribute(
-                    com.google.android.material.R.attr.isMaterialTheme,
-                    materialThemeMarker,
-                    true,
-                ),
+    fun magnifierViewBuildsFromApplicationContextWithMtTextsAndHitZones() {
+        val cells = PickerSettingsCatalog.gridCellCountFor(8)
+        val size = 500
+        lateinit var magnifier: MagnifierView
+        instrumentation.runOnMainSync {
+            magnifier = MagnifierView(
+                requireNotNull(context.applicationContext),
+                gridCells = cells,
+                showGrid = true,
+                hexFormat = true,
             )
-            assertTrue(materialThemeMarker.data != 0)
-            assertEquals(4, view.descendants().count { it is MaterialButton })
-        } finally {
-            instrumentation.runOnMainSync {
-                bitmap?.takeUnless(android.graphics.Bitmap::isRecycled)?.recycle()
-            }
+            magnifier.measure(
+                View.MeasureSpec.makeMeasureSpec(size, View.MeasureSpec.EXACTLY),
+                View.MeasureSpec.makeMeasureSpec(size, View.MeasureSpec.EXACTLY),
+            )
+            magnifier.layout(0, 0, size, size)
+            magnifier.updateSample(IntArray(cells * cells) { Color.rgb(0xFA, 0xFA, 0xFA) }, 342, 1951)
         }
+
+        assertEquals(Color.rgb(0xFA, 0xFA, 0xFA), magnifier.centerColor)
+        assertEquals("#FAFAFA", magnifier.colorCopyText(numericOnly = false))
+        assertEquals("FAFAFA", magnifier.colorCopyText(numericOnly = true))
+        assertEquals("343,1952", magnifier.coordinateText())
+        instrumentation.runOnMainSync { magnifier.hexFormat = false }
+        assertEquals("R250,G250,B250", magnifier.colorCopyText(numericOnly = false))
+        assertEquals("250,250,250", magnifier.colorCopyText(numericOnly = true))
+
+        val center = size / 2f
+        val bandRadius = size / 2f - 1f
+        fun pointAt(angleFromNoonDegrees: Double): Pair<Float, Float> {
+            val radians = Math.toRadians(angleFromNoonDegrees)
+            return (center + bandRadius * sin(radians)).toFloat() to
+                (center - bandRadius * cos(radians)).toFloat()
+        }
+
+        val colorPoint = pointAt(-40.0)
+        val coordinatePoint = pointAt(40.0)
+        val closePoint = pointAt(180.0)
+        assertEquals(MagnifierHitZone.COLOR_TEXT, magnifier.hitZone(colorPoint.first, colorPoint.second))
+        assertEquals(MagnifierHitZone.COORDINATE_TEXT, magnifier.hitZone(coordinatePoint.first, coordinatePoint.second))
+        assertEquals(MagnifierHitZone.CLOSE, magnifier.hitZone(closePoint.first, closePoint.second))
+        assertEquals(MagnifierHitZone.NONE, magnifier.hitZone(center, center))
     }
 
     @Test
@@ -323,15 +333,6 @@ class ScreenColorPickerPluginInstrumentedTest {
         val deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(3)
         while (api.state != ScreenColorPickerStates.INACTIVE && System.nanoTime() < deadline) {
             Thread.sleep(25)
-        }
-    }
-
-    private fun View.descendants(): Sequence<View> = sequence {
-        if (this@descendants !is ViewGroup) return@sequence
-        for (index in 0 until childCount) {
-            val child = getChildAt(index)
-            yield(child)
-            yieldAll(child.descendants())
         }
     }
 

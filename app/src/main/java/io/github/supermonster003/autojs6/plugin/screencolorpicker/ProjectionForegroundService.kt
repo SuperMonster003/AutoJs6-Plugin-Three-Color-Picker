@@ -89,7 +89,7 @@ class ProjectionForegroundService : Service() {
                 mainHandler.post { requestStop(this) }
             }
             overlay = newOverlay
-            newOverlay.showBubble()
+            newOverlay.start()
             if (!PickerRuntime.markActive()) {
                 shutdown(stopProjection = true, stopSelfAfter = true)
             }
