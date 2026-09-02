@@ -65,6 +65,29 @@ internal object ColorFormatter {
 
     fun oneDecimal(value: Double): String = String.format(Locale.US, "%.1f", value)
 
+    fun compactRgb(argb: Int): String = String.format(
+        Locale.US,
+        "R%d,G%d,B%d",
+        red(argb),
+        green(argb),
+        blue(argb),
+    )
+
+    fun colorText(argb: Int, hexFormat: Boolean): String =
+        if (hexFormat) hex(argb) else compactRgb(argb)
+
+    /** Text placed on the clipboard; numeric-only strips the '#' prefix or the R/G/B letters. */
+    fun colorCopyText(argb: Int, hexFormat: Boolean, numericOnly: Boolean): String {
+        val text = colorText(argb, hexFormat)
+        if (!numericOnly) return text
+        return if (text.startsWith("#")) text.substring(1) else text.replace(CHANNEL_LETTERS, "")
+    }
+
+    /** Coordinates are displayed and copied 1-based, comma-separated without spaces. */
+    fun coordinateText(x: Int, y: Int): String = "${x + 1},${y + 1}"
+
+    private val CHANNEL_LETTERS = Regex("[RGB]")
+
     fun alpha(argb: Int): Int = argb ushr 24 and 0xFF
     fun red(argb: Int): Int = argb ushr 16 and 0xFF
     fun green(argb: Int): Int = argb ushr 8 and 0xFF

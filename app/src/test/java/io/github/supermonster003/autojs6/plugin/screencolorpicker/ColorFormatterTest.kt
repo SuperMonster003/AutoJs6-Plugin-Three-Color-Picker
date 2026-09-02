@@ -33,6 +33,29 @@ class ColorFormatterTest {
         assertEquals("hsl(198.5, 87.4%, 50.4%)", ColorFormatter.hslCss(color))
     }
 
+    @Test
+    fun magnifierColorTextsFollowTheSelectedFormat() {
+        val color = 0xFFFAFAFA.toInt()
+        assertEquals("R250,G250,B250", ColorFormatter.compactRgb(color))
+        assertEquals("#FAFAFA", ColorFormatter.colorText(color, hexFormat = true))
+        assertEquals("R250,G250,B250", ColorFormatter.colorText(color, hexFormat = false))
+    }
+
+    @Test
+    fun numericOnlyCopyStripsThePrefixWithoutTouchingHexDigits() {
+        val color = 0xFF00AB0B.toInt()
+        assertEquals("#00AB0B", ColorFormatter.colorCopyText(color, hexFormat = true, numericOnly = false))
+        assertEquals("00AB0B", ColorFormatter.colorCopyText(color, hexFormat = true, numericOnly = true))
+        assertEquals("R0,G171,B11", ColorFormatter.colorCopyText(color, hexFormat = false, numericOnly = false))
+        assertEquals("0,171,11", ColorFormatter.colorCopyText(color, hexFormat = false, numericOnly = true))
+    }
+
+    @Test
+    fun coordinatesAreDisplayedAndCopiedOneBased() {
+        assertEquals("343,1952", ColorFormatter.coordinateText(342, 1951))
+        assertEquals("1,1", ColorFormatter.coordinateText(0, 0))
+    }
+
     private fun assertHsl(h: Double, s: Double, l: Double, actual: HslColor) {
         assertEquals(h, actual.hue, 0.0001)
         assertEquals(s, actual.saturation, 0.0001)
