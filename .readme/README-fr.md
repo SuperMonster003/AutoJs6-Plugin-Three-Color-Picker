@@ -31,7 +31,7 @@ Le README est disponible dans les langues suivantes:
 
 ### Introduction
 
-Screen Color Picker est un outil local de prélèvement de couleur conçu pour les écrans tactiles. Son sélecteur flottant affiche un échantillon agrandi, les coordonnées et plusieurs formats de couleur avec une interaction directe et claire.
+Screen Color Picker est un outil local de prélèvement de couleur conçu pour les écrans tactiles. Son sélecteur flottant associe un anneau cible déplaçable à une loupe en temps réel qui affiche une grille de pixels agrandie, la couleur actuelle et les coordonnées exactes, avec une interaction directe et claire.
 
 Le même APK fonctionne seul depuis le lanceur ou est découvert par AutoJs6 comme troisième outil étendu du tiroir. Le mode autonome ne nécessite pas AutoJs6.
 
@@ -40,9 +40,9 @@ Le même APK fonctionne seul depuis le lanceur ou est découvert par AutoJs6 com
 ### Fonctions
 
 - Deux entrées: utilisation autonome depuis le lanceur ou comme outil étendu AutoJs6
-- Optimisé pour le tactile: une cible flottante et un échantillon agrandi aident à sélectionner un pixel précis
-- Données immédiates: affiche ensemble les coordonnées, HEX, RGB et HSL
-- Copie multiformat: choisissez HEX, RGB ou HSL et copiez la valeur de couleur actuelle
+- Optimisé pour le tactile: faites glisser l'anneau cible pour les grands déplacements et glissez sur la loupe pour l'ajustement fin
+- Données immédiates: la loupe affiche en temps réel la couleur échantillonnée et ses coordonnées
+- Copie flexible: copiez la couleur en HEX ou RGB (valeur numérique seule possible) ou copiez les coordonnées
 - Cycle de vie contrôlé: arrêtez depuis l'accueil, l'interface flottante, la notification ou l'interrupteur hôte
 - Entièrement hors ligne: le contenu de l'écran n'est jamais envoyé et aucun historique de capture n'est conservé
 
@@ -55,8 +55,8 @@ Utilisez le sélecteur sans AutoJs6:
 1. Ouvrez Screen Color Picker depuis le lanceur système.
 2. Touchez Démarrer le sélecteur et suivez l'explication pour autoriser l'affichage sur les autres applications.
 3. Autorisez la capture actuelle dans la demande du système Android.
-4. Passez dans l'application à échantillonner, touchez la cible flottante pour figer l'écran, puis faites glisser le réticule sur la capture.
-5. Copiez le format souhaité ou arrêtez le sélecteur à tout moment.
+4. Passez dans l'application à échantillonner, faites glisser l'anneau cible jusqu'au pixel souhaité, puis glissez sur le disque de la loupe pour affiner.
+5. Touchez le texte de couleur ou de coordonnées sur la loupe pour le copier, appuyez longuement sur le texte de couleur pour changer de format, ou arrêtez le sélecteur à tout moment.
 
 ******
 

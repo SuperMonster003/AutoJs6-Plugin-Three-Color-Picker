@@ -5,14 +5,14 @@
   "h_languages": "Idiomas",
   "p_languages": "El README está disponible en los siguientes idiomas",
   "h_introduction": "Introducción",
-  "p_introduction": "Screen Color Picker es una herramienta local de muestreo de color diseñada para pantallas táctiles. Su selector flotante muestra una muestra ampliada, coordenadas y varios formatos de color con una interacción directa y clara.",
+  "p_introduction": "Screen Color Picker es una herramienta local de muestreo de color diseñada para pantallas táctiles. Su selector flotante combina un anillo objetivo arrastrable con una lupa en tiempo real que muestra una cuadrícula de píxeles ampliada, el color actual y las coordenadas exactas, con una interacción directa y clara.",
   "p_dual_mode": "El mismo APK funciona de forma independiente desde el lanzador o es descubierto por AutoJs6 como la tercera herramienta ampliada de su panel. El modo independiente no requiere AutoJs6.",
   "h_features": "Funciones",
   "features": [
     "Dos entradas: uso independiente desde el lanzador o como herramienta ampliada de AutoJs6",
-    "Optimizado para el tacto: un objetivo flotante y una muestra ampliada ayudan a seleccionar un píxel exacto",
-    "Datos inmediatos: consulta coordenadas de pantalla, HEX, RGB y HSL juntos",
-    "Copia en varios formatos: elige HEX, RGB o HSL y copia el valor de color actual",
+    "Optimizado para el tacto: arrastra el anillo objetivo para movimientos amplios y desliza sobre la lupa para el ajuste fino",
+    "Datos inmediatos: la lupa muestra en tiempo real el color muestreado y sus coordenadas",
+    "Copia flexible: copia el color como HEX o RGB (solo valores numéricos si lo prefieres) o copia las coordenadas",
     "Ciclo de vida controlado: detén desde la pantalla principal, la interfaz flotante, la notificación o el interruptor del host",
     "Totalmente sin conexión: el contenido de la pantalla no se sube y no se conserva un historial de capturas"
   ],
@@ -22,8 +22,8 @@
     "Abre Screen Color Picker desde el lanzador del sistema.",
     "Pulsa Iniciar selector de color y sigue la explicación para permitir mostrar sobre otras aplicaciones.",
     "Permite la captura de pantalla actual en el aviso del sistema Android.",
-    "Cambia a la aplicación que quieras muestrear, pulsa el objetivo flotante para congelar la pantalla y arrastra la retícula sobre la captura.",
-    "Copia el formato deseado o detén el selector en cualquier momento."
+    "Cambia a la aplicación que quieras muestrear, arrastra el anillo objetivo hasta el píxel deseado y desliza sobre el disco de la lupa para afinar.",
+    "Pulsa el texto de color o de coordenadas en la lupa para copiarlo, mantén pulsado el texto de color para cambiar de formato o detén el selector en cualquier momento."
   ],
   "h_host": "Uso como herramienta de AutoJs6",
   "p_host": "Tras la instalación AutoJs6 descubre la aplicación mediante el contrato formal del plugin y solo muestra su herramienta en el panel mientras el plugin está activado en el Centro de plugins",

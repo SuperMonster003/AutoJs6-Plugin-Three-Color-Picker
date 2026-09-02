@@ -1,12 +1,12 @@
-Screen Color Picker es una herramienta local de muestreo de color diseñada para pantallas táctiles. Su selector flotante muestra una muestra ampliada, coordenadas y varios formatos de color con una interacción directa y clara.
+Screen Color Picker es una herramienta local de muestreo de color diseñada para pantallas táctiles. Su selector flotante combina un anillo objetivo arrastrable con una lupa en tiempo real que muestra una cuadrícula de píxeles ampliada, el color actual y las coordenadas exactas, con una interacción directa y clara.
 
 ### Uso independiente
 
 1. Abre Screen Color Picker desde el lanzador del sistema.
 2. Pulsa Iniciar selector de color y sigue la explicación para permitir mostrar sobre otras aplicaciones.
 3. Permite la captura de pantalla actual en el aviso del sistema Android.
-4. Cambia a la aplicación que quieras muestrear, pulsa el objetivo flotante para congelar la pantalla y arrastra la retícula sobre la captura.
-5. Copia el formato deseado o detén el selector en cualquier momento.
+4. Cambia a la aplicación que quieras muestrear, arrastra el anillo objetivo hasta el píxel deseado y desliza sobre el disco de la lupa para afinar.
+5. Pulsa el texto de color o de coordenadas en la lupa para copiarlo, mantén pulsado el texto de color para cambiar de formato o detén el selector en cualquier momento.
 
 ### Uso como herramienta de AutoJs6
 

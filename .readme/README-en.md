@@ -31,7 +31,7 @@ The README is available in the following languages:
 
 ### Introduction
 
-Screen Color Picker is a local color sampling tool designed for touchscreens. Its floating picker shows a magnified sample, coordinates, and several color formats while keeping finger interaction direct and clear.
+Screen Color Picker is a local color sampling tool designed for touchscreens. Its floating picker pairs a draggable target ring with a live magnifier that shows a magnified pixel grid, the current color, and exact coordinates while keeping finger interaction direct and clear.
 
 The same APK can run independently from the launcher or be discovered by AutoJs6 as the third extended tool in its drawer. Standalone mode does not require AutoJs6.
 
@@ -40,9 +40,9 @@ The same APK can run independently from the launcher or be discovered by AutoJs6
 ### Features
 
 - Two entry points: use it independently from the launcher or as an AutoJs6 extended tool
-- Touch optimized: a floating target and magnified sample help select an exact pixel
-- Immediate data: see screen coordinates, HEX, RGB, and HSL together
-- Multi-format copy: choose HEX, RGB, or HSL and copy the current color value
+- Touch optimized: drag the target ring for coarse moves and slide on the magnifier to fine-tune
+- Live readout: the magnifier shows the sampled color and its coordinates in real time
+- Flexible copy: copy the color as HEX or RGB, with an optional numeric-only form, or copy the coordinates
 - Controlled lifecycle: stop from the home screen, floating UI, notification, or host tool switch
 - Fully offline: screen content is never uploaded and screenshot history is not retained
 
@@ -55,8 +55,8 @@ Use the picker without AutoJs6:
 1. Open Screen Color Picker from the system launcher.
 2. Tap Start color picker and follow the explanation to allow display over other apps.
 3. Allow the current screen capture in the Android system prompt.
-4. Switch to the app you want to sample, tap the floating target to freeze the screen, then drag the crosshair over the snapshot.
-5. Copy the desired format or stop the picker at any time.
+4. Switch to the app you want to sample, drag the target ring to the desired pixel, then slide on the magnifier disc to fine-tune.
+5. Tap the color or coordinate text on the magnifier to copy it, long-press the color text to switch formats, or stop the picker at any time.
 
 ******
 
