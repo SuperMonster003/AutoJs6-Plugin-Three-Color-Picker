@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.graphics.PixelFormat
 import android.hardware.display.DisplayManager
 import android.hardware.display.VirtualDisplay
+import android.media.Image
 import android.media.ImageReader
 import android.media.projection.MediaProjection
 import android.os.Build
@@ -17,6 +18,11 @@ import android.view.WindowManager
 import java.util.concurrent.atomic.AtomicBoolean
 
 internal data class CaptureDisplaySpec(val width: Int, val height: Int, val densityDpi: Int)
+
+/** One sampled pixel block: row-major (2*radius+1)^2 ARGB values around (x, y). */
+internal class SampleResult(val pixels: IntArray, val x: Int, val y: Int, val radius: Int)
+
+private class SampleRequest(val x: Int, val y: Int, val radius: Int)
 
 /** Owns exactly one MediaProjection and one VirtualDisplay for their whole lifetime. */
 internal class ProjectionSession(
@@ -41,6 +47,12 @@ internal class ProjectionSession(
     private lateinit var imageReader: ImageReader
     private var pendingCapture: ((Bitmap?) -> Unit)? = null
     private lateinit var virtualDisplay: VirtualDisplay
+
+    @Volatile
+    private var sampleRequest: SampleRequest? = null
+
+    @Volatile
+    private var sampleListener: ((SampleResult) -> Unit)? = null
 
     private val projectionCallback = object : MediaProjection.Callback() {
         override fun onStop() {
@@ -124,6 +136,20 @@ internal class ProjectionSession(
         if (!posted) mainHandler.post { callback(null) }
     }
 
+    /** Receives one [SampleResult] on the main thread for every captured frame while a request is set. */
+    fun setSampleListener(listener: ((SampleResult) -> Unit)?) {
+        sampleListener = listener
+    }
+
+    /** Frames only arrive while screen content changes; moving the overlays is itself such a change. */
+    fun setSampleRequest(x: Int, y: Int, radius: Int) {
+        sampleRequest = SampleRequest(x, y, radius)
+    }
+
+    fun clearSampleRequest() {
+        sampleRequest = null
+    }
+
     fun resize(spec: CaptureDisplaySpec) {
         if (closed.get() || spec.width <= 0 || spec.height <= 0) return
         val posted = captureHandler.post {
@@ -180,24 +206,45 @@ internal class ProjectionSession(
 
     private fun onImageAvailable(reader: ImageReader) {
         val image = runCatching { reader.acquireLatestImage() }.getOrNull() ?: return
-        val callback = synchronized(pendingLock) {
-            pendingCapture.also { pendingCapture = null }
-        }
-        if (callback == null) {
-            image.close()
-            return
-        }
-        val bitmap = try {
-            ImagePlaneBitmapConverter.convert(image)
-        } catch (_: RuntimeException) {
-            null
-        } catch (_: OutOfMemoryError) {
-            onProjectionStopped()
-            null
+        var outOfMemory = false
+        try {
+            deliverSample(image)
+            val callback = synchronized(pendingLock) {
+                pendingCapture.also { pendingCapture = null }
+            }
+            if (callback != null) {
+                val bitmap = try {
+                    ImagePlaneBitmapConverter.convert(image)
+                } catch (_: RuntimeException) {
+                    null
+                } catch (_: OutOfMemoryError) {
+                    outOfMemory = true
+                    null
+                }
+                if (!mainHandler.post { callback(bitmap) }) bitmap?.recycle()
+            }
         } finally {
             image.close()
         }
-        if (!mainHandler.post { callback(bitmap) }) bitmap?.recycle()
+        if (outOfMemory) onProjectionStopped()
+    }
+
+    /** Reads only the requested pixel block from the frame; no frame data is retained. */
+    private fun deliverSample(image: Image) {
+        val request = sampleRequest ?: return
+        if (sampleListener == null) return
+        val plane = image.planes.firstOrNull() ?: return
+        val layout = runCatching {
+            RgbaPlaneLayout(image.width, image.height, plane.pixelStride, plane.rowStride)
+        }.getOrNull() ?: return
+        val (x, y) = MagnifierGeometry.clampSample(request.x, request.y, layout.width, layout.height)
+        val side = request.radius * 2 + 1
+        val pixels = IntArray(side * side)
+        runCatching {
+            RgbaBlockReader.readArgbBlock(plane.buffer, layout, x, y, request.radius, pixels)
+        }.getOrElse { return }
+        val result = SampleResult(pixels, x, y, request.radius)
+        mainHandler.post { sampleListener?.invoke(result) }
     }
 
     private fun expireCapture(callback: (Bitmap?) -> Unit) {
@@ -227,6 +274,8 @@ internal class ProjectionSession(
 
     private fun releaseResources() {
         if (!resourcesReleased.compareAndSet(false, true)) return
+        sampleRequest = null
+        sampleListener = null
         val abandoned = synchronized(pendingLock) {
             pendingCapture.also { pendingCapture = null }
         }
