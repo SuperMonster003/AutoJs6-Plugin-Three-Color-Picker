@@ -6,10 +6,11 @@
 
 # v1.0.1
 
-_2026/09/01_
+_2026/09/11_
 
 - `修正` 為使用 Service/application Context 建立的 Material 按鈕明確套用 Material 主題, 避免 ThemeEnforcement 崩潰
 - `修正` 只在外掛中心啟用外掛時顯示 AutoJs6 抽屜工具, 重新啟用後自動恢復
+- `改善` 建置階段阻止意外引入原生相依套件, 並輸出 JSON 校驗報告
 
 # v1.0.0
 

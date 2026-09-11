@@ -6,10 +6,11 @@
 
 # v1.0.1
 
-_2026/09/01_
+_2026/09/11_
 
 - `修复` 为使用 Service/application Context 创建的 Material 按钮显式应用 Material 主题, 避免 ThemeEnforcement 崩溃
 - `修复` 仅在插件中心启用插件时显示 AutoJs6 抽屉工具, 重新启用后自动恢复
+- `优化` 构建阶段阻止意外引入原生依赖, 并输出 JSON 校验报告
 
 # v1.0.0
 

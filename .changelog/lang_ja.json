@@ -6,10 +6,13 @@
   "changelog_label_dependency": "依存関係",
   "$data": {
     "v1.0.1": {
-      "released_date": "2026/09/01",
+      "released_date": "2026/09/11",
       "fix": [
         "Service/application Context から Material ボタンを作成する際に Material テーマを明示的に適用し, ThemeEnforcement のクラッシュを防止",
         "プラグインセンターでプラグインが有効な間だけ AutoJs6 のドロワーツールを表示し, 再有効化後に自動復元"
+      ],
+      "improvement": [
+        "意図しないネイティブ依存関係をビルド時に拒否し, JSON レポートを生成"
       ]
     },
     "v1.0.0": {

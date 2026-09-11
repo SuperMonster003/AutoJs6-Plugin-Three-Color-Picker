@@ -4,6 +4,7 @@ import java.util.Properties
 import java.util.TimeZone
 
 plugins {
+    id("io.github.supermonster003.autojs6-native-alignment")
     id("org.autojs.build.utils")
     id("org.autojs.build.versions")
     id("org.autojs.build.jvm-convention")
@@ -148,3 +149,6 @@ tasks.register<Copy>("appendDigestToReleasedFiles") {
 tasks.withType<JavaCompile>().configureEach {
     options.encoding = "UTF-8"
 }
+
+// Reject accidental native dependencies on every ABI.
+nativeAlignment { expectNoNativeLibraries.set(true) }

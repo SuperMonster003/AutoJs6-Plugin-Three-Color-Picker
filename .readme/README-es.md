@@ -120,10 +120,11 @@ native libraries: none
 
 #### v1.0.1
 
-_2026/09/01_
+_2026/09/11_
 
 - `Corregido` Evitar el bloqueo de ThemeEnforcement al aplicar un tema Material explícito a los botones Material creados desde el Context del servicio/aplicación
 - `Corregido` Mostrar la herramienta del panel de AutoJs6 solo mientras el plugin esté activado en el Centro de plugins y restaurarla al volver a activarlo
+- `Mejorado` La verificación de compilación rechaza dependencias nativas accidentales y genera un informe JSON
 
 #### v1.0.0
 
@@ -162,3 +163,6 @@ py .python/generate_markdown.py --check
 El código del proyecto se distribuye bajo Mozilla Public License 2.0.
 
 [LICENSE](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/LICENSE)
+
+
+[16 KB page alignment and build verification](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/docs/16kb.md)

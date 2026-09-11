@@ -120,10 +120,11 @@ native libraries: none
 
 #### v1.0.1
 
-_2026/09/01_
+_2026/09/11_
 
 - `수정` Service/application Context에서 Material 버튼을 만들 때 명시적인 Material 테마를 적용하여 ThemeEnforcement 비정상 종료를 방지
 - `수정` 플러그인 센터에서 플러그인이 활성화된 동안에만 AutoJs6 서랍 도구를 표시하고 다시 활성화하면 복원
+- `개선` 빌드 시 의도하지 않은 네이티브 의존성을 거부하고 JSON 보고서 생성
 
 #### v1.0.0
 
@@ -162,3 +163,6 @@ py .python/generate_markdown.py --check
 프로젝트 코드는 Mozilla Public License 2.0으로 제공됩니다.
 
 [LICENSE](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/LICENSE)
+
+
+[16 KB page alignment and build verification](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/docs/16kb.md)
