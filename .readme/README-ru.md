@@ -120,10 +120,11 @@ native libraries: none
 
 #### v1.0.1
 
-_2026/09/01_
+_2026/09/11_
 
 - `Исправлено` Предотвращен сбой ThemeEnforcement за счет явного применения темы Material к кнопкам Material, создаваемым из Context службы/приложения
 - `Исправлено` Инструмент в боковой панели AutoJs6 отображается только при включенном плагине в Центре плагинов и восстанавливается после повторного включения
+- `Улучшено` Проверка сборки отклоняет непреднамеренные нативные зависимости и создает отчет JSON
 
 #### v1.0.0
 
@@ -162,3 +163,6 @@ py .python/generate_markdown.py --check
 Код проекта распространяется по Mozilla Public License 2.0.
 
 [LICENSE](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/LICENSE)
+
+
+[16 KB page alignment and build verification](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/docs/16kb.md)

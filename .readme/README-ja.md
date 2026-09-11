@@ -120,10 +120,11 @@ native libraries: none
 
 #### v1.0.1
 
-_2026/09/01_
+_2026/09/11_
 
 - `修正` Service/application Context から Material ボタンを作成する際に Material テーマを明示的に適用し, ThemeEnforcement のクラッシュを防止
 - `修正` プラグインセンターでプラグインが有効な間だけ AutoJs6 のドロワーツールを表示し, 再有効化後に自動復元
+- `改善` 意図しないネイティブ依存関係をビルド時に拒否し, JSON レポートを生成
 
 #### v1.0.0
 
@@ -162,3 +163,6 @@ py .python/generate_markdown.py --check
 プロジェクトコードは Mozilla Public License 2.0 で提供されます.
 
 [LICENSE](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/LICENSE)
+
+
+[16 KB page alignment and build verification](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/docs/16kb.md)

@@ -6,10 +6,13 @@
   "changelog_label_dependency": "Dependencia",
   "$data": {
     "v1.0.1": {
-      "released_date": "2026/09/01",
+      "released_date": "2026/09/11",
       "fix": [
         "Evitar el bloqueo de ThemeEnforcement al aplicar un tema Material explícito a los botones Material creados desde el Context del servicio/aplicación",
         "Mostrar la herramienta del panel de AutoJs6 solo mientras el plugin esté activado en el Centro de plugins y restaurarla al volver a activarlo"
+      ],
+      "improvement": [
+        "La verificación de compilación rechaza dependencias nativas accidentales y genera un informe JSON"
       ]
     },
     "v1.0.0": {

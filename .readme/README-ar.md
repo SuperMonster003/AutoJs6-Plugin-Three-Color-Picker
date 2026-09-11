@@ -120,10 +120,11 @@ native libraries: none
 
 #### v1.0.1
 
-_2026/09/01_
+_2026/09/11_
 
 - `إصلاح` منع تعطل ThemeEnforcement بتطبيق سمة Material صراحة على أزرار Material المنشأة من Context الخدمة/التطبيق
 - `إصلاح` عرض أداة اللوحة الجانبية في AutoJs6 فقط عند تمكين المكون الإضافي في مركز المكونات الإضافية واستعادتها بعد إعادة تمكينه
+- `تحسين` التحقق أثناء البناء لمنع إدخال تبعيات أصلية غير مقصودة, مع تقرير JSON
 
 #### v1.0.0
 
@@ -162,3 +163,6 @@ py .python/generate_markdown.py --check
 كود المشروع مرخص بموجب Mozilla Public License 2.0.
 
 [LICENSE](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/LICENSE)
+
+
+[16 KB page alignment and build verification](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/docs/16kb.md)
