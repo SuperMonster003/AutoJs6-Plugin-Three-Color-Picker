@@ -8,6 +8,8 @@
     <string name="notification_text_screen_color_picker">Плавающая пипетка готова выбирать цвета на экране</string>
     <string name="notification_title_screen_color_picker">Пипетка экрана активна</string>
     <string name="plugin_description">Выбирает цвета в любой точке экрана с помощью удобной плавающей пипетки</string>
+    <string name="release_history">История выпусков</string>
+    <string name="release_history_unavailable">История выпусков недоступна</string>
     <string name="text_active">Активно</string>
     <string name="text_capture_range">Диапазон выборки</string>
     <string name="text_capture_timed_out">Время захвата экрана истекло</string>

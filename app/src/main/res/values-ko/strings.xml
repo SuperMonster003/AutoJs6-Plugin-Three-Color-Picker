@@ -8,6 +8,8 @@
     <string name="notification_text_screen_color_picker">플로팅 선택기로 화면 색상을 추출할 수 있습니다</string>
     <string name="notification_title_screen_color_picker">화면 색상 선택기가 활성 상태입니다</string>
     <string name="plugin_description">터치하기 쉬운 플로팅 선택기로 화면 어디서나 색상을 추출합니다</string>
+    <string name="release_history">릴리스 기록</string>
+    <string name="release_history_unavailable">릴리스 기록을 사용할 수 없습니다</string>
     <string name="text_active">활성</string>
     <string name="text_capture_range">샘플링 범위</string>
     <string name="text_capture_timed_out">화면 캡처 시간이 초과되었습니다</string>

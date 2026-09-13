@@ -9,7 +9,7 @@ import org.autojs.plugin.screencolorpicker.api.IScreenColorPickerPlugin
 
 class ScreenColorPickerPluginService : Service() {
     private val binder = object : IScreenColorPickerPlugin.Stub() {
-        override fun getInfo(): PluginInfo = PluginRuntimeInfo.create(this@ScreenColorPickerPluginService)
+        override fun getInfo(): PluginInfo = PluginRuntimeInfo.create(this@ScreenColorPickerPluginService).apply { supportedAbis = emptyArray() }
 
         override fun getState(): Int = PickerRuntime.state()
 

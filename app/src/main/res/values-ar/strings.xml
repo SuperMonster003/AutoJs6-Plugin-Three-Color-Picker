@@ -8,6 +8,8 @@
     <string name="notification_text_screen_color_picker">المنتقي العائم جاهز لأخذ عينة من الشاشة</string>
     <string name="notification_title_screen_color_picker">منتقي ألوان الشاشة نشط</string>
     <string name="plugin_description">يلتقط الألوان من أي مكان على الشاشة باستخدام منتقي عائم مناسب للمس</string>
+    <string name="release_history">سجل الإصدارات</string>
+    <string name="release_history_unavailable">سجل الإصدارات غير متاح</string>
     <string name="text_active">نشط</string>
     <string name="text_capture_range">نطاق الالتقاط</string>
     <string name="text_capture_timed_out">انتهت مهلة التقاط الشاشة</string>

@@ -28,3 +28,5 @@ __pycache__/
 /release/
 /releases/
 /sign.properties
+
+*.pre-platform-versions.bak

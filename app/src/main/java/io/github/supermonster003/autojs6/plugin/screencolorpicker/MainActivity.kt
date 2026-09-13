@@ -131,6 +131,10 @@ class MainActivity : AppCompatActivity() {
         root.addView(buildSettingsCard(), LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply {
             topMargin = dp(20)
         })
+        root.addView(MaterialButton(this).apply {
+            setText(R.string.release_history)
+            setOnClickListener { showReleaseHistory() }
+        })
         renderState(PickerRuntime.state())
         return ScrollView(this).apply {
             isFillViewport = true
