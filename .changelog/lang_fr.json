@@ -11,7 +11,8 @@
         "Historique local accessible depuis l'interface, avec traductions et repli en anglais"
       ],
       "improvement": [
-        "Vérification de la signature complète, des APK attendus et de la reproductibilité de la documentation"
+        "Vérification de la signature complète, des APK attendus et de la reproductibilité de la documentation",
+        "Conserver une icône PNG de base issue de l'icône existante et la référencer dans la documentation"
       ]
     },
     "v1.0.1": {

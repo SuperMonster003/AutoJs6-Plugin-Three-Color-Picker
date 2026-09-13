@@ -10,6 +10,7 @@ _2026/09/13_
 
 - `Ajout` Historique local accessible depuis l'interface, avec traductions et repli en anglais
 - `Amélioration` Vérification de la signature complète, des APK attendus et de la reproductibilité de la documentation
+- `Amélioration` Conserver une icône PNG de base issue de l'icône existante et la référencer dans la documentation
 
 # v1.0.1
 

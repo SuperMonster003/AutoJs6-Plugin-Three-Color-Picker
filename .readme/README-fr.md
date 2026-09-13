@@ -1,7 +1,7 @@
 <!--suppress HtmlDeprecatedAttribute, HttpUrlsUsage -->
 
 <div align="center">
-  <p><img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/docs/images/icon.svg?raw=true" alt="Screen Color Picker icon" border="0" width="128" /></p>
+  <p><img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="Screen Color Picker icon" border="0" width="128" /></p>
   <p>Échantillonne les couleurs partout sur l'écran avec un sélecteur flottant tactile</p>
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker?label=Release"/></a>
@@ -124,6 +124,7 @@ _2026/09/13_
 
 - `Ajout` Historique local accessible depuis l'interface, avec traductions et repli en anglais
 - `Amélioration` Vérification de la signature complète, des APK attendus et de la reproductibilité de la documentation
+- `Amélioration` Conserver une icône PNG de base issue de l'icône existante et la référencer dans la documentation
 
 #### v1.0.1
 

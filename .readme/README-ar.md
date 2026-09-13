@@ -1,7 +1,7 @@
 <!--suppress HtmlDeprecatedAttribute, HttpUrlsUsage -->
 
 <div align="center">
-  <p><img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/docs/images/icon.svg?raw=true" alt="Screen Color Picker icon" border="0" width="128" /></p>
+  <p><img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="Screen Color Picker icon" border="0" width="128" /></p>
   <p>يلتقط الألوان من أي مكان على الشاشة باستخدام منتقي عائم مناسب للمس</p>
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker?label=Release"/></a>
@@ -124,6 +124,7 @@ _2026/09/13_
 
 - `إضافة` يتوفر سجل الإصدارات محليا من الواجهة بالنص المترجم والإنجليزية كبديل
 - `تحسين` التحقق من اكتمال إعداد توقيع حزم الإصدار وملفات APK المتوقعة وإمكانية إعادة إنشاء الوثائق
+- `تحسين` إضافة أيقونة تشغيل أساسية بصيغة PNG مشتقة من الأيقونة الحالية والإشارة إليها في التوثيق
 
 #### v1.0.1
 
