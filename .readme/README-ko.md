@@ -1,7 +1,7 @@
 <!--suppress HtmlDeprecatedAttribute, HttpUrlsUsage -->
 
 <div align="center">
-  <p><img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/docs/images/icon.svg?raw=true" alt="Screen Color Picker icon" border="0" width="128" /></p>
+  <p><img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="Screen Color Picker icon" border="0" width="128" /></p>
   <p>터치하기 쉬운 플로팅 선택기로 화면 어디서나 색상을 추출합니다</p>
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker?label=Release"/></a>
@@ -124,6 +124,7 @@ _2026/09/13_
 
 - `추가` 화면에서 현지화된 로컬 릴리스 기록을 표시하고 영어 대체 제공
 - `개선` 릴리스 서명 설정, 예상 APK 구성 및 문서 재생성 결과 검증
+- `개선` 기존 아이콘에서 기본 PNG 실행기 이미지를 만들고 문서에서 참조
 
 #### v1.0.1
 

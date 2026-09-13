@@ -1,7 +1,7 @@
 <!--suppress HtmlDeprecatedAttribute, HttpUrlsUsage -->
 
 <div align="center">
-  <p><img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/docs/images/icon.svg?raw=true" alt="Screen Color Picker icon" border="0" width="128" /></p>
+  <p><img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="Screen Color Picker icon" border="0" width="128" /></p>
   <p>タッチ操作しやすいフローティングピッカーで画面上の色を取得します</p>
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker?label=Release"/></a>
@@ -124,6 +124,7 @@ _2026/09/13_
 
 - `追加` 画面からローカルのリリース履歴を表示し, 各言語と英語へのフォールバックに対応
 - `改善` リリース署名の設定, APK の構成, ドキュメントの再生成結果を検証
+- `改善` 既存のアイコンから基本の PNG ランチャー画像を用意し, ドキュメントから参照
 
 #### v1.0.1
 

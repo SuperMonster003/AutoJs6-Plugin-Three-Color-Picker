@@ -1,7 +1,7 @@
 {
   "repo_url": "https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker",
   "repo_slug": "SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker",
-  "icon_url": "https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/docs/images/icon.svg?raw=true",
+  "icon_url": "https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true",
   "license_url": "https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/LICENSE",
   "application_id": "io.github.supermonster003.autojs6.plugin.screencolorpicker",
   "plugin_id": "screen-color-picker",

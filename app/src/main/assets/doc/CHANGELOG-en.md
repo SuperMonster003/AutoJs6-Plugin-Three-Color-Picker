@@ -10,6 +10,7 @@ _2026/09/13_
 
 - `Added` Local release history is available from the interface, with localized text and an English fallback
 - `Improved` Release packages are checked for a complete signing configuration, exact APK contents and reproducible documentation
+- `Improved` Keep a base PNG launcher asset derived from the existing icon and reference it from the documentation
 
 # v1.0.1
 

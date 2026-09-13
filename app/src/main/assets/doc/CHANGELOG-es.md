@@ -10,6 +10,7 @@ _2026/09/13_
 
 - `Añadido` Historial de versiones local desde la interfaz con traducciones y alternativa en inglés
 - `Mejorado` Comprobación de la firma completa, los APK esperados y la documentación reproducible de cada versión
+- `Mejorado` Conservar un icono PNG base derivado del icono existente y usarlo en la documentación
 
 # v1.0.1
 
