@@ -8,6 +8,8 @@
     <string name="notification_text_screen_color_picker">浮動取色器已可在螢幕上取色</string>
     <string name="notification_title_screen_color_picker">螢幕取色正在執行</string>
     <string name="plugin_description">使用適合觸控操作的浮動取色器擷取螢幕任意位置的顏色</string>
+    <string name="release_history">發行歷史</string>
+    <string name="release_history_unavailable">發行歷史暫不可用</string>
     <string name="text_active">執行中</string>
     <string name="text_capture_range">取色範圍</string>
     <string name="text_capture_timed_out">螢幕擷取逾時</string>

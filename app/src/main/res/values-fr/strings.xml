@@ -8,6 +8,8 @@
     <string name="notification_text_screen_color_picker">Le sélecteur flottant est prêt à échantillonner l\'écran</string>
     <string name="notification_title_screen_color_picker">Le sélecteur de couleur d\'écran est actif</string>
     <string name="plugin_description">Échantillonne les couleurs partout sur l\'écran avec un sélecteur flottant tactile</string>
+    <string name="release_history">Historique des versions</string>
+    <string name="release_history_unavailable">L\'historique des versions est indisponible</string>
     <string name="text_active">Actif</string>
     <string name="text_capture_range">Plage d\'échantillonnage</string>
     <string name="text_capture_timed_out">Délai de capture d\'écran dépassé</string>

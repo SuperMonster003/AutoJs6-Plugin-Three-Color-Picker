@@ -18,7 +18,7 @@ val releaseProperties = Properties().apply {
 val releaseSigningAvailable = listOf("storeFile", "storePassword", "keyAlias", "keyPassword")
     .all { releaseProperties.getProperty(it).isNullOrBlank().not() }
     && releaseProperties.getProperty("storeFile")
-        ?.let(rootProject::file)
+        ?.let { file(it).takeIf(File::isFile) ?: rootProject.file(it) }
         ?.isFile == true
 val buildDate = SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH).apply {
     timeZone = TimeZone.getTimeZone("GMT+08:00")
@@ -45,7 +45,8 @@ android {
     signingConfigs {
         if (releaseSigningAvailable) {
             create("release") {
-                storeFile = rootProject.file(releaseProperties.getProperty("storeFile"))
+                storeFile = file(releaseProperties.getProperty("storeFile")).takeIf(File::isFile)
+                    ?: rootProject.file(releaseProperties.getProperty("storeFile"))
                 storePassword = releaseProperties.getProperty("storePassword")
                 keyAlias = releaseProperties.getProperty("keyAlias")
                 keyPassword = releaseProperties.getProperty("keyPassword")
@@ -152,3 +153,34 @@ tasks.withType<JavaCompile>().configureEach {
 
 // Reject accidental native dependencies on every ABI.
 nativeAlignment { expectNoNativeLibraries.set(true) }
+
+
+// Fail before collection when credentials, keystore or the actual APK set are incomplete.
+val verifySignedReleaseArtifacts = tasks.register("verifySignedReleaseArtifacts") {
+    group = "verification"
+    dependsOn("assembleRelease")
+    doLast {
+        val signing = android.buildTypes.getByName("release").signingConfig
+        check(signing != null && signing.storeFile?.isFile == true &&
+            !signing.storePassword.isNullOrBlank() && !signing.keyAlias.isNullOrBlank() &&
+            !signing.keyPassword.isNullOrBlank()) { "Release signing configuration is missing or incomplete" }
+        val directory = layout.buildDirectory.dir("outputs/apk/release").get().asFile
+        val apks = directory.listFiles { file -> file.isFile && file.extension == "apk" }.orEmpty()
+        check(apks.map { it.name }.toSet() == setOf("app-release.apk")) {
+            "Unexpected release APK set: ${apks.map { it.name }.sorted()}"
+        }
+        val buildTools = androidComponents.sdkComponents.sdkDirectory.get().asFile
+            .resolve("build-tools/${android.buildToolsVersion}")
+        val signerJar = buildTools.resolve("lib/apksigner.jar")
+        check(signerJar.isFile) { "Android SDK apksigner is unavailable" }
+        val result = providers.exec {
+            commandLine("java", "-jar", signerJar.absolutePath, "verify", apks.single().absolutePath)
+            isIgnoreExitValue = true
+        }.result.get()
+        check(result.exitValue == 0) { "Release APK signature verification failed" }
+    }
+}
+tasks.named("appendDigestToReleasedFiles") { dependsOn(verifySignedReleaseArtifacts) }
+tasks.matching { it.name == "prepareReleaseArtifacts" }.configureEach {
+    dependsOn(verifySignedReleaseArtifacts)
+}

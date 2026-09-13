@@ -8,6 +8,8 @@
     <string name="notification_text_screen_color_picker">El selector flotante está listo para tomar muestras de la pantalla</string>
     <string name="notification_title_screen_color_picker">El selector de color de pantalla está activo</string>
     <string name="plugin_description">Toma colores de cualquier parte de la pantalla con un selector flotante táctil</string>
+    <string name="release_history">Historial de versiones</string>
+    <string name="release_history_unavailable">El historial de versiones no está disponible</string>
     <string name="text_active">Activo</string>
     <string name="text_capture_range">Rango de muestreo</string>
     <string name="text_capture_timed_out">Se agotó el tiempo de captura de pantalla</string>

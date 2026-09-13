@@ -8,6 +8,8 @@
     <string name="notification_text_screen_color_picker">The floating picker is ready to sample the screen</string>
     <string name="notification_title_screen_color_picker">Screen color picker is active</string>
     <string name="plugin_description">Samples colors anywhere on the screen with a touch-friendly floating picker</string>
+    <string name="release_history">Release history</string>
+    <string name="release_history_unavailable">Release history is unavailable</string>
     <string name="text_active">Active</string>
     <string name="text_capture_range">Sampling range</string>
     <string name="text_capture_timed_out">Screen capture timed out</string>

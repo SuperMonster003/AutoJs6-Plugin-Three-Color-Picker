@@ -8,6 +8,8 @@
     <string name="notification_text_screen_color_picker">フローティングピッカーで画面の色を取得できます</string>
     <string name="notification_title_screen_color_picker">画面カラーピッカーは動作中です</string>
     <string name="plugin_description">タッチ操作しやすいフローティングピッカーで画面上の色を取得します</string>
+    <string name="release_history">リリース履歴</string>
+    <string name="release_history_unavailable">リリース履歴を表示できません</string>
     <string name="text_active">動作中</string>
     <string name="text_capture_range">サンプリング範囲</string>
     <string name="text_capture_timed_out">画面キャプチャがタイムアウトしました</string>
