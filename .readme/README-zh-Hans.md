@@ -118,6 +118,12 @@ native libraries: none
 
 ### 发行历史
 
+#### v1.1.1
+
+_2026/09/15_
+
+- `优化` 将 compileSdk 提升到 37 (Android 17), targetSdk 保持 36, 待依赖目标版本的行为验证后再提升
+
 #### v1.1.0
 
 _2026/09/13_
@@ -133,17 +139,6 @@ _2026/09/11_
 - `修复` 为使用 Service/application Context 创建的 Material 按钮显式应用 Material 主题, 避免 ThemeEnforcement 崩溃
 - `修复` 仅在插件中心启用插件时显示 AutoJs6 抽屉工具, 重新启用后自动恢复
 - `优化` 构建阶段阻止意外引入原生依赖, 并输出 JSON 校验报告
-
-#### v1.0.0
-
-_2026/09/01_
-
-- `新增` 同一个 APK 可从系统启动器独立运行, 也可作为 AutoJs6 的屏幕取色扩展工具使用
-- `新增` 提供适合触摸屏的浮动取色器, 并同时显示放大采样, 坐标, HEX, RGB 和 HSL
-- `新增` 提供 contract v1 Binder 接口, 包含 getInfo, getState, getStartPendingIntent 和 stop
-- `新增` 提供 10 种语言的本地界面和文档, 所有取色处理完全离线完成
-- `优化` 明确处理悬浮窗, 屏幕捕获, 前台服务和通知权限流程, 并可随时停止
-- `优化` 支持 AutoJs6 Wake 协议和最低宿主版本 5278, 并加入 CI 与文档漂移检查
 
 [查看完整 CHANGELOG](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-zh-Hans.md)
 

@@ -118,6 +118,12 @@ native libraries: none
 
 ### 릴리스 기록
 
+#### v1.1.1
+
+_2026/09/15_
+
+- `개선` compileSdk 를 37 (Android 17) 로 올리며, targetSdk 는 대상 버전에 의존하는 동작을 검증할 때까지 36 으로 유지
+
 #### v1.1.0
 
 _2026/09/13_
@@ -133,17 +139,6 @@ _2026/09/11_
 - `수정` Service/application Context에서 Material 버튼을 만들 때 명시적인 Material 테마를 적용하여 ThemeEnforcement 비정상 종료를 방지
 - `수정` 플러그인 센터에서 플러그인이 활성화된 동안에만 AutoJs6 서랍 도구를 표시하고 다시 활성화하면 복원
 - `개선` 빌드 시 의도하지 않은 네이티브 의존성을 거부하고 JSON 보고서 생성
-
-#### v1.0.0
-
-_2026/09/01_
-
-- `추가` 같은 APK를 런처에서 독립 실행하거나 AutoJs6의 화면 색상 선택기 확장 도구로 사용할 수 있습니다
-- `추가` 확대 샘플, 좌표, HEX, RGB, HSL을 보여 주는 터치 친화적 플로팅 선택기를 사용할 수 있습니다
-- `추가` getInfo, getState, getStartPendingIntent, stop을 포함한 contract v1 Binder 인터페이스를 제공합니다
-- `추가` 10개 언어의 로컬 인터페이스와 문서를 제공하며 색상 처리는 완전히 오프라인으로 수행됩니다
-- `개선` 오버레이, 화면 캡처, 포그라운드 서비스, 알림 권한 흐름을 중지 작업과 함께 명시적으로 처리합니다
-- `개선` AutoJs6 Wake 프로토콜과 최소 호스트 버전 5278을 지원하고 CI 및 문서 드리프트 검사를 추가했습니다
 
 [전체 CHANGELOG 보기](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-ko.md)
 
