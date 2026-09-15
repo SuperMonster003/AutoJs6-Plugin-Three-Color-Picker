@@ -118,6 +118,12 @@ native libraries: none
 
 ### 發行歷史
 
+#### v1.1.2
+
+_2026/09/16_
+
+- `修正` 懸浮視窗權限說明在介面重建時釋放舊對話框, 避免視窗殘留和焦點衝突
+
 #### v1.1.1
 
 _2026/09/15_
@@ -131,14 +137,6 @@ _2026/09/13_
 - `新增` 介面提供本地發行歷史, 支援多語言及英語回退
 - `改善` 校驗發行簽章設定, 預期 APK 集合與可重現文件
 - `改善` 從現有圖示保留基礎 PNG 啟動器資源, 並在文件中引用
-
-#### v1.0.1
-
-_2026/09/11_
-
-- `修正` 為使用 Service/application Context 建立的 Material 按鈕明確套用 Material 主題, 避免 ThemeEnforcement 崩潰
-- `修正` 只在外掛中心啟用外掛時顯示 AutoJs6 選單工具, 重新啟用後自動恢復
-- `改善` 建置階段阻止意外引入原生相依套件, 並輸出 JSON 校驗報告
 
 [檢視完整 CHANGELOG](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-zh-Hant-TW.md)
 

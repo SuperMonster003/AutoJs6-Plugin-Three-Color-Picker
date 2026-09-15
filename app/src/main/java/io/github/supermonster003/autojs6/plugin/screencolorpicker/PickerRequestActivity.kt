@@ -14,6 +14,7 @@ import android.os.Looper
 import android.provider.Settings
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -23,7 +24,7 @@ import org.autojs.plugin.screencolorpicker.api.ScreenColorPickerStates
 class PickerRequestActivity : AppCompatActivity() {
     private val handler = Handler(Looper.getMainLooper())
     private var overlaySettingsLaunched = false
-    private var overlayExplanationVisible = false
+    private var overlayExplanationDialog: AlertDialog? = null
     private var initialAdvanceDone = false
     private var notificationRequestLaunched = false
     private var projectionRequestLaunched = false
@@ -149,7 +150,12 @@ class PickerRequestActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         PickerRuntime.removeListener(stateListener)
-        handler.removeCallbacks(startTimeout)
+        handler.removeCallbacksAndMessages(null)
+        // This window belongs to this Activity instance. Dismissal during recreation must
+        // release it without treating the ongoing permission request as user cancellation.
+        overlayExplanationDialog?.setOnDismissListener(null)
+        overlayExplanationDialog?.dismiss()
+        overlayExplanationDialog = null
         if (isFinishing && !completed && ownsStart && PickerRuntime.state() == ScreenColorPickerStates.STARTING) {
             ProjectionForegroundService.requestStop(this)
         }
@@ -157,23 +163,24 @@ class PickerRequestActivity : AppCompatActivity() {
     }
 
     private fun explainOverlayPermission() {
-        if (overlayExplanationVisible) return
-        overlayExplanationVisible = true
+        if (overlayExplanationDialog?.isShowing == true) return
         MaterialAlertDialogBuilder(this)
             .setTitle(R.string.text_overlay_permission_required)
             .setMessage(R.string.text_overlay_permission_explanation)
             .setNegativeButton(android.R.string.cancel) { _, _ ->
-                overlayExplanationVisible = false
                 finishCanceled()
             }
             .setPositiveButton(android.R.string.ok) { _, _ ->
-                overlayExplanationVisible = false
                 initialAdvanceDone = true
                 openOverlaySettings()
             }
             .setOnCancelListener { finishCanceled() }
-            .setOnDismissListener { overlayExplanationVisible = false }
-            .show()
+            .setOnDismissListener { overlayExplanationDialog = null }
+            .create()
+            .also { dialog ->
+                overlayExplanationDialog = dialog
+                dialog.show()
+            }
     }
 
     private fun openOverlaySettings() {

@@ -4,6 +4,12 @@
 
 ******
 
+# v1.1.2
+
+_2026/09/16_
+
+- `Fixed` Release the old overlay permission dialog when the screen is recreated to prevent stale windows and focus conflicts
+
 # v1.1.1
 
 _2026/09/15_

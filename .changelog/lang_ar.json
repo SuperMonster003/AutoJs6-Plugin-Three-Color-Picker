@@ -5,6 +5,12 @@
   "changelog_label_improvement": "تحسين",
   "changelog_label_dependency": "اعتماد",
   "$data": {
+    "v1.1.2": {
+      "released_date": "2026/09/16",
+      "fix": [
+        "إغلاق مربع حوار إذن التراكب القديم عند إعادة إنشاء الشاشة لمنع بقاء النوافذ وتعارض التركيز"
+      ]
+    },
     "v1.1.1": {
       "released_date": "2026/09/15",
       "improvement": [

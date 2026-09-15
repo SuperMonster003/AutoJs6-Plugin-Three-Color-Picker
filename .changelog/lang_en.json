@@ -5,6 +5,12 @@
   "changelog_label_improvement": "Improved",
   "changelog_label_dependency": "Dependency",
   "$data": {
+    "v1.1.2": {
+      "released_date": "2026/09/16",
+      "fix": [
+        "Release the old overlay permission dialog when the screen is recreated to prevent stale windows and focus conflicts"
+      ]
+    },
     "v1.1.1": {
       "released_date": "2026/09/15",
       "improvement": [

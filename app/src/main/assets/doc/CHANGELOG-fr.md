@@ -4,6 +4,12 @@
 
 ******
 
+# v1.1.2
+
+_2026/09/16_
+
+- `Correction` Fermer l'ancienne boîte de dialogue expliquant l'autorisation de superposition lors de la recréation de l'écran pour éviter les fenêtres résiduelles et les conflits de focus
+
 # v1.1.1
 
 _2026/09/15_

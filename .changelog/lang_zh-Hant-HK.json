@@ -5,6 +5,12 @@
   "changelog_label_improvement": "改善",
   "changelog_label_dependency": "相依項目",
   "$data": {
+    "v1.1.2": {
+      "released_date": "2026/09/16",
+      "fix": [
+        "懸浮窗權限說明在介面重建時釋放舊對話框, 避免視窗殘留和焦點衝突"
+      ]
+    },
     "v1.1.1": {
       "released_date": "2026/09/15",
       "improvement": [

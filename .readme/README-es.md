@@ -118,6 +118,12 @@ native libraries: none
 
 ### Historial de versiones
 
+#### v1.1.2
+
+_2026/09/16_
+
+- `Corregido` Cerrar el diálogo anterior de permisos de superposición al recrear la pantalla para evitar ventanas residuales y conflictos de foco
+
 #### v1.1.1
 
 _2026/09/15_
@@ -131,14 +137,6 @@ _2026/09/13_
 - `Añadido` Historial de versiones local desde la interfaz con traducciones y alternativa en inglés
 - `Mejorado` Comprobación de la firma completa, los APK esperados y la documentación reproducible de cada versión
 - `Mejorado` Conservar un icono PNG base derivado del icono existente y usarlo en la documentación
-
-#### v1.0.1
-
-_2026/09/11_
-
-- `Corregido` Evitar el bloqueo de ThemeEnforcement al aplicar un tema Material explícito a los botones Material creados desde el Context del servicio/aplicación
-- `Corregido` Mostrar la herramienta del panel de AutoJs6 solo mientras el plugin esté activado en el Centro de plugins y restaurarla al volver a activarlo
-- `Mejorado` La verificación de compilación rechaza dependencias nativas accidentales y genera un informe JSON
 
 [Ver el CHANGELOG completo](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-es.md)
 

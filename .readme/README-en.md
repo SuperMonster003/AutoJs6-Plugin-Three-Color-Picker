@@ -118,6 +118,12 @@ native libraries: none
 
 ### Release history
 
+#### v1.1.2
+
+_2026/09/16_
+
+- `Fixed` Release the old overlay permission dialog when the screen is recreated to prevent stale windows and focus conflicts
+
 #### v1.1.1
 
 _2026/09/15_
@@ -131,14 +137,6 @@ _2026/09/13_
 - `Added` Local release history is available from the interface, with localized text and an English fallback
 - `Improved` Release packages are checked for a complete signing configuration, exact APK contents and reproducible documentation
 - `Improved` Keep a base PNG launcher asset derived from the existing icon and reference it from the documentation
-
-#### v1.0.1
-
-_2026/09/11_
-
-- `Fixed` Prevent a ThemeEnforcement crash by giving Material buttons created from the service/application Context an explicit Material theme
-- `Fixed` Show the AutoJs6 drawer tool only while the plugin is enabled in Plugin Center, and restore it after re-enabling
-- `Improved` Build verification rejects accidental native dependencies and produces a JSON report
 
 [View the complete CHANGELOG](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-en.md)
 

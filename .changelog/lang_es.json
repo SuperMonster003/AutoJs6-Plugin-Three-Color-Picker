@@ -5,6 +5,12 @@
   "changelog_label_improvement": "Mejorado",
   "changelog_label_dependency": "Dependencia",
   "$data": {
+    "v1.1.2": {
+      "released_date": "2026/09/16",
+      "fix": [
+        "Cerrar el diálogo anterior de permisos de superposición al recrear la pantalla para evitar ventanas residuales y conflictos de foco"
+      ]
+    },
     "v1.1.1": {
       "released_date": "2026/09/15",
       "improvement": [
