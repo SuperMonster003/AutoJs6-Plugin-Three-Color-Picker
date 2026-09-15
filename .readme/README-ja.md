@@ -118,6 +118,12 @@ native libraries: none
 
 ### リリース履歴
 
+#### v1.1.2
+
+_2026/09/16_
+
+- `修正` 画面の再作成時に古いオーバーレイ権限の説明ダイアログを解放し, ウィンドウの残留とフォーカスの競合を防止
+
 #### v1.1.1
 
 _2026/09/15_
@@ -131,14 +137,6 @@ _2026/09/13_
 - `追加` 画面からローカルのリリース履歴を表示し, 各言語と英語へのフォールバックに対応
 - `改善` リリース署名の設定, APK の構成, ドキュメントの再生成結果を検証
 - `改善` 既存のアイコンから基本の PNG ランチャー画像を用意し, ドキュメントから参照
-
-#### v1.0.1
-
-_2026/09/11_
-
-- `修正` Service/application Context から Material ボタンを作成する際に Material テーマを明示的に適用し, ThemeEnforcement のクラッシュを防止
-- `修正` プラグインセンターでプラグインが有効な間だけ AutoJs6 のドロワーツールを表示し, 再有効化後に自動復元
-- `改善` 意図しないネイティブ依存関係をビルド時に拒否し, JSON レポートを生成
 
 [完全な CHANGELOG を表示](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-ja.md)
 

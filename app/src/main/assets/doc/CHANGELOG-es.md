@@ -4,6 +4,12 @@
 
 ******
 
+# v1.1.2
+
+_2026/09/16_
+
+- `Corregido` Cerrar el diálogo anterior de permisos de superposición al recrear la pantalla para evitar ventanas residuales y conflictos de foco
+
 # v1.1.1
 
 _2026/09/15_

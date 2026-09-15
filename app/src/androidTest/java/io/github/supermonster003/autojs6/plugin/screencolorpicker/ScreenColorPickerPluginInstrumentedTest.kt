@@ -22,6 +22,8 @@ import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.RootMatchers.isDialog
+import androidx.test.espresso.matcher.RootMatchers.withDecorView
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -38,6 +40,9 @@ import org.junit.Assert.assertTrue
 import org.junit.Assume.assumeFalse
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.hamcrest.Matchers.allOf
+import org.hamcrest.Matchers.not
+import org.hamcrest.Matchers.sameInstance
 import java.nio.ByteBuffer
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
@@ -297,14 +302,25 @@ class ScreenColorPickerPluginInstrumentedTest {
         ActivityScenario.launch<PickerRequestActivity>(
             Intent(context, PickerRequestActivity::class.java),
         ).use { scenario ->
+            lateinit var oldDialogDecor: View
             onView(withText(R.string.text_overlay_permission_explanation))
+                .inRoot(isDialog())
                 .check(matches(isDisplayed()))
+                .check { view, error ->
+                    if (error != null) throw error
+                    oldDialogDecor = requireNotNull(view).rootView
+                }
 
             scenario.recreate()
 
+            instrumentation.runOnMainSync {
+                assertFalse("Recreation must detach the old dialog window", oldDialogDecor.isAttachedToWindow)
+            }
+            val recreatedDialog = allOf(isDialog(), withDecorView(not(sameInstance(oldDialogDecor))))
             onView(withText(R.string.text_overlay_permission_explanation))
+                .inRoot(recreatedDialog)
                 .check(matches(isDisplayed()))
-            onView(withText(android.R.string.cancel)).perform(click())
+            onView(withText(android.R.string.cancel)).inRoot(recreatedDialog).perform(click())
         }
 
         assertEquals(ScreenColorPickerStates.INACTIVE, PickerRuntime.state())

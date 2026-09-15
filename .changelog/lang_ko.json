@@ -5,6 +5,12 @@
   "changelog_label_improvement": "개선",
   "changelog_label_dependency": "의존성",
   "$data": {
+    "v1.1.2": {
+      "released_date": "2026/09/16",
+      "fix": [
+        "화면을 다시 생성할 때 이전 오버레이 권한 설명 대화상자를 해제하여 창 잔류와 포커스 충돌 방지"
+      ]
+    },
     "v1.1.1": {
       "released_date": "2026/09/15",
       "improvement": [

@@ -118,6 +118,12 @@ native libraries: none
 
 ### 릴리스 기록
 
+#### v1.1.2
+
+_2026/09/16_
+
+- `수정` 화면을 다시 생성할 때 이전 오버레이 권한 설명 대화상자를 해제하여 창 잔류와 포커스 충돌 방지
+
 #### v1.1.1
 
 _2026/09/15_
@@ -131,14 +137,6 @@ _2026/09/13_
 - `추가` 화면에서 현지화된 로컬 릴리스 기록을 표시하고 영어 대체 제공
 - `개선` 릴리스 서명 설정, 예상 APK 구성 및 문서 재생성 결과 검증
 - `개선` 기존 아이콘에서 기본 PNG 실행기 이미지를 만들고 문서에서 참조
-
-#### v1.0.1
-
-_2026/09/11_
-
-- `수정` Service/application Context에서 Material 버튼을 만들 때 명시적인 Material 테마를 적용하여 ThemeEnforcement 비정상 종료를 방지
-- `수정` 플러그인 센터에서 플러그인이 활성화된 동안에만 AutoJs6 서랍 도구를 표시하고 다시 활성화하면 복원
-- `개선` 빌드 시 의도하지 않은 네이티브 의존성을 거부하고 JSON 보고서 생성
 
 [전체 CHANGELOG 보기](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-ko.md)
 
