@@ -118,6 +118,12 @@ native libraries: none
 
 ### リリース履歴
 
+#### v1.1.1
+
+_2026/09/15_
+
+- `改善` compileSdk を 37 (Android 17) に引き上げ, targetSdk はターゲット依存の動作を検証するまで 36 のまま
+
 #### v1.1.0
 
 _2026/09/13_
@@ -133,17 +139,6 @@ _2026/09/11_
 - `修正` Service/application Context から Material ボタンを作成する際に Material テーマを明示的に適用し, ThemeEnforcement のクラッシュを防止
 - `修正` プラグインセンターでプラグインが有効な間だけ AutoJs6 のドロワーツールを表示し, 再有効化後に自動復元
 - `改善` 意図しないネイティブ依存関係をビルド時に拒否し, JSON レポートを生成
-
-#### v1.0.0
-
-_2026/09/01_
-
-- `追加` 同じ APK をランチャーから単独で実行するか, AutoJs6 の画面カラーピッカー拡張ツールとして使用できます
-- `追加` 拡大サンプル, 座標, HEX, RGB, HSL を表示するタッチ向けフローティングピッカーを使用できます
-- `追加` getInfo, getState, getStartPendingIntent, stop を持つ contract v1 Binder インターフェースを使用できます
-- `追加` 10 言語のローカル UI とドキュメントを利用でき, 色処理は完全にオフラインで行われます
-- `改善` オーバーレイ, 画面キャプチャ, フォアグラウンドサービス, 通知の権限フローを停止操作付きで明示的に処理します
-- `改善` AutoJs6 Wake プロトコルと最小ホストバージョン 5278 に対応し, CI とドキュメント差分検査を追加しました
 
 [完全な CHANGELOG を表示](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-ja.md)
 
