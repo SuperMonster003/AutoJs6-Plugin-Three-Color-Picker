@@ -4,6 +4,12 @@
 
 ******
 
+# v1.1.3
+
+_2026/09/16_
+
+- `Amélioration` Après compileSdk, targetSdk passe à 37 (Android 17) ; le comportement du plugin ne dépend pas de la nouvelle cible
+
 # v1.1.2
 
 _2026/09/16_

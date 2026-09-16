@@ -118,6 +118,12 @@ native libraries: none
 
 ### リリース履歴
 
+#### v1.1.3
+
+_2026/09/16_
+
+- `改善` compileSdk に続き targetSdk を 37 (Android 17) に引き上げ, プラグインの動作は新しいターゲットの影響を受けない
+
 #### v1.1.2
 
 _2026/09/16_
@@ -129,14 +135,6 @@ _2026/09/16_
 _2026/09/15_
 
 - `改善` compileSdk を 37 (Android 17) に引き上げ, targetSdk はターゲット依存の動作を検証するまで 36 のまま
-
-#### v1.1.0
-
-_2026/09/13_
-
-- `追加` 画面からローカルのリリース履歴を表示し, 各言語と英語へのフォールバックに対応
-- `改善` リリース署名の設定, APK の構成, ドキュメントの再生成結果を検証
-- `改善` 既存のアイコンから基本の PNG ランチャー画像を用意し, ドキュメントから参照
 
 [完全な CHANGELOG を表示](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-ja.md)
 

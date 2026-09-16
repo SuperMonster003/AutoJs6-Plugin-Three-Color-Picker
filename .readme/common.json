@@ -15,5 +15,5 @@
   "required_host_version": "5278",
   "min_android_version": "7.0",
   "min_sdk": "24",
-  "target_sdk": "36"
+  "target_sdk": "37"
 }

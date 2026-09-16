@@ -118,6 +118,12 @@ native libraries: none
 
 ### Historique des versions
 
+#### v1.1.3
+
+_2026/09/16_
+
+- `Amélioration` Après compileSdk, targetSdk passe à 37 (Android 17) ; le comportement du plugin ne dépend pas de la nouvelle cible
+
 #### v1.1.2
 
 _2026/09/16_
@@ -129,14 +135,6 @@ _2026/09/16_
 _2026/09/15_
 
 - `Amélioration` compileSdk passe à 37 (Android 17) ; targetSdk reste à 36 jusqu'à la vérification du comportement dépendant de la cible
-
-#### v1.1.0
-
-_2026/09/13_
-
-- `Ajout` Historique local accessible depuis l'interface, avec traductions et repli en anglais
-- `Amélioration` Vérification de la signature complète, des APK attendus et de la reproductibilité de la documentation
-- `Amélioration` Conserver une icône PNG de base issue de l'icône existante et la référencer dans la documentation
 
 [Voir le CHANGELOG complet](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-fr.md)
 

@@ -118,6 +118,12 @@ native libraries: none
 
 ### 릴리스 기록
 
+#### v1.1.3
+
+_2026/09/16_
+
+- `개선` compileSdk 에 이어 targetSdk 를 37 (Android 17) 로 올리며, 플러그인 동작은 새 대상 버전의 영향을 받지 않음
+
 #### v1.1.2
 
 _2026/09/16_
@@ -129,14 +135,6 @@ _2026/09/16_
 _2026/09/15_
 
 - `개선` compileSdk 를 37 (Android 17) 로 올리며, targetSdk 는 대상 버전에 의존하는 동작을 검증할 때까지 36 으로 유지
-
-#### v1.1.0
-
-_2026/09/13_
-
-- `추가` 화면에서 현지화된 로컬 릴리스 기록을 표시하고 영어 대체 제공
-- `개선` 릴리스 서명 설정, 예상 APK 구성 및 문서 재생성 결과 검증
-- `개선` 기존 아이콘에서 기본 PNG 실행기 이미지를 만들고 문서에서 참조
 
 [전체 CHANGELOG 보기](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-ko.md)
 
