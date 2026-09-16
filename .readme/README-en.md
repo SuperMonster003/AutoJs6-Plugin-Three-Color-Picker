@@ -118,6 +118,12 @@ native libraries: none
 
 ### Release history
 
+#### v1.1.3
+
+_2026/09/16_
+
+- `Improved` Raise targetSdk to 37 (Android 17) after compileSdk; the plugin's behavior does not depend on the new target
+
 #### v1.1.2
 
 _2026/09/16_
@@ -129,14 +135,6 @@ _2026/09/16_
 _2026/09/15_
 
 - `Improved` Raise compileSdk to 37 (Android 17); targetSdk stays at 36 until the behavior that depends on the target is verified
-
-#### v1.1.0
-
-_2026/09/13_
-
-- `Added` Local release history is available from the interface, with localized text and an English fallback
-- `Improved` Release packages are checked for a complete signing configuration, exact APK contents and reproducible documentation
-- `Improved` Keep a base PNG launcher asset derived from the existing icon and reference it from the documentation
 
 [View the complete CHANGELOG](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-en.md)
 

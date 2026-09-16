@@ -118,6 +118,12 @@ native libraries: none
 
 ### 發行歷史
 
+#### v1.1.3
+
+_2026/09/16_
+
+- `改善` 繼 compileSdk 之後將 targetSdk 提升到 37 (Android 17), 外掛程式行為不受新目標版本影響
+
 #### v1.1.2
 
 _2026/09/16_
@@ -129,14 +135,6 @@ _2026/09/16_
 _2026/09/15_
 
 - `改善` 將 compileSdk 提升到 37 (Android 17), targetSdk 保持 36, 待依賴目標版本的行為驗證後再提升
-
-#### v1.1.0
-
-_2026/09/13_
-
-- `新增` 介面提供本地發行歷史, 支援多語言及英語回退
-- `改善` 校驗發行簽章設定, 預期 APK 集合與可重現文件
-- `改善` 從現有圖示保留基礎 PNG 啟動器資源, 並在文件中引用
 
 [檢視完整 CHANGELOG](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-zh-Hant-TW.md)
 
