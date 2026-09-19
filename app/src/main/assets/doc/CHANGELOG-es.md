@@ -6,8 +6,9 @@
 
 # v1.1.3
 
-_2026/09/16_
+_2026/09/19_
 
+- `Corregido` Advertencias de lectura de SDK XML v4 con AGP 9.1 y comprobaciones de alineación nativa de APK activadas por error al ensamblar pruebas unitarias JVM, mediante los plugins de compilación compartidos 1.8.3
 - `Mejorado` Tras compileSdk, targetSdk sube a 37 (Android 17); el comportamiento del plugin no depende del nuevo objetivo
 
 # v1.1.2
