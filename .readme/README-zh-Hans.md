@@ -122,20 +122,20 @@ native libraries: none
 
 _2026/09/19_
 
-- `修复` AGP 9.1 构建时的 SDK XML v4 解析警告及 JVM 单元测试组装任务误触发 APK 原生库对齐检查的问题 (共享构建插件 1.8.3)
-- `优化` 继 compileSdk 之后将 targetSdk 提升到 37 (Android 17), 插件行为不受新目标版本影响
+- `修复` AGP 9.1 构建时的 SDK XML v4 解析警告, 以及 JVM 单元测试误触发 APK 原生库对齐检查的问题 (共享构建插件 1.8.3)
+- `优化` targetSdk 升级至 37 (Android 17)
 
 #### v1.1.2
 
 _2026/09/16_
 
-- `修复` 悬浮窗权限说明在界面重建时释放旧对话框, 避免窗口残留和焦点冲突
+- `修复` 界面重建时悬浮窗权限说明对话框残留及焦点冲突的问题
 
 #### v1.1.1
 
 _2026/09/15_
 
-- `优化` 将 compileSdk 提升到 37 (Android 17), targetSdk 保持 36, 待依赖目标版本的行为验证后再提升
+- `优化` compileSdk 升级至 37 (Android 17), targetSdk 保持 36
 
 [查看完整 CHANGELOG](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-zh-Hans.md)
 
