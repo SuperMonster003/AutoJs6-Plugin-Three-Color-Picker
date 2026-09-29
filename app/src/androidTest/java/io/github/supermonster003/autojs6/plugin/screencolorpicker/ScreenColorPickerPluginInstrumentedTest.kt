@@ -246,7 +246,9 @@ class ScreenColorPickerPluginInstrumentedTest {
         val launcherMatches = context.packageManager.queryIntentActivitiesCompat(
             Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER).setPackage(context.packageName),
         )
-        assertTrue(launcherMatches.any { it.activityInfo.name == MainActivity::class.java.name })
+        assertEquals(1, launcherMatches.size)
+        assertEquals(MainActivity::class.java.name, launcherMatches.single().activityInfo.targetActivity)
+        assertEquals(LauncherIcons.current(context).component(context).className, launcherMatches.single().activityInfo.name)
 
         val request = activities.getValue(PickerRequestActivity::class.java.name)
         assertFalse(request.exported)

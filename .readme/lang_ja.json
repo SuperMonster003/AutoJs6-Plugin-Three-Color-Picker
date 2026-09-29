@@ -59,5 +59,6 @@
   "p_build": "同梱の Gradle Wrapper と JDK 21 でテストを実行し, debug APK と instrumentation APK をビルドしてから lint を実行します.",
   "p_docs_generation": "README, プラグイン説明, changelog は JSON 文書ソースから生成されます. ソースを変更したら次の 2 つのコマンドを実行します.",
   "h_license": "ライセンス",
-  "p_license": "プロジェクトコードは Mozilla Public License 2.0 で提供されます."
+  "p_license": "プロジェクトコードは Mozilla Public License 2.0 で提供されます.",
+  "p_launcher_modes": "ランチャーアイコンはアダプティブ ライト, アダプティブ ダーク (既定), アダプティブ 自動, 透明な背景から選択できます. 自動はシステムテーマへの追従を試みますが, ランチャーが配色をキャッシュする場合があります. 透明なアイコンにも背景やマスクが追加される場合があります. 切り替えてもアプリは実行を続け, 反映には数秒かかる場合があります."
 }

@@ -4,6 +4,12 @@
 
 ******
 
+# v1.2.0
+
+_2026/09/29_
+
+- `Añadido` El icono del lanzador admite adaptable claro, adaptable oscuro (predeterminado), adaptable automático y fondo transparente. El modo automático intenta seguir el tema del sistema, pero el lanzador puede guardar una sola paleta en caché; puede agregar un fondo o una máscara a los iconos transparentes. El cambio mantiene la aplicación en ejecución y puede tardar unos segundos.
+
 # v1.1.3
 
 _2026/09/19_

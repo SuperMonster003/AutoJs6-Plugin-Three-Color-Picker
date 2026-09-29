@@ -36,7 +36,9 @@
 
 ### {{ h_standalone }}
 
-{{ p_standalone }}:
+{{ p_standalone }}
+
+{{ p_launcher_modes }}:
 
 {{ standalone_steps_list }}
 
