@@ -59,5 +59,6 @@
   "p_build": "Usa el Gradle Wrapper incluido y JDK 21 para ejecutar pruebas, compilar los APK de depuración e instrumentación y después ejecutar lint.",
   "p_docs_generation": "Los README, las instrucciones del plugin y los changelog se generan desde fuentes JSON. Tras editar una fuente ejecuta los dos comandos siguientes.",
   "h_license": "Licencia",
-  "p_license": "El código del proyecto se distribuye bajo Mozilla Public License 2.0."
+  "p_license": "El código del proyecto se distribuye bajo Mozilla Public License 2.0.",
+  "p_launcher_modes": "El icono del lanzador admite adaptable claro, adaptable oscuro (predeterminado), adaptable automático y fondo transparente. El modo automático intenta seguir el tema del sistema, pero el lanzador puede guardar una sola paleta en caché; puede agregar un fondo o una máscara a los iconos transparentes. El cambio mantiene la aplicación en ejecución y puede tardar unos segundos."
 }

@@ -48,9 +48,9 @@ The shared contract comes from `libs/screen-color-picker-api.aar`. Do not recrea
 
 ## Component and permission contract
 
-The final manifest has five intentional components:
+The final manifest has five real components and four selectable launcher aliases:
 
-- `MainActivity`: exported Launcher entry, with no AutoJs6 plugin permission. It must work when AutoJs6 is absent.
+- `MainActivity`: stable exported UI Activity, with no AutoJs6 plugin permission. It must work when AutoJs6 is absent. Four stable `launcher.*IconAlias` entries target it; only the selected alias has an enabled MAIN/LAUNCHER entry.
 - `PickerRequestActivity`: non-exported, translucent permission flow launched by an explicit `PendingIntent`.
 - `WakeActivity`: exported, `Theme.NoDisplay`, protected by `org.autojs.permission.PLUGIN`, responds to `org.autojs.plugin.action.WAKE`, and finishes immediately.
 - `ScreenColorPickerPluginService`: exported Binder service protected by `org.autojs.permission.PLUGIN`, with the exact shared action and category.
@@ -182,3 +182,11 @@ Read [the complete repository standard](docs/development/repository-standard.md)
 This APK contains ABI-independent managed code; native alignment verification rejects native dependencies. No ABI splits are appropriate. Release collection is `:app:appendDigestToReleasedFiles` and verifies the exact signed APK set. Do not claim physical ColorOS activation, projection consent or host output publication was tested unless it was actually exercised.
 
 Run `.python/check_markdown.bat`, `py -3 -m unittest discover -s .python/tests`, and the Gradle Wrapper with `--max-workers=2`. Platform acceptance: `--no-daemon -Djava.vendor="Eclipse Adoptium" -Djava.vendor.version=Temurin-21.0.12.1+1 :app:assembleDebug :app:testDebugUnitTest`. Disable version auto-increment while checking a prepared commit. Before every commit set VERSION_BUILD to `git rev-list --count HEAD` plus one.
+
+## Selectable launcher icons
+
+- Expose adaptive light, adaptive dark (default), adaptive automatic, and transparent modes in one settings row. Explain automatic/transparent launcher caching and background limitations.
+- Keep all four `launcher.*IconAlias` component names stable. Keep MainActivity enabled for existing explicit intents. Enable the new alias before disabling the old one with DONT_KILL_APP, migrate mutable shortcut ownership, and restore previous states if switching fails.
+- Regenerate the separate launcher resources with `py .python/generate_launcher_icons.py`; run its read-only `--check`. The source vector is preserved in `.python/icons/launcher-foreground.xml`. Original purpose-specific PNG/README/application resources remain unchanged.
+- Fixed dark uses glyph #D8D8D8/background #212121; fixed light uses glyph #272727/background #FAFAFA. Auto must have an independent resource ID: PackageManager eagerly resolves values aliases when parsing activity icons. Supply default dark and notnight light legacy XML plus matching default-v26 and notnight-v26 adaptive XML. Never put a legacy night PNG ahead of an adaptive v26 resource with the same name.
+- Run LauncherIconResourceTest and LauncherIconSelectionTest on API 24 and a modern API. Tests restore exact component states and remove only their own temporary shortcuts; do not clear user or launcher data.

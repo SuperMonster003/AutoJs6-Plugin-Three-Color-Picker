@@ -4,6 +4,12 @@
 
 ******
 
+# v1.2.0
+
+_2026/09/29_
+
+- `Added` Launcher icon can be set to adaptive light, adaptive dark (default), adaptive automatic or transparent background. Automatic mode tries to follow the system theme, but launchers may cache a single color scheme; transparent icons may receive a launcher background or mask. Switching preserves the running app and may take a few seconds to appear.
+
 # v1.1.3
 
 _2026/09/19_

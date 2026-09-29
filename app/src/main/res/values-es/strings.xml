@@ -3,6 +3,15 @@
     <string name="clipboard_label_color">Color de pantalla</string>
     <string name="content_desc_magnifier">Lupa de color</string>
     <string name="content_desc_target_ring">Anillo de selección</string>
+    <string name="launcher_icon_applied_note">El lanzador puede tardar unos segundos en actualizarse. Puede ser necesario volver a agregar algunos accesos directos.</string>
+    <string name="launcher_icon_auto">Adaptable automático</string>
+    <string name="launcher_icon_auto_note">Intenta seguir el tema del sistema. Algunos lanzadores guardan los iconos en caché o usan una sola paleta.</string>
+    <string name="launcher_icon_dark">Adaptable oscuro</string>
+    <string name="launcher_icon_failed">No se pudo cambiar el icono del lanzador. Inténtalo de nuevo.</string>
+    <string name="launcher_icon_light">Adaptable claro</string>
+    <string name="launcher_icon_title">Icono del lanzador</string>
+    <string name="launcher_icon_transparent">Fondo transparente</string>
+    <string name="launcher_icon_transparent_note">Algunos lanzadores agregan un fondo o una máscara. Puede que no se conserve la transparencia.</string>
     <string name="notification_action_stop">Detener</string>
     <string name="notification_channel_screen_color_picker">Selector de color de pantalla</string>
     <string name="notification_text_screen_color_picker">El selector flotante está listo para tomar muestras de la pantalla</string>

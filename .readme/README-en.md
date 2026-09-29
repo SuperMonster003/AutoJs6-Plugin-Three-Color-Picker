@@ -50,7 +50,9 @@ The same APK can run independently from the launcher or be discovered by AutoJs6
 
 ### Standalone use
 
-Use the picker without AutoJs6:
+Use the picker without AutoJs6
+
+Launcher icon can be set to adaptive light, adaptive dark (default), adaptive automatic or transparent background. Automatic mode tries to follow the system theme, but launchers may cache a single color scheme; transparent icons may receive a launcher background or mask. Switching preserves the running app and may take a few seconds to appear.:
 
 1. Open Screen Color Picker from the system launcher.
 2. Tap Start color picker and follow the explanation to allow display over other apps.
@@ -118,6 +120,12 @@ native libraries: none
 
 ### Release history
 
+#### v1.2.0
+
+_2026/09/29_
+
+- `Added` Launcher icon can be set to adaptive light, adaptive dark (default), adaptive automatic or transparent background. Automatic mode tries to follow the system theme, but launchers may cache a single color scheme; transparent icons may receive a launcher background or mask. Switching preserves the running app and may take a few seconds to appear.
+
 #### v1.1.3
 
 _2026/09/19_
@@ -130,12 +138,6 @@ _2026/09/19_
 _2026/09/16_
 
 - `Fixed` Release the old overlay permission dialog when the screen is recreated to prevent stale windows and focus conflicts
-
-#### v1.1.1
-
-_2026/09/15_
-
-- `Improved` Raise compileSdk to 37 (Android 17); targetSdk stays at 36 until the behavior that depends on the target is verified
 
 [View the complete CHANGELOG](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-en.md)
 

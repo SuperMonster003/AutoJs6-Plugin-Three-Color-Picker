@@ -59,5 +59,6 @@
   "p_build": "使用仓库自带的 Gradle Wrapper 和 JDK 21 运行测试, 构建 debug APK 与 instrumentation APK, 然后执行 lint.",
   "p_docs_generation": "README, 插件说明和 changelog 由 JSON 文案源生成. 修改源文件后运行以下两个命令.",
   "h_license": "许可证",
-  "p_license": "项目代码采用 Mozilla Public License 2.0 许可."
+  "p_license": "项目代码采用 Mozilla Public License 2.0 许可.",
+  "p_launcher_modes": "启动器图标可选择自适应亮色, 自适应暗色 (默认), 自适应自动或透明背景. 自动模式尝试跟随系统主题, 但启动器可能缓存单一配色; 透明图标可能被启动器添加背景或遮罩. 切换保持应用运行, 显示刷新可能需要几秒钟."
 }

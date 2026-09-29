@@ -1,0 +1,9 @@
+# Deterministically generated launcher XML must retain LF on Windows checkout.
+app/src/main/res/drawable/launcher_glyph_*.xml text eol=lf
+app/src/main/res/mipmap/ic_launcher_system*.xml text eol=lf
+app/src/main/res/mipmap/ic_launcher_transparent.xml text eol=lf
+app/src/main/res/mipmap-night/ic_launcher_transparent.xml text eol=lf
+app/src/main/res/mipmap-anydpi-v26/ic_launcher_system*.xml text eol=lf
+app/src/main/res/values/launcher_icons.xml text eol=lf
+app/src/main/res/mipmap-notnight/ic_launcher_system_auto.xml text eol=lf
+app/src/main/res/mipmap-notnight-anydpi-v26/ic_launcher_system_auto.xml text eol=lf

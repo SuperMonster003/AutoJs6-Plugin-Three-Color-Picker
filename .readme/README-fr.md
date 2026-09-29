@@ -50,7 +50,9 @@ Le même APK fonctionne seul depuis le lanceur ou est découvert par AutoJs6 com
 
 ### Utilisation autonome
 
-Utilisez le sélecteur sans AutoJs6:
+Utilisez le sélecteur sans AutoJs6
+
+L'icône du lanceur propose les modes adaptatif clair, adaptatif sombre (par défaut), adaptatif automatique et fond transparent. Le mode automatique tente de suivre le thème système, mais le lanceur peut garder une palette en cache; il peut ajouter un fond ou un masque aux icônes transparentes. Le changement conserve l'application en cours et peut prendre quelques secondes.:
 
 1. Ouvrez Screen Color Picker depuis le lanceur système.
 2. Touchez Démarrer le sélecteur et suivez l'explication pour autoriser l'affichage sur les autres applications.
@@ -118,6 +120,12 @@ native libraries: none
 
 ### Historique des versions
 
+#### v1.2.0
+
+_2026/09/29_
+
+- `Ajout` L'icône du lanceur propose les modes adaptatif clair, adaptatif sombre (par défaut), adaptatif automatique et fond transparent. Le mode automatique tente de suivre le thème système, mais le lanceur peut garder une palette en cache; il peut ajouter un fond ou un masque aux icônes transparentes. Le changement conserve l'application en cours et peut prendre quelques secondes.
+
 #### v1.1.3
 
 _2026/09/19_
@@ -130,12 +138,6 @@ _2026/09/19_
 _2026/09/16_
 
 - `Correction` Fermer l'ancienne boîte de dialogue expliquant l'autorisation de superposition lors de la recréation de l'écran pour éviter les fenêtres résiduelles et les conflits de focus
-
-#### v1.1.1
-
-_2026/09/15_
-
-- `Amélioration` compileSdk passe à 37 (Android 17) ; targetSdk reste à 36 jusqu'à la vérification du comportement dépendant de la cible
 
 [Voir le CHANGELOG complet](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-fr.md)
 

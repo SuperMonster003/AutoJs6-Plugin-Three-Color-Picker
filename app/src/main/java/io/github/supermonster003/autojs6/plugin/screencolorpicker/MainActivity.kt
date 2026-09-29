@@ -34,6 +34,13 @@ class MainActivity : AppCompatActivity() {
 
     private val stateListener: (Int) -> Unit = { state -> runOnUiThread { renderState(state) } }
 
+    internal var launcherIconDialog: androidx.appcompat.app.AlertDialog? = null
+
+    override fun onDestroy() {
+        launcherIconDialog?.dismiss()
+        super.onDestroy()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(buildContent())
@@ -188,6 +195,18 @@ class MainActivity : AppCompatActivity() {
             },
             settingsRowParams(dp(4)),
         )
+        val launcherButton = MaterialButton(this).apply {
+            tag = "launcher-icon"
+            isAllCaps = false
+            minHeight = dp(48)
+            text = LauncherIconChooser.summary(this@MainActivity)
+        }
+        launcherButton.setOnClickListener {
+            launcherIconDialog = LauncherIconChooser.show(this) {
+                launcherButton.text = LauncherIconChooser.summary(this)
+            }
+        }
+        content.addView(launcherButton, settingsRowParams(dp(12)))
         content.addView(TextView(this).apply {
             text = listOf(
                 R.string.text_picker_instruction,
