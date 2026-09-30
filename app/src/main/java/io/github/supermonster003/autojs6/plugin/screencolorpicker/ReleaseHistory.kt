@@ -1,7 +1,8 @@
 package io.github.supermonster003.autojs6.plugin.screencolorpicker
 
 import android.app.Activity
-import android.app.AlertDialog
+import androidx.appcompat.app.AlertDialog
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import android.widget.ScrollView
 import android.widget.TextView
 import java.io.IOException
@@ -24,7 +25,7 @@ internal fun loadReleaseHistory(candidates: List<String>, loader: (String) -> St
     return null
 }
 
-internal fun Activity.showReleaseHistory() {
+internal fun Activity.showReleaseHistory(): AlertDialog {
     val locale = resources.configuration.locales[0]
     val history = loadReleaseHistory(releaseHistoryCandidates(locale.language, locale.country, locale.script)) { path ->
         assets.open(path).bufferedReader(Charsets.UTF_8).use { it.readText() }
@@ -36,9 +37,21 @@ internal fun Activity.showReleaseHistory() {
         val padding = (20 * resources.displayMetrics.density).toInt()
         setPadding(padding, padding, padding, padding)
     }
-    AlertDialog.Builder(this)
+    val palette=SettingsPalette(AppearanceSource.resolve(this))
+    content.setTextColor(palette.text)
+    content.setLinkTextColor(palette.accent)
+    content.highlightColor=palette.ripple
+    return MaterialAlertDialogBuilder(this)
         .setTitle(R.string.release_history)
         .setView(ScrollView(this).apply { addView(content) })
         .setPositiveButton(android.R.string.ok, null)
-        .show()
+         .show().also { dialog ->
+            SettingsUi(this,palette).styleDialog(dialog)
+            val owner=this as? androidx.lifecycle.LifecycleOwner
+            val observer=androidx.lifecycle.LifecycleEventObserver { _,event ->
+                if(event==androidx.lifecycle.Lifecycle.Event.ON_DESTROY) dialog.dismiss()
+            }
+            owner?.lifecycle?.addObserver(observer)
+            dialog.setOnDismissListener { owner?.lifecycle?.removeObserver(observer) }
+        }
 }

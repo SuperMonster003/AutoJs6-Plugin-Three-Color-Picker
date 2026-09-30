@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_settings_always_dark">Всегда темная</string>
+    <string name="app_settings_always_light">Всегда светлая</string>
+    <string name="app_settings_appearance">Оформление</string>
+    <string name="app_settings_dark_mode">Темная тема</string>
+    <string name="app_settings_follow_autojs6">Следовать AutoJs6</string>
+    <string name="app_settings_follow_autojs6_summary">Следовать AutoJs6 · %1$s</string>
+    <string name="app_settings_follow_system">Следовать системе</string>
+    <string name="app_settings_language">Язык</string>
+    <string name="app_settings_theme_color">Цвет темы</string>
+    <string name="app_settings_updates">Updates</string>
     <string name="clipboard_label_color">Цвет экрана</string>
     <string name="content_desc_magnifier">Лупа цвета</string>
     <string name="content_desc_target_ring">Кольцо выбора точки</string>
     <string name="launcher_icon_applied_note">Обновление значка может занять несколько секунд. Некоторые ярлыки на главном экране может потребоваться добавить заново.</string>
-    <string name="launcher_icon_auto">Адаптивный автоматический</string>
+    <string name="launcher_icon_auto">Адаптивный значок (автоматически)</string>
     <string name="launcher_icon_auto_note">Пытается следовать системной теме. Некоторые лаунчеры кешируют значки или используют только одну цветовую схему.</string>
-    <string name="launcher_icon_dark">Адаптивный темный</string>
+    <string name="launcher_icon_dark">Адаптивный значок (тёмный)</string>
     <string name="launcher_icon_failed">Не удалось изменить значок запуска. Повторите попытку.</string>
-    <string name="launcher_icon_light">Адаптивный светлый</string>
+    <string name="launcher_icon_light">Адаптивный значок (светлый)</string>
     <string name="launcher_icon_title">Значок запуска</string>
-    <string name="launcher_icon_transparent">Прозрачный фон</string>
+    <string name="launcher_icon_transparent">Значок с прозрачным фоном</string>
     <string name="launcher_icon_transparent_note">Некоторые лаунчеры добавляют фон или маску, поэтому прозрачность может не сохраниться.</string>
     <string name="notification_action_stop">Остановить</string>
     <string name="notification_channel_screen_color_picker">Пипетка экрана</string>
@@ -19,6 +29,8 @@
     <string name="plugin_description">Выбирает цвета в любой точке экрана с помощью удобной плавающей пипетки</string>
     <string name="release_history">История выпусков</string>
     <string name="release_history_unavailable">История выпусков недоступна</string>
+    <string name="settings_apply_failed">Не удалось применить настройку. Повторите попытку.</string>
+    <string name="settings_title">Настройки</string>
     <string name="text_active">Активно</string>
     <string name="text_capture_range">Диапазон выборки</string>
     <string name="text_capture_timed_out">Время захвата экрана истекло</string>
@@ -46,4 +58,9 @@
     <string name="text_starting">Запуск</string>
     <string name="text_stop_color_picker">Остановить пипетку</string>
     <string name="text_stopping">Остановка</string>
+    <string name="theme_picker_custom">Свой цвет</string>
+    <string name="theme_picker_input">HEX / RGB</string>
+    <string name="theme_picker_invalid">Введите #RRGGBB, RRGGBB или rgb(r, g, b). Значения RGB должны быть от 0 до 255.</string>
+    <string name="theme_picker_presets">Готовые цвета</string>
+    <string name="theme_picker_preview">Предпросмотр</string>
 </resources>

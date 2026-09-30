@@ -48,7 +48,7 @@ The shared contract comes from `libs/screen-color-picker-api.aar`. Do not recrea
 
 ## Component and permission contract
 
-The final manifest has five real components and four selectable launcher aliases:
+The final manifest has seven real Activity/service components, four selectable launcher aliases and one internal update receiver:
 
 - `MainActivity`: stable exported UI Activity, with no AutoJs6 plugin permission. It must work when AutoJs6 is absent. Four stable `launcher.*IconAlias` entries target it; only the selected alias has an enabled MAIN/LAUNCHER entry.
 - `PickerRequestActivity`: non-exported, translucent permission flow launched by an explicit `PendingIntent`.
@@ -185,8 +185,18 @@ Run `.python/check_markdown.bat`, `py -3 -m unittest discover -s .python/tests`,
 
 ## Selectable launcher icons
 
-- Expose adaptive light, adaptive dark (default), adaptive automatic, and transparent modes in one settings row. Explain automatic/transparent launcher caching and background limitations.
+- Expose adaptive light, adaptive dark, adaptive automatic (default), and transparent modes in one settings row. Explain automatic/transparent launcher caching and background limitations.
 - Keep all four `launcher.*IconAlias` component names stable. Keep MainActivity enabled for existing explicit intents. Enable the new alias before disabling the old one with DONT_KILL_APP, migrate mutable shortcut ownership, and restore previous states if switching fails.
 - Regenerate the separate launcher resources with `py .python/generate_launcher_icons.py`; run its read-only `--check`. The source vector is preserved in `.python/icons/launcher-foreground.xml`. Original purpose-specific PNG/README/application resources remain unchanged.
 - Fixed dark uses glyph #D8D8D8/background #212121; fixed light uses glyph #272727/background #FAFAFA. Auto must have an independent resource ID: PackageManager eagerly resolves values aliases when parsing activity icons. Supply default dark and notnight light legacy XML plus matching default-v26 and notnight-v26 adaptive XML. Never put a legacy night PNG ahead of an adaptive v26 resource with the same name.
 - Run LauncherIconResourceTest and LauncherIconSelectionTest on API 24 and a modern API. Tests restore exact component states and remove only their own temporary shortcuts; do not clear user or launcher data.
+
+## Standalone settings standard (2026-09-29)
+
+Read `../AUTOJS6_PLUGIN_STANDALONE_SETTINGS_AGENTS.md` for the maintainer-approved common style. All four appearance settings are implemented here: language, night mode, theme color, launcher icon. Use neutral surfaces, 16/14 sp text, 72 dp minimum two-line rows, 24 dp horizontal padding and matching outline icons. Choices and HEX/RGB preview remain drafts until OK; Cancel must have no persistence side effect. Default appearance follows AutoJs6 with system/default fallback, and the launcher default is Auto. The update-only receiver normalizes component state without changing explicit choices or starting business work.
+
+Appearance snapshots are read asynchronously through the local pinned official common API and validated before use. Never bypass host signing/enable checks; unavailable snapshots use an honest fallback. Theme coverage includes disabled states, radio/check/switch, input cursor/selection, buttons, sliders, menus and dynamically created rows. Preserve content-specific colors such as sampled pixels. Run AppearancePolicyTest, ThemeColorValueTest, SettingsAppearanceTest and LauncherIconSelectionTest, including cancel/confirm, contrast and old-default migration.
+
+The default debug signer is intentionally retained for existing debug installations. `-PofficialUiValidation=true` signs the debug/probe artifacts with the existing release configuration and uses a distinct `.test.official` test package. It is for local host-appearance verification only; never use it to replace an installed package with a different signer. Preserve exact artifact paths/hashes for both signing modes.
+
+`ScreenColorPickerInfoService` is the permission-protected common INFO endpoint needed for official host appearance discovery. It reuses PluginRuntimeInfo and never starts capture. The original SCREEN_COLOR_PICKER Binder contract remains unchanged; verify both discovery paths and keep the new service protected by org.autojs.permission.PLUGIN.

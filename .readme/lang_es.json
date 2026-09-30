@@ -60,5 +60,5 @@
   "p_docs_generation": "Los README, las instrucciones del plugin y los changelog se generan desde fuentes JSON. Tras editar una fuente ejecuta los dos comandos siguientes.",
   "h_license": "Licencia",
   "p_license": "El código del proyecto se distribuye bajo Mozilla Public License 2.0.",
-  "p_launcher_modes": "El icono del lanzador admite adaptable claro, adaptable oscuro (predeterminado), adaptable automático y fondo transparente. El modo automático intenta seguir el tema del sistema, pero el lanzador puede guardar una sola paleta en caché; puede agregar un fondo o una máscara a los iconos transparentes. El cambio mantiene la aplicación en ejecución y puede tardar unos segundos."
+  "p_launcher_modes": "Unificar los ajustes independientes: idioma, modo nocturno, color e icono. Seguir AutoJs6 de forma predeterminada con alternativa del sistema, superficies neutras y controles adaptados. Aplicar los cambios tras confirmar, ofrecer una vista previa HEX/RGB y usar el modo adaptable automático por defecto, conservando las elecciones explícitas al actualizar."
 }

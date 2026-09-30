@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_settings_always_dark">Siempre oscuro</string>
+    <string name="app_settings_always_light">Siempre claro</string>
+    <string name="app_settings_appearance">Apariencia</string>
+    <string name="app_settings_dark_mode">Modo oscuro</string>
+    <string name="app_settings_follow_autojs6">Seguir AutoJs6</string>
+    <string name="app_settings_follow_autojs6_summary">Seguir AutoJs6 · %1$s</string>
+    <string name="app_settings_follow_system">Seguir el sistema</string>
+    <string name="app_settings_language">Idioma</string>
+    <string name="app_settings_theme_color">Color del tema</string>
+    <string name="app_settings_updates">Updates</string>
     <string name="clipboard_label_color">Color de pantalla</string>
     <string name="content_desc_magnifier">Lupa de color</string>
     <string name="content_desc_target_ring">Anillo de selección</string>
     <string name="launcher_icon_applied_note">El lanzador puede tardar unos segundos en actualizarse. Puede ser necesario volver a agregar algunos accesos directos.</string>
-    <string name="launcher_icon_auto">Adaptable automático</string>
+    <string name="launcher_icon_auto">Icono adaptable (automático)</string>
     <string name="launcher_icon_auto_note">Intenta seguir el tema del sistema. Algunos lanzadores guardan los iconos en caché o usan una sola paleta.</string>
-    <string name="launcher_icon_dark">Adaptable oscuro</string>
+    <string name="launcher_icon_dark">Icono adaptable (oscuro)</string>
     <string name="launcher_icon_failed">No se pudo cambiar el icono del lanzador. Inténtalo de nuevo.</string>
-    <string name="launcher_icon_light">Adaptable claro</string>
+    <string name="launcher_icon_light">Icono adaptable (claro)</string>
     <string name="launcher_icon_title">Icono del lanzador</string>
-    <string name="launcher_icon_transparent">Fondo transparente</string>
+    <string name="launcher_icon_transparent">Icono con fondo transparente</string>
     <string name="launcher_icon_transparent_note">Algunos lanzadores agregan un fondo o una máscara. Puede que no se conserve la transparencia.</string>
     <string name="notification_action_stop">Detener</string>
     <string name="notification_channel_screen_color_picker">Selector de color de pantalla</string>
@@ -19,6 +29,8 @@
     <string name="plugin_description">Toma colores de cualquier parte de la pantalla con un selector flotante táctil</string>
     <string name="release_history">Historial de versiones</string>
     <string name="release_history_unavailable">El historial de versiones no está disponible</string>
+    <string name="settings_apply_failed">No se pudo aplicar este ajuste. Inténtalo de nuevo.</string>
+    <string name="settings_title">Ajustes</string>
     <string name="text_active">Activo</string>
     <string name="text_capture_range">Rango de muestreo</string>
     <string name="text_capture_timed_out">Se agotó el tiempo de captura de pantalla</string>
@@ -46,4 +58,9 @@
     <string name="text_starting">Iniciando</string>
     <string name="text_stop_color_picker">Detener selector de color</string>
     <string name="text_stopping">Deteniendo</string>
+    <string name="theme_picker_custom">Color personalizado</string>
+    <string name="theme_picker_input">HEX / RGB</string>
+    <string name="theme_picker_invalid">Introduce #RRGGBB, RRGGBB o rgb(r, g, b). Los valores RGB deben ser de 0 a 255.</string>
+    <string name="theme_picker_presets">Colores predefinidos</string>
+    <string name="theme_picker_preview">Vista previa</string>
 </resources>

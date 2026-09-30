@@ -22,7 +22,7 @@ import com.google.android.material.card.MaterialCardView
 import com.google.android.material.materialswitch.MaterialSwitch
 import org.autojs.plugin.screencolorpicker.api.ScreenColorPickerStates
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppearanceActivity() {
     private lateinit var statusText: TextView
     private lateinit var detailText: TextView
     private lateinit var actionButton: MaterialButton
@@ -33,13 +33,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val stateListener: (Int) -> Unit = { state -> runOnUiThread { renderState(state) } }
-
-    internal var launcherIconDialog: androidx.appcompat.app.AlertDialog? = null
-
-    override fun onDestroy() {
-        launcherIconDialog?.dismiss()
-        super.onDestroy()
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -135,141 +128,24 @@ class MainActivity : AppCompatActivity() {
         root.addView(card, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply {
             topMargin = dp(40)
         })
-        root.addView(buildSettingsCard(), LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply {
-            topMargin = dp(20)
-        })
+        root.addView(MaterialButton(this).apply {
+            tag="open-settings"
+            setText(R.string.settings_title)
+            isAllCaps=false
+            setOnClickListener { startActivity(Intent(this@MainActivity,AppSettingsActivity::class.java)) }
+            SettingsUi(this@MainActivity,settingsPalette).tint(this)
+        },LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT).apply { topMargin=dp(20) })
         root.addView(MaterialButton(this).apply {
             setText(R.string.release_history)
             setOnClickListener { showReleaseHistory() }
         })
+        SettingsUi(this,settingsPalette).tint(root)
         renderState(PickerRuntime.state())
         return ScrollView(this).apply {
             isFillViewport = true
             addView(root, ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
         }
     }
-
-    private fun buildSettingsCard(): View {
-        val card = MaterialCardView(this).apply {
-            radius = dp(28).toFloat()
-            cardElevation = dp(2).toFloat()
-            setCardBackgroundColor(themeColor(com.google.android.material.R.attr.colorSurfaceContainer))
-        }
-        val content = LinearLayout(this).apply {
-            orientation = LinearLayout.VERTICAL
-            setPadding(dp(24), dp(20), dp(24), dp(20))
-        }
-        content.addView(TextView(this).apply {
-            text = getString(R.string.text_picker_settings)
-            textSize = 18f
-            setTypeface(typeface, android.graphics.Typeface.BOLD)
-            setTextColor(themeColor(com.google.android.material.R.attr.colorOnSurface))
-        })
-        content.addView(
-            optionRow(R.string.text_magnifier_size, PickerSettings.magnifierSizeIndex(this)) { index ->
-                PickerSettings.setMagnifierSizeIndex(this, index)
-            },
-            settingsRowParams(dp(12)),
-        )
-        content.addView(
-            optionRow(R.string.text_capture_range, PickerSettings.captureRangeIndex(this)) { index ->
-                PickerSettings.setCaptureRangeIndex(this, index)
-            },
-            settingsRowParams(dp(4)),
-        )
-        content.addView(
-            optionRow(R.string.text_fine_tune_speed, PickerSettings.fineTuneSpeedIndex(this)) { index ->
-                PickerSettings.setFineTuneSpeedIndex(this, index)
-            },
-            settingsRowParams(dp(4)),
-        )
-        content.addView(
-            switchRow(R.string.text_show_grid_lines, PickerSettings.showGrid(this)) { checked ->
-                PickerSettings.setShowGrid(this, checked)
-            },
-            settingsRowParams(dp(4)),
-        )
-        content.addView(
-            switchRow(R.string.text_copy_numeric_only, PickerSettings.copyNumericOnly(this)) { checked ->
-                PickerSettings.setCopyNumericOnly(this, checked)
-            },
-            settingsRowParams(dp(4)),
-        )
-        val launcherButton = MaterialButton(this).apply {
-            tag = "launcher-icon"
-            isAllCaps = false
-            minHeight = dp(48)
-            text = LauncherIconChooser.summary(this@MainActivity)
-        }
-        launcherButton.setOnClickListener {
-            launcherIconDialog = LauncherIconChooser.show(this) {
-                launcherButton.text = LauncherIconChooser.summary(this)
-            }
-        }
-        content.addView(launcherButton, settingsRowParams(dp(12)))
-        content.addView(TextView(this).apply {
-            text = listOf(
-                R.string.text_picker_instruction,
-                R.string.text_picker_instruction_copy,
-                R.string.text_picker_instruction_close,
-            ).joinToString("\n") { resId -> getString(resId) }
-            textSize = 13f
-            setLineSpacing(0f, 1.25f)
-            setTextColor(themeColor(com.google.android.material.R.attr.colorOnSurfaceVariant))
-        }, settingsRowParams(dp(14)))
-        card.addView(content)
-        return card
-    }
-
-    private fun settingsRowParams(topMargin: Int): LinearLayout.LayoutParams =
-        LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply {
-            this.topMargin = topMargin
-        }
-
-    private fun optionRow(labelRes: Int, selectedIndex: Int, onSelected: (Int) -> Unit): View {
-        val row = LinearLayout(this).apply {
-            orientation = LinearLayout.HORIZONTAL
-            gravity = Gravity.CENTER_VERTICAL
-            minimumHeight = dp(48)
-        }
-        row.addView(TextView(this).apply {
-            setText(labelRes)
-            textSize = 15f
-            setTextColor(themeColor(com.google.android.material.R.attr.colorOnSurface))
-        }, LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f))
-        row.addView(Spinner(this).apply {
-            adapter = ArrayAdapter(
-                this@MainActivity,
-                android.R.layout.simple_spinner_item,
-                listOf(
-                    getString(R.string.text_option_large),
-                    getString(R.string.text_option_medium),
-                    getString(R.string.text_option_small),
-                ),
-            ).apply { setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item) }
-            setSelection(selectedIndex.coerceIn(0, PickerSettingsCatalog.OPTION_COUNT - 1), false)
-            contentDescription = getString(labelRes)
-            minimumHeight = dp(48)
-            onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                    onSelected(position)
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>?) = Unit
-            }
-        }, LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT))
-        return row
-    }
-
-    private fun switchRow(labelRes: Int, checked: Boolean, onChanged: (Boolean) -> Unit): View =
-        MaterialSwitch(this).apply {
-            setText(labelRes)
-            textSize = 15f
-            setTextColor(themeColor(com.google.android.material.R.attr.colorOnSurface))
-            minHeight = dp(48)
-            isChecked = checked
-            setOnCheckedChangeListener { _, isChecked -> onChanged(isChecked) }
-        }
 
     private fun renderState(state: Int) {
         if (!::statusText.isInitialized || !::actionButton.isInitialized) return
@@ -299,9 +175,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun themeColor(attribute: Int): Int {
-        val value = android.util.TypedValue()
-        theme.resolveAttribute(attribute, value, true)
-        return value.data
+        return when(attribute) {
+            com.google.android.material.R.attr.colorOnSurface -> settingsPalette.text
+            com.google.android.material.R.attr.colorOnSurfaceVariant -> settingsPalette.muted
+            com.google.android.material.R.attr.colorSurfaceContainer,com.google.android.material.R.attr.colorSurface -> settingsPalette.surface
+            androidx.appcompat.R.attr.colorPrimary -> settingsPalette.primary
+            else -> settingsPalette.accent
+        }
     }
 
     private fun dp(value: Int): Int = (value * resources.displayMetrics.density + 0.5f).toInt()

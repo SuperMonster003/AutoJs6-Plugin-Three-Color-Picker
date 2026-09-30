@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_settings_always_dark">Toujours sombre</string>
+    <string name="app_settings_always_light">Toujours clair</string>
+    <string name="app_settings_appearance">Apparence</string>
+    <string name="app_settings_dark_mode">Mode sombre</string>
+    <string name="app_settings_follow_autojs6">Suivre AutoJs6</string>
+    <string name="app_settings_follow_autojs6_summary">Suivre AutoJs6 · %1$s</string>
+    <string name="app_settings_follow_system">Suivre le système</string>
+    <string name="app_settings_language">Langue</string>
+    <string name="app_settings_theme_color">Couleur du thème</string>
+    <string name="app_settings_updates">Updates</string>
     <string name="clipboard_label_color">Couleur de l\'écran</string>
     <string name="content_desc_magnifier">Loupe de couleur</string>
     <string name="content_desc_target_ring">Anneau de ciblage</string>
     <string name="launcher_icon_applied_note">Le lanceur peut prendre quelques secondes pour se rafraîchir. Certains raccourcis peuvent devoir être ajoutés a nouveau.</string>
-    <string name="launcher_icon_auto">Adaptative automatique</string>
+    <string name="launcher_icon_auto">Icône adaptative (automatique)</string>
     <string name="launcher_icon_auto_note">Tente de suivre le thème du système. Certains lanceurs gardent les icônes en cache ou utilisent une seule palette.</string>
-    <string name="launcher_icon_dark">Adaptative sombre</string>
+    <string name="launcher_icon_dark">Icône adaptative (sombre)</string>
     <string name="launcher_icon_failed">Impossible de changer l\'icône du lanceur. Veuillez réessayer.</string>
-    <string name="launcher_icon_light">Adaptative claire</string>
+    <string name="launcher_icon_light">Icône adaptative (claire)</string>
     <string name="launcher_icon_title">Icône du lanceur</string>
-    <string name="launcher_icon_transparent">Fond transparent</string>
+    <string name="launcher_icon_transparent">Icône à fond transparent</string>
     <string name="launcher_icon_transparent_note">Certains lanceurs ajoutent un fond ou un masque. La transparence peut ne pas être conservée.</string>
     <string name="notification_action_stop">Arrêter</string>
     <string name="notification_channel_screen_color_picker">Sélecteur de couleur d\'écran</string>
@@ -19,6 +29,8 @@
     <string name="plugin_description">Échantillonne les couleurs partout sur l\'écran avec un sélecteur flottant tactile</string>
     <string name="release_history">Historique des versions</string>
     <string name="release_history_unavailable">L\'historique des versions est indisponible</string>
+    <string name="settings_apply_failed">Impossible d\'appliquer ce réglage. Réessayez.</string>
+    <string name="settings_title">Paramètres</string>
     <string name="text_active">Actif</string>
     <string name="text_capture_range">Plage d\'échantillonnage</string>
     <string name="text_capture_timed_out">Délai de capture d\'écran dépassé</string>
@@ -46,4 +58,9 @@
     <string name="text_starting">Démarrage</string>
     <string name="text_stop_color_picker">Arrêter le sélecteur</string>
     <string name="text_stopping">Arrêt</string>
+    <string name="theme_picker_custom">Couleur personnalisée</string>
+    <string name="theme_picker_input">HEX / RGB</string>
+    <string name="theme_picker_invalid">Saisissez #RRGGBB, RRGGBB ou rgb(r, g, b). Les valeurs RGB doivent être comprises entre 0 et 255.</string>
+    <string name="theme_picker_presets">Couleurs prédéfinies</string>
+    <string name="theme_picker_preview">Aperçu</string>
 </resources>
