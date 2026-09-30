@@ -77,6 +77,12 @@ class PickerRequestActivity : AppCompatActivity() {
         requestProjectionConsent()
     }
 
+    override fun attachBaseContext(newBase: android.content.Context) {
+        val appearance=AppearanceSource.resolve(newBase)
+        delegate.localNightMode=if(appearance.night) androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES else androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
+        super.attachBaseContext(appearance.wrap(newBase))
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val restored = PickerRequestRestoreState(
@@ -180,6 +186,7 @@ class PickerRequestActivity : AppCompatActivity() {
             .also { dialog ->
                 overlayExplanationDialog = dialog
                 dialog.show()
+                SettingsUi(this,SettingsPalette(AppearanceSource.resolve(this))).styleDialog(dialog)
             }
     }
 

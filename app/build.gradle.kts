@@ -12,6 +12,8 @@ plugins {
 }
 
 val globalApplicationId = "io.github.supermonster003.autojs6.plugin.screencolorpicker"
+// Explicit local UI validation only: preserve the normal debug signer and its installed data.
+val officialUiValidation = providers.gradleProperty("officialUiValidation").orNull == "true"
 val releaseProperties = Properties().apply {
     rootProject.file("sign.properties").takeIf(File::isFile)?.inputStream()?.use { load(it) }
 }
@@ -26,6 +28,7 @@ val buildDate = SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH).apply {
 
 android {
     namespace = globalApplicationId
+    bundle { language { enableSplit = false } }
     compileSdk = versions.sdkVersionCompile
 
     defaultConfig {
@@ -36,6 +39,7 @@ android {
         versionName = versions.appVersionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        if (officialUiValidation) testApplicationId = "$globalApplicationId.test.official"
 
         resValue("string", "app_name", "Screen Color Picker")
         resValue("string", "plugin_author", "SuperMonster003")
@@ -57,6 +61,10 @@ android {
     buildTypes {
         debug {
             isMinifyEnabled = false
+            if (officialUiValidation) {
+                check(releaseSigningAvailable) { "Official UI validation requires the existing release signing configuration" }
+                signingConfig = signingConfigs.getByName("release")
+            }
         }
         release {
             isMinifyEnabled = true

@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_settings_always_dark">داكن دائما</string>
+    <string name="app_settings_always_light">فاتح دائما</string>
+    <string name="app_settings_appearance">المظهر</string>
+    <string name="app_settings_dark_mode">الوضع الداكن</string>
+    <string name="app_settings_follow_autojs6">اتباع AutoJs6</string>
+    <string name="app_settings_follow_autojs6_summary">اتباع AutoJs6 · %1$s</string>
+    <string name="app_settings_follow_system">اتباع النظام</string>
+    <string name="app_settings_language">اللغة</string>
+    <string name="app_settings_theme_color">لون السمة</string>
+    <string name="app_settings_updates">Updates</string>
     <string name="clipboard_label_color">لون الشاشة</string>
     <string name="content_desc_magnifier">عدسة تكبير اللون</string>
     <string name="content_desc_target_ring">حلقة تحديد نقطة الالتقاط</string>
     <string name="launcher_icon_applied_note">قد يستغرق تحديث المشغل بضع ثوان. قد تحتاج إلى إضافة بعض اختصارات الشاشة الرئيسية مرة أخرى.</string>
-    <string name="launcher_icon_auto">متكيف تلقائي</string>
+    <string name="launcher_icon_auto">أيقونة تكيفية (تلقائية)</string>
     <string name="launcher_icon_auto_note">يحاول اتباع سمة النظام. بعض المشغلات تخزن الرموز مؤقتا أو تستخدم نظام ألوان واحدا فقط.</string>
-    <string name="launcher_icon_dark">متكيف داكن</string>
+    <string name="launcher_icon_dark">أيقونة تكيفية (داكنة)</string>
     <string name="launcher_icon_failed">تعذر تغيير رمز المشغل. يرجى المحاولة مرة أخرى.</string>
-    <string name="launcher_icon_light">متكيف فاتح</string>
+    <string name="launcher_icon_light">أيقونة تكيفية (فاتحة)</string>
     <string name="launcher_icon_title">رمز المشغل</string>
-    <string name="launcher_icon_transparent">خلفية شفافة</string>
+    <string name="launcher_icon_transparent">أيقونة بخلفية شفافة</string>
     <string name="launcher_icon_transparent_note">قد تضيف بعض المشغلات خلفية أو قناعا, لذلك قد لا يتم الحفاظ على الشفافية.</string>
     <string name="notification_action_stop">إيقاف</string>
     <string name="notification_channel_screen_color_picker">منتقي ألوان الشاشة</string>
@@ -19,6 +29,8 @@
     <string name="plugin_description">يلتقط الألوان من أي مكان على الشاشة باستخدام منتقي عائم مناسب للمس</string>
     <string name="release_history">سجل الإصدارات</string>
     <string name="release_history_unavailable">سجل الإصدارات غير متاح</string>
+    <string name="settings_apply_failed">تعذر تطبيق هذا الإعداد. حاول مرة أخرى.</string>
+    <string name="settings_title">الإعدادات</string>
     <string name="text_active">نشط</string>
     <string name="text_capture_range">نطاق الالتقاط</string>
     <string name="text_capture_timed_out">انتهت مهلة التقاط الشاشة</string>
@@ -46,4 +58,9 @@
     <string name="text_starting">جار التشغيل</string>
     <string name="text_stop_color_picker">إيقاف منتقي الألوان</string>
     <string name="text_stopping">جار الإيقاف</string>
+    <string name="theme_picker_custom">لون مخصص</string>
+    <string name="theme_picker_input">HEX / RGB</string>
+    <string name="theme_picker_invalid">أدخل #RRGGBB أو RRGGBB أو rgb(r, g, b). يجب أن تكون قيم RGB بين 0 و255.</string>
+    <string name="theme_picker_presets">ألوان جاهزة</string>
+    <string name="theme_picker_preview">معاينة</string>
 </resources>

@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_settings_always_dark">Always dark</string>
+    <string name="app_settings_always_light">Always light</string>
+    <string name="app_settings_appearance">Appearance</string>
+    <string name="app_settings_dark_mode">Dark mode</string>
+    <string name="app_settings_follow_autojs6">Follow AutoJs6</string>
+    <string name="app_settings_follow_autojs6_summary">Follow AutoJs6 · %1$s</string>
+    <string name="app_settings_follow_system">Follow system</string>
+    <string name="app_settings_language">Language</string>
+    <string name="app_settings_theme_color">Theme color</string>
+    <string name="app_settings_updates">Updates</string>
     <string name="clipboard_label_color">Screen color</string>
     <string name="content_desc_magnifier">Color magnifier disc</string>
     <string name="content_desc_target_ring">Sampling target ring</string>
     <string name="launcher_icon_applied_note">The launcher may take a few seconds to refresh. Some home-screen shortcuts may need to be added again.</string>
-    <string name="launcher_icon_auto">Adaptive automatic</string>
+    <string name="launcher_icon_auto">Adaptive icon (automatic)</string>
     <string name="launcher_icon_auto_note">Tries to follow the system theme. Some launchers cache icons or use only one color scheme.</string>
-    <string name="launcher_icon_dark">Adaptive dark</string>
+    <string name="launcher_icon_dark">Adaptive icon (dark)</string>
     <string name="launcher_icon_failed">Unable to change the launcher icon. Please try again.</string>
-    <string name="launcher_icon_light">Adaptive light</string>
+    <string name="launcher_icon_light">Adaptive icon (light)</string>
     <string name="launcher_icon_title">Launcher icon</string>
-    <string name="launcher_icon_transparent">Transparent background</string>
+    <string name="launcher_icon_transparent">Transparent background icon</string>
     <string name="launcher_icon_transparent_note">Some launchers add their own background or mask, so transparency may not be preserved.</string>
     <string name="notification_action_stop">Stop</string>
     <string name="notification_channel_screen_color_picker">Screen color picker</string>
@@ -19,6 +29,8 @@
     <string name="plugin_description">Samples colors anywhere on the screen with a touch-friendly floating picker</string>
     <string name="release_history">Release history</string>
     <string name="release_history_unavailable">Release history is unavailable</string>
+    <string name="settings_apply_failed">Could not apply this setting. Please try again.</string>
+    <string name="settings_title">Settings</string>
     <string name="text_active">Active</string>
     <string name="text_capture_range">Sampling range</string>
     <string name="text_capture_timed_out">Screen capture timed out</string>
@@ -46,4 +58,9 @@
     <string name="text_starting">Starting</string>
     <string name="text_stop_color_picker">Stop color picker</string>
     <string name="text_stopping">Stopping</string>
+    <string name="theme_picker_custom">Custom color</string>
+    <string name="theme_picker_input">HEX / RGB</string>
+    <string name="theme_picker_invalid">Enter #RRGGBB, RRGGBB or rgb(r, g, b). RGB values must be 0..255.</string>
+    <string name="theme_picker_presets">Preset colors</string>
+    <string name="theme_picker_preview">Preview</string>
 </resources>

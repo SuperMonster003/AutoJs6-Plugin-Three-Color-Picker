@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_on_primary">#FFFFFFFF</color>
-    <color name="color_on_surface">#FF1D1B20</color>
-    <color name="color_primary">#FF6750A4</color>
-    <color name="color_secondary">#FF006A6A</color>
-    <color name="color_surface">#FFFFFBFE</color>
     <color name="ic_launcher_background">#FF6750A4</color>
 </resources>
