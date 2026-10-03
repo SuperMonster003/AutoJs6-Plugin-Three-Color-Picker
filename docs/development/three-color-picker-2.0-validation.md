@@ -3,6 +3,12 @@
 Validated on 2026-10-03, with versionCode 20 and the dotted application ID
 `io.github.supermonster003.autojs6.plugin.three.color.picker`.
 
+Release preparation uses versionCode 21. The first remote CI run found that Pillow's
+Windows zlib-ng and Linux zlib encoders produced different PNG bytes for identical
+pixels. The generator now uses a controlled RGBA PNG stream with the standard-library
+zlib fixed-Huffman strategy. Windows and Ubuntu checks agree byte-for-byte; every
+decoded pixel remains identical to the artwork used in the device checks below.
+
 ## Identity and host
 
 - Product title: `3-Color Picker`; root project: `autojs6-plugin-three-color-picker`.

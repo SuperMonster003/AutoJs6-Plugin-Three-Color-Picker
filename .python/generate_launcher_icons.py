@@ -6,8 +6,9 @@ all shapes from the light source alpha, using the common black/white palette.
 from __future__ import annotations
 
 import argparse
-import io
 import math
+import struct
+import zlib
 from pathlib import Path
 
 from PIL import Image, ImageDraw
@@ -78,6 +79,30 @@ def adaptive(foreground, background):
 '''.encode()
 
 
+def encode_png(image):
+    """Use one row filter and the standard zlib encoder on Windows and Linux.
+
+    Pillow wheels bundle different PNG compression backends (zlib / zlib-ng).
+    Their optimized streams can differ even when every decoded pixel matches.
+    Keep byte-for-byte checks while encoding the generated RGBA pixels ourselves.
+    """
+    rgba = image.convert("RGBA")
+    pixels = rgba.tobytes()
+    stride = rgba.width * 4
+    rows = b"".join(b"\x00" + pixels[start:start + stride]
+                    for start in range(0, len(pixels), stride))
+    compressor = zlib.compressobj(level=9, strategy=zlib.Z_FIXED)
+    compressed = compressor.compress(rows) + compressor.flush()
+
+    def chunk(kind, data):
+        return (struct.pack(">I", len(data)) + kind + data
+                + struct.pack(">I", zlib.crc32(kind + data)))
+
+    header = struct.pack(">IIBBBBB", rgba.width, rgba.height, 8, 6, 0, 0, 0)
+    return (b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", header)
+            + chunk(b"IDAT", compressed) + chunk(b"IEND", b""))
+
+
 def generated_files():
     alpha = source_alpha()
     ui = positioned_alpha(alpha, UI_GLYPH)
@@ -93,9 +118,7 @@ def generated_files():
     }
     outputs = {}
     for name, image in images.items():
-        buffer = io.BytesIO()
-        image.save(buffer, format="PNG", optimize=True)
-        outputs[RES / name] = buffer.getvalue()
+        outputs[RES / name] = encode_png(image)
     for name, background in (("ic_launcher_system", "launcher_icon_background_dark"),
                              ("ic_launcher_system_light", "launcher_icon_background_light")):
         outputs[RES / f"mipmap-anydpi-v26/{name}.xml"] = adaptive(f"{name}_foreground", background)
