@@ -18,6 +18,7 @@
 .kotlin/
 __pycache__/
 
+/.bak
 /app/build/
 /app/releases/
 /build/
