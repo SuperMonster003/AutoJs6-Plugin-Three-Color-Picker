@@ -1,4 +1,4 @@
-# AutoJs6 Screen Color Picker Plugin Repository Guide
+# AutoJs6 3-Color Picker Plugin Repository Guide
 
 ## Scope and identity
 
@@ -11,17 +11,18 @@ The following identities are stable contract values and must be changed together
 
 | Item | Value |
 |---|---|
-| Project | `AutoJs6-Plugin-Screen-Color-Picker` |
-| Gradle root | `autojs6-plugin-screen-color-picker` |
-| App title | `Screen Color Picker` |
-| Application ID | `io.github.supermonster003.autojs6.plugin.screencolorpicker` |
+| Project | `AutoJs6-Plugin-Three-Color-Picker` |
+| Gradle root | `autojs6-plugin-three-color-picker` |
+| App title | `3-Color Picker` |
+| Application ID | `io.github.supermonster003.autojs6.plugin.three.color.picker` |
 | API package | `org.autojs.plugin.screencolorpicker.api` |
-| Plugin ID / engine / category | `screen-color-picker` |
+| Plugin ID / INFO category | `three-color-picker` |
+| Engine / capture service category | `screen-color-picker` |
 | Variant | `default` |
 | Service action | `org.autojs.plugin.SCREEN_COLOR_PICKER` |
 | Binder interface | `IScreenColorPickerPlugin` |
 | Contract version | `1` |
-| Minimum host versionCode | `5278` |
+| Minimum host versionCode | `5316` |
 
 The shared contract comes from `libs/screen-color-picker-api.aar`. Do not recreate its AIDL, constants, `PluginInfo`, or package names in this repository. The host and plugin must consume the same API build.
 
@@ -53,7 +54,7 @@ The final manifest has seven real Activity/service components, four selectable l
 - `MainActivity`: stable exported UI Activity, with no AutoJs6 plugin permission. It must work when AutoJs6 is absent. Four stable `launcher.*IconAlias` entries target it; only the selected alias has an enabled MAIN/LAUNCHER entry.
 - `PickerRequestActivity`: non-exported, translucent permission flow launched by an explicit `PendingIntent`.
 - `WakeActivity`: exported, `Theme.NoDisplay`, protected by `org.autojs.permission.PLUGIN`, responds to `org.autojs.plugin.action.WAKE`, and finishes immediately.
-- `ScreenColorPickerPluginService`: exported Binder service protected by `org.autojs.permission.PLUGIN`, with the exact shared action and category.
+- `ThreeColorPickerPluginService`: exported Binder service protected by `org.autojs.permission.PLUGIN`, with the exact shared action and category.
 - `ProjectionForegroundService`: non-exported foreground service with type `mediaProjection`.
 
 Keep `org.autojs.plugin.WAKE_ACTIVITY` metadata resolvable to the real Wake Activity. Do not move work, permission prompts, network calls, or model initialization into `WakeActivity`.
@@ -187,8 +188,8 @@ Run `.python/check_markdown.bat`, `py -3 -m unittest discover -s .python/tests`,
 
 - Expose adaptive light, adaptive dark, adaptive automatic (default), and transparent modes in one settings row. Explain automatic/transparent launcher caching and background limitations.
 - Keep all four `launcher.*IconAlias` component names stable. Keep MainActivity enabled for existing explicit intents. Enable the new alias before disabling the old one with DONT_KILL_APP, migrate mutable shortcut ownership, and restore previous states if switching fails.
-- Regenerate the separate launcher resources with `py .python/generate_launcher_icons.py`; run its read-only `--check`. The source vector is preserved in `.python/icons/launcher-foreground.xml`. Original purpose-specific PNG/README/application resources remain unchanged.
-- Fixed dark uses glyph #D8D8D8/background #212121; fixed light uses glyph #272727/background #FAFAFA. Auto must have an independent resource ID: PackageManager eagerly resolves values aliases when parsing activity icons. Supply default dark and notnight light legacy XML plus matching default-v26 and notnight-v26 adaptive XML. Never put a legacy night PNG ahead of an adaptive v26 resource with the same name.
+- Regenerate the separate launcher resources with `py .python/generate_launcher_icons.py` (Pillow 12.3.0); run its read-only `--check`. The maintainer-provided 387 x 387 light/dark PNG sources are preserved unchanged in `.python/icons/three-color-picker-ic-launcher-{light,dark}.png`. Both share the same alpha. Generate 432 px monochrome artwork from the light alpha; UI width is 0.66, adaptive width is 0.42, optical offsets are zero. Validate final antialiased pixels against the safe circle. `ic_launcher` is always a transparent BitmapDrawable, with no adaptive XML override.
+- Fixed dark uses glyph #D8D8D8/background #212121; fixed light uses glyph #272727/background #FAFAFA. Auto must have an independent resource ID: PackageManager eagerly resolves values aliases when parsing activity icons. Supply default dark and notnight light legacy bitmap wrappers plus matching default-v26 and notnight-v26 adaptive XML. Never put a legacy night PNG ahead of an adaptive v26 resource with the same name.
 - Run LauncherIconResourceTest and LauncherIconSelectionTest on API 24 and a modern API. Tests restore exact component states and remove only their own temporary shortcuts; do not clear user or launcher data.
 
 ## Standalone settings standard (2026-09-29)
@@ -199,4 +200,12 @@ Appearance snapshots are read asynchronously through the local pinned official c
 
 The default debug signer is intentionally retained for existing debug installations. `-PofficialUiValidation=true` signs the debug/probe artifacts with the existing release configuration and uses a distinct `.test.official` test package. It is for local host-appearance verification only; never use it to replace an installed package with a different signer. Preserve exact artifact paths/hashes for both signing modes.
 
-`ScreenColorPickerInfoService` is the permission-protected common INFO endpoint needed for official host appearance discovery. It reuses PluginRuntimeInfo and never starts capture. The original SCREEN_COLOR_PICKER Binder contract remains unchanged; verify both discovery paths and keep the new service protected by org.autojs.permission.PLUGIN.
+`ThreeColorPickerInfoService` is the permission-protected common INFO endpoint needed for official host appearance discovery. It reuses PluginRuntimeInfo and never starts capture. The original SCREEN_COLOR_PICKER Binder contract remains unchanged; verify both discovery paths and keep the new service protected by org.autojs.permission.PLUGIN.
+
+## 3-Color Picker 2.0 identity and design (2026-10-03)
+
+Read `../AUTOJS6_PLUGIN_THREE_SERIES_RENAME_AGENTS.md` and `../AUTOJS6_PLUGIN_BLACK_N_WHITE_ADAPTIVE_ICON_AGENTS.md` alongside the standalone settings standard. The maintainer chose the dotted application ID and version 2.0.0. Android treats this as a new app; the old `io.github.supermonster003.autojs6.plugin.screencolorpicker` may remain installed, with no automatic settings migration or uninstall.
+
+Product classes use ThreeColorPicker; capture mechanics retain ScreenColorPicker API naming. The shared AAR and host have synchronized package/ID/minimum-host constants. The AIDL descriptor, transaction order, service action/category, engine and protocol version 1 remain functional contract names. The AutoJs6 drawer text, including Simplified Chinese `屏幕取色`, must not change.
+
+The home screen uses the transparent themed mipmap, a readable session status/action, and three usage steps. Settings preserves the common appearance workflow and adds localized design acknowledgements. `docs/design-reference.md` records MT Manager (`bm.mt.plus`) v2.26.9 as a design reference; `RIGHTS_AND_TAKEDOWN.md` records rights-concern contact and cooperation. Neither attribution nor MPL-2.0 grants third-party permission. Keep these links in every generated README and plugin instruction.

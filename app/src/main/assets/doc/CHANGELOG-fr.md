@@ -4,6 +4,14 @@
 
 ******
 
+# v2.0.0
+
+_2026/10/03_
+
+- `Indication` La version 2.0 utilise le nouvel identifiant io.github.supermonster003.autojs6.plugin.three.color.picker. Android l'installe comme une application distincte; l'ancienne peut rester installée et les réglages ne sont pas migrés automatiquement. Accordez à nouveau les autorisations et utilisez AutoJs6 versionCode 5316 ou ultérieur pour le mode plugin. Le libellé du tiroir AutoJs6 reste inchangé
+- `Amélioration` Screen Color Picker devient 3-Color Picker, avec un nouvel accueil, des icônes claires/sombres et quatre modes de lanceur
+- `Amélioration` Référence à MT Manager (bm.mt.plus) v2.26.9, remerciements et procédure de traitement des demandes des titulaires de droits dans les paramètres et la documentation
+
 # v1.2.0
 
 _2026/09/30_

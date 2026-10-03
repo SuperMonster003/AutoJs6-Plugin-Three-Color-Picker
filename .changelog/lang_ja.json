@@ -5,6 +5,16 @@
   "changelog_label_improvement": "改善",
   "changelog_label_dependency": "依存関係",
   "$data": {
+    "v2.0.0": {
+      "released_date": "2026/10/03",
+      "hint": [
+        "2.0 は新しいアプリ ID io.github.supermonster003.autojs6.plugin.three.color.picker を使用します. Android では別のアプリとしてインストールされ, 旧版と共存できます. 設定は自動移行されません. 権限を再度許可し, プラグインモードでは AutoJs6 versionCode 5316 以降を使用してください. AutoJs6 ドロワーの画面色取得の表示名は変更しません"
+      ],
+      "improvement": [
+        "Screen Color Picker を 3-Color Picker に改名し, ホーム画面と明暗のアイコンを刷新. 4 種類のランチャーアイコンモードを維持",
+        "設定とプロジェクト文書に MT Manager (bm.mt.plus) v2.26.9 のデザイン参考, 謝辞と権利に関する申し立てへの対応方針を追加"
+      ]
+    },
     "v1.2.0": {
       "released_date": "2026/09/30",
       "feature": [

@@ -32,6 +32,14 @@ jobs:
       - name: Make Gradle wrapper executable
         run: chmod +x gradlew
 
+      - name: Set up icon tooling
+        run: python3 -m pip install -r .python/requirements.txt
+
+      - name: Check generated icons
+        run: |
+          python3 .python/generate_launcher_icons.py --check
+          python3 -m unittest discover -s .python/tests
+
       - name: Check generated documentation
         run: python3 .python/generate_markdown.py --check
 
@@ -48,7 +56,7 @@ jobs:
       - name: Upload debug APKs
         uses: actions/upload-artifact@v7
         with:
-          name: screen-color-picker-debug
+          name: three-color-picker-debug-apks
           if-no-files-found: error
           path: |
             app/build/outputs/apk/debug/app-debug.apk
@@ -65,7 +73,7 @@ jobs:
       - name: Download debug APKs
         uses: actions/download-artifact@v8
         with:
-          name: screen-color-picker-debug
+          name: three-color-picker-debug-apks
 
       - name: Enable KVM
         run: |
@@ -85,4 +93,4 @@ jobs:
           script: |
             adb install -r debug/app-debug.apk
             adb install -r androidTest/debug/app-debug-androidTest.apk
-            adb shell am instrument -w io.github.supermonster003.autojs6.plugin.screencolorpicker.test/androidx.test.runner.AndroidJUnitRunner
+            adb shell am instrument -w io.github.supermonster003.autojs6.plugin.three.color.picker.test/androidx.test.runner.AndroidJUnitRunner

@@ -1,8 +1,12 @@
-Screen Color Picker는 터치 화면을 위해 설계된 로컬 색상 추출 도구입니다. 플로팅 선택기는 드래그할 수 있는 대상 링과 실시간 확대경으로 구성되어 확대된 픽셀 격자, 현재 색상, 정확한 좌표를 표시하며 손가락으로 직접 명확하게 조작할 수 있습니다.
+# AutoJs6 3-Color Picker
+
+3-Color Picker는 터치 화면을 위해 설계된 로컬 색상 추출 도구입니다. 플로팅 선택기는 드래그할 수 있는 대상 링과 실시간 확대경으로 구성되어 확대된 픽셀 격자, 현재 색상, 정확한 좌표를 표시하며 손가락으로 직접 명확하게 조작할 수 있습니다.
+
+2.0은 새 앱 ID io.github.supermonster003.autojs6.plugin.three.color.picker를 사용합니다. Android에서 별도 앱으로 설치되며 기존 앱과 함께 사용할 수 있습니다. 설정은 자동 이전되지 않습니다. 권한을 다시 허용하고 플러그인 모드에는 AutoJs6 versionCode 5316 이상을 사용하세요. AutoJs6 서랍의 화면 색상 추출 문구는 유지됩니다.
 
 ### 독립 사용
 
-1. 시스템 런처에서 Screen Color Picker를 엽니다.
+1. 시스템 런처에서 3-Color Picker를 엽니다.
 2. 색상 선택기 시작을 누르고 안내에 따라 다른 앱 위에 표시를 허용합니다.
 3. Android 시스템 알림에서 현재 화면 캡처를 허용합니다.
 4. 색상을 가져올 앱으로 전환하고 대상 링을 원하는 픽셀로 드래그한 다음 확대경 원판 위에서 밀어 미세 조정합니다.
@@ -11,7 +15,7 @@ Screen Color Picker는 터치 화면을 위해 설계된 로컬 색상 추출 �
 ### AutoJs6 도구로 사용
 
 1. 플러그인 APK를 설치합니다. 런처 항목을 먼저 열 필요가 없습니다.
-2. AutoJs6 플러그인 센터를 열고 Screen Color Picker가 활성화되어 있는지 확인합니다. 메시지가 표시되면 플러그인을 승인합니다.
+2. AutoJs6 플러그인 센터를 열고 3-Color Picker가 활성화되어 있는지 확인합니다. 메시지가 표시되면 플러그인을 승인합니다.
 3. AutoJs6 서랍을 엽니다. Screen Color Picker는 확장 도구의 세 번째 항목으로 표시되며 실행 스위치는 기본적으로 꺼져 있습니다.
 4. 처음 사용할 때 오버레이 및 화면 캡처 동의를 완료합니다.
 5. 서랍 스위치를 끄거나 플로팅 UI 또는 알림 작업을 사용하여 중지합니다.
@@ -28,3 +32,11 @@ Screen Color Picker는 터치 화면을 위해 설계된 로컬 색상 추출 �
 - 네트워크 및 저장소: 네트워크 또는 공유 저장소 권한을 요청하지 않음
 
 다른 앱 위에 표시 또는 화면 캡처 권한을 거부하면 시작이 안전하게 취소됩니다. 알림 권한을 거부하면 경고를 표시하고 시작은 계속됩니다.
+
+### 디자인 참고 및 감사
+
+현재 디자인은 MT Manager (bm.mt.plus) v2.26.9, 특히 플로팅 화면 색상 선택기의 상호 작용을 참고했습니다. 개발자의 작업에 감사드립니다. 이 프로젝트는 독립적으로 유지되며 이 감사 표시는 제휴, 보증 또는 허가를 의미하지 않습니다. 권리자는 프로젝트 Issues를 통해 연락할 수 있습니다. 내용을 확인하고 필요에 따라 출처 표시 수정, 교체 또는 삭제에 협조하겠습니다.
+
+[MT Manager](https://mt.cc/) · [v2.26.9](https://mt.cc/releases/)
+
+프로젝트 문서: [Design reference](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/docs/design-reference.md) · [Rights and takedown cooperation](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/RIGHTS_AND_TAKEDOWN.md)

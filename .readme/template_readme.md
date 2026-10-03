@@ -1,7 +1,13 @@
 <!--suppress HtmlDeprecatedAttribute, HttpUrlsUsage -->
 
 <div align="center">
-  <p><img src="{{ icon_url }}" alt="Screen Color Picker icon" border="0" width="128" /></p>
+  <p>
+    <picture>
+      <source srcset="{{ repo_url }}/blob/master/app/src/main/res/mipmap-night/ic_launcher.png?raw=true" media="(prefers-color-scheme: dark)" />
+      <img src="{{ icon_url }}" alt="autojs6-plugin-three-color-picker-ic-launcher" border="0" width="128" />
+    </picture>
+  </p>
+  <h1>3-Color Picker</h1>
   <p>{{ synopsis }}</p>
   <p>
     <a href="{{ repo_url }}/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/{{ repo_slug }}?label=Release"/></a>
@@ -26,6 +32,8 @@
 
 {{ p_dual_mode }}
 
+{{ p_migration }}
+
 ******
 
 ### {{ h_features }}
@@ -35,6 +43,11 @@
 ******
 
 ### {{ h_standalone }}
+
+<picture>
+  <source srcset="{{ repo_url }}/blob/master/docs/images/home-dark.png?raw=true" media="(prefers-color-scheme: dark)" />
+  <img src="{{ repo_url }}/blob/master/docs/images/home-light.png?raw=true" alt="3-Color Picker home" width="280" />
+</picture>
 
 {{ p_standalone }}
 
@@ -79,7 +92,8 @@
 
 ```text
 application id: {{ application_id }}
-plugin id / engine / category: {{ plugin_id }}
+plugin id / INFO category: {{ plugin_id }}
+engine / capture service category: {{ plugin_engine }}
 variant: {{ plugin_variant }}
 service action: {{ service_action }}
 wake action: {{ wake_action }}
@@ -116,6 +130,16 @@ py .python/generate_markdown.py --check
 
 ******
 
+### {{ h_design_reference }}
+
+{{ p_design_reference }}
+
+[MT Manager](https://mt.cc/) · [v2.26.9](https://mt.cc/releases/)
+
+{{ text_design_documents }}: [Design reference]({{ repo_url }}/blob/master/docs/design-reference.md) · [Rights and takedown cooperation]({{ repo_url }}/blob/master/RIGHTS_AND_TAKEDOWN.md)
+
+******
+
 ### {{ h_license }}
 
 {{ p_license }}
@@ -123,4 +147,4 @@ py .python/generate_markdown.py --check
 [LICENSE]({{ license_url }})
 
 
-[16 KB page alignment and build verification](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/docs/16kb.md)
+[16 KB page alignment and build verification]({{ repo_url }}/blob/master/docs/16kb.md)

@@ -1,8 +1,12 @@
-Screen Color Picker est un outil local de prélèvement de couleur conçu pour les écrans tactiles. Son sélecteur flottant associe un anneau cible déplaçable à une loupe en temps réel qui affiche une grille de pixels agrandie, la couleur actuelle et les coordonnées exactes, avec une interaction directe et claire.
+# AutoJs6 3-Color Picker
+
+3-Color Picker est un outil local de prélèvement de couleur conçu pour les écrans tactiles. Son sélecteur flottant associe un anneau cible déplaçable à une loupe en temps réel qui affiche une grille de pixels agrandie, la couleur actuelle et les coordonnées exactes, avec une interaction directe et claire.
+
+La version 2.0 utilise le nouvel identifiant io.github.supermonster003.autojs6.plugin.three.color.picker. Android l'installe comme une application distincte; l'ancienne peut rester installée et les réglages ne sont pas migrés automatiquement. Accordez à nouveau les autorisations et utilisez AutoJs6 versionCode 5316 ou ultérieur pour le mode plugin. Le libellé du tiroir AutoJs6 reste inchangé.
 
 ### Utilisation autonome
 
-1. Ouvrez Screen Color Picker depuis le lanceur système.
+1. Ouvrez 3-Color Picker depuis le lanceur système.
 2. Touchez Démarrer le sélecteur et suivez l'explication pour autoriser l'affichage sur les autres applications.
 3. Autorisez la capture actuelle dans la demande du système Android.
 4. Passez dans l'application à échantillonner, faites glisser l'anneau cible jusqu'au pixel souhaité, puis glissez sur le disque de la loupe pour affiner.
@@ -11,7 +15,7 @@ Screen Color Picker est un outil local de prélèvement de couleur conçu pour l
 ### Utilisation comme outil AutoJs6
 
 1. Installez l'APK du plugin. Il n'est pas nécessaire d'ouvrir son entrée du lanceur.
-2. Ouvrez le Centre de plugins d'AutoJs6 et vérifiez que Screen Color Picker est activé. Autorisez le plugin si demandé.
+2. Ouvrez le Centre de plugins d'AutoJs6 et vérifiez que 3-Color Picker est activé. Autorisez le plugin si demandé.
 3. Ouvrez le tiroir AutoJs6. Screen Color Picker apparaît comme troisième outil étendu, avec son interrupteur d'exécution désactivé par défaut.
 4. Acceptez la superposition et la capture d'écran lors de la première utilisation.
 5. Désactivez l'interrupteur, utilisez l'interface flottante ou l'action de notification pour arrêter.
@@ -28,3 +32,11 @@ Tout le traitement de l'écran reste local sur l'appareil et ne commence qu'apr�
 - Réseau et stockage: aucune autorisation réseau ou de stockage partagé n'est demandée
 
 Le refus de l'affichage superposé ou de la capture d'écran annule le démarrage en toute sécurité. Le refus des notifications affiche un avertissement, puis le démarrage continue.
+
+### Référence de conception et remerciements
+
+La conception actuelle prend pour référence MT Manager (bm.mt.plus) v2.26.9, notamment les interactions de son sélecteur de couleur flottant. Nous remercions ses développeurs pour leur travail. Ce projet est indépendant; ces remerciements ne constituent ni affiliation, ni approbation, ni autorisation. Les titulaires de droits peuvent nous contacter via les Issues du projet. Nous examinerons les demandes et coopérerons, selon le cas, à la correction des attributions, au remplacement ou au retrait du contenu.
+
+[MT Manager](https://mt.cc/) · [v2.26.9](https://mt.cc/releases/)
+
+Documentation du projet: [Design reference](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/docs/design-reference.md) · [Rights and takedown cooperation](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/RIGHTS_AND_TAKEDOWN.md)

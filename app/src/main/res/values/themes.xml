@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.ScreenColorPicker.Translucent" parent="Theme.StandaloneSettings">
+    <style name="Theme.ThreeColorPicker.Translucent" parent="Theme.StandaloneSettings">
         <item name="android:backgroundDimEnabled">false</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowBackground">@android:color/transparent</item>
