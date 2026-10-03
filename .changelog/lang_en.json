@@ -12,7 +12,8 @@
       ],
       "improvement": [
         "Screen Color Picker is now 3-Color Picker, with a new home screen, light/dark artwork and four launcher icon modes",
-        "Design reference to MT Manager (bm.mt.plus) v2.26.9, acknowledgements and a rights-concern response policy are available in Settings and the project documentation"
+        "Design reference to MT Manager (bm.mt.plus) v2.26.9, acknowledgements and a rights-concern response policy are available in Settings and the project documentation",
+        "Consistent visual sizing for launcher and Plugin Center icons, with transparent backgrounds and neutral black, white or grayscale artwork"
       ]
     },
     "v1.2.0": {

@@ -12,7 +12,8 @@
       ],
       "improvement": [
         "Screen Color Picker devient 3-Color Picker, avec un nouvel accueil, des icônes claires/sombres et quatre modes de lanceur",
-        "Référence à MT Manager (bm.mt.plus) v2.26.9, remerciements et procédure de traitement des demandes des titulaires de droits dans les paramètres et la documentation"
+        "Référence à MT Manager (bm.mt.plus) v2.26.9, remerciements et procédure de traitement des demandes des titulaires de droits dans les paramètres et la documentation",
+        "Taille visuelle harmonisée des icônes du lanceur et du Centre de plugins, avec des fonds transparents et des motifs noirs, blancs ou gris neutres"
       ]
     },
     "v1.2.0": {

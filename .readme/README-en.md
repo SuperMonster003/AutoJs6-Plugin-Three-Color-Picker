@@ -141,6 +141,7 @@ _2026/10/03_
 - `Hint` Version 2.0 uses the new application ID io.github.supermonster003.autojs6.plugin.three.color.picker. Android installs it as a separate app; the old app can remain installed and settings are not migrated automatically. Grant permissions again and use AutoJs6 versionCode 5316 or later for host integration. The AutoJs6 drawer label remains Screen color picker
 - `Improved` Screen Color Picker is now 3-Color Picker, with a new home screen, light/dark artwork and four launcher icon modes
 - `Improved` Design reference to MT Manager (bm.mt.plus) v2.26.9, acknowledgements and a rights-concern response policy are available in Settings and the project documentation
+- `Improved` Consistent visual sizing for launcher and Plugin Center icons, with transparent backgrounds and neutral black, white or grayscale artwork
 
 #### v1.2.0
 
