@@ -5,7 +5,7 @@
   "h_languages": "Idiomas",
   "p_languages": "El README está disponible en los siguientes idiomas",
   "h_introduction": "Introducción",
-  "p_introduction": "Screen Color Picker es una herramienta local de muestreo de color diseñada para pantallas táctiles. Su selector flotante combina un anillo objetivo arrastrable con una lupa en tiempo real que muestra una cuadrícula de píxeles ampliada, el color actual y las coordenadas exactas, con una interacción directa y clara.",
+  "p_introduction": "3-Color Picker es una herramienta local de muestreo de color diseñada para pantallas táctiles. Su selector flotante combina un anillo objetivo arrastrable con una lupa en tiempo real que muestra una cuadrícula de píxeles ampliada, el color actual y las coordenadas exactas, con una interacción directa y clara.",
   "p_dual_mode": "El mismo APK funciona de forma independiente desde el lanzador o es descubierto por AutoJs6 como la tercera herramienta ampliada de su panel. El modo independiente no requiere AutoJs6.",
   "h_features": "Funciones",
   "features": [
@@ -19,7 +19,7 @@
   "h_standalone": "Uso independiente",
   "p_standalone": "Usa el selector sin AutoJs6",
   "standalone_steps": [
-    "Abre Screen Color Picker desde el lanzador del sistema.",
+    "Abre 3-Color Picker desde el lanzador del sistema.",
     "Pulsa Iniciar selector de color y sigue la explicación para permitir mostrar sobre otras aplicaciones.",
     "Permite la captura de pantalla actual en el aviso del sistema Android.",
     "Cambia a la aplicación que quieras muestrear, arrastra el anillo objetivo hasta el píxel deseado y desliza sobre el disco de la lupa para afinar.",
@@ -29,7 +29,7 @@
   "p_host": "Tras la instalación AutoJs6 descubre la aplicación mediante el contrato formal del plugin y solo muestra su herramienta en el panel mientras el plugin está activado en el Centro de plugins",
   "host_steps": [
     "Instala el APK del plugin. No necesitas abrir primero la entrada del lanzador.",
-    "Abre el Centro de plugins de AutoJs6 y comprueba que Screen Color Picker esté activado. Autoriza el plugin si se solicita.",
+    "Abre el Centro de plugins de AutoJs6 y comprueba que 3-Color Picker esté activado. Autoriza el plugin si se solicita.",
     "Abre el panel de AutoJs6. Screen Color Picker aparece como la tercera entrada de Herramientas ampliadas, con su interruptor de ejecución desactivado de forma predeterminada.",
     "Completa el consentimiento de superposición y captura de pantalla en el primer uso.",
     "Desactiva el interruptor, usa la interfaz flotante o la acción de notificación para detener.",
@@ -60,5 +60,9 @@
   "p_docs_generation": "Los README, las instrucciones del plugin y los changelog se generan desde fuentes JSON. Tras editar una fuente ejecuta los dos comandos siguientes.",
   "h_license": "Licencia",
   "p_license": "El código del proyecto se distribuye bajo Mozilla Public License 2.0.",
-  "p_launcher_modes": "Unificar los ajustes independientes: idioma, modo nocturno, color e icono. Seguir AutoJs6 de forma predeterminada con alternativa del sistema, superficies neutras y controles adaptados. Aplicar los cambios tras confirmar, ofrecer una vista previa HEX/RGB y usar el modo adaptable automático por defecto, conservando las elecciones explícitas al actualizar."
+  "p_launcher_modes": "Unificar los ajustes independientes: idioma, modo nocturno, color e icono. Seguir AutoJs6 de forma predeterminada con alternativa del sistema, superficies neutras y controles adaptados. Aplicar los cambios tras confirmar, ofrecer una vista previa HEX/RGB y usar el modo adaptable automático por defecto, conservando las elecciones explícitas al actualizar.",
+  "h_design_reference": "Referencia de diseño y agradecimientos",
+  "p_design_reference": "El diseño actual toma como referencia MT Manager (bm.mt.plus) v2.26.9, especialmente la interacción de su selector de color flotante. Agradecemos el trabajo de sus desarrolladores. Este proyecto es independiente; este reconocimiento no implica afiliación, respaldo ni autorización. Los titulares de derechos pueden contactarnos mediante las Issues del proyecto. Revisaremos las consultas y colaboraremos con correcciones de atribución, sustituciones o retiradas según corresponda.",
+  "text_design_documents": "Documentación del proyecto",
+  "p_migration": "La versión 2.0 usa el nuevo ID io.github.supermonster003.autojs6.plugin.three.color.picker. Android la instala como una aplicación independiente; la anterior puede permanecer instalada y los ajustes no se migran automáticamente. Concede los permisos de nuevo y usa AutoJs6 versionCode 5316 o posterior para el modo plugin. La etiqueta del panel de AutoJs6 no cambia."
 }

@@ -1,12 +1,18 @@
 <!--suppress HtmlDeprecatedAttribute, HttpUrlsUsage -->
 
 <div align="center">
-  <p><img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="Screen Color Picker icon" border="0" width="128" /></p>
+  <p>
+    <picture>
+      <source srcset="https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/app/src/main/res/mipmap-night/ic_launcher.png?raw=true" media="(prefers-color-scheme: dark)" />
+      <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/app/src/main/res/mipmap/ic_launcher.png?raw=true" alt="autojs6-plugin-three-color-picker-ic-launcher" border="0" width="128" />
+    </picture>
+  </p>
+  <h1>3-Color Picker</h1>
   <p>يلتقط الألوان من أي مكان على الشاشة باستخدام منتقي عائم مناسب للمس</p>
   <p>
-    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker?label=Release"/></a>
-    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker?label=Issues"/></a>
-    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/license/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker?label=License"/></a>
+    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker?label=Release"/></a>
+    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker?label=Issues"/></a>
+    <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/license/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker?label=License"/></a>
   </p>
 </div>
 
@@ -16,24 +22,26 @@
 
 يتوفر README باللغات التالية:
 
-- [简体中文 [zh-Hans]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-zh-Hans.md)
-- [繁體中文 (香港) [zh-Hant-HK]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-zh-Hant-HK.md)
-- [繁體中文 (台灣) [zh-Hant-TW]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-zh-Hant-TW.md)
-- [English [en]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-en.md)
-- [Français [fr]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-fr.md)
-- [Español [es]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-es.md)
-- [日本語 [ja]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-ja.md)
-- [한국어 [ko]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-ko.md)
-- [Русский [ru]](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/.readme/README-ru.md)
+- [简体中文 [zh-Hans]](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/.readme/README-zh-Hans.md)
+- [繁體中文 (香港) [zh-Hant-HK]](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/.readme/README-zh-Hant-HK.md)
+- [繁體中文 (台灣) [zh-Hant-TW]](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/.readme/README-zh-Hant-TW.md)
+- [English [en]](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/.readme/README-en.md)
+- [Français [fr]](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/.readme/README-fr.md)
+- [Español [es]](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/.readme/README-es.md)
+- [日本語 [ja]](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/.readme/README-ja.md)
+- [한국어 [ko]](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/.readme/README-ko.md)
+- [Русский [ru]](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/.readme/README-ru.md)
 - العربية [ar] # الحالية
 
 ******
 
 ### مقدمة
 
-Screen Color Picker أداة محلية لأخذ عينات الألوان ومصممة للشاشات اللمسية. يجمع المنتقي العائم بين حلقة هدف قابلة للسحب ومكبر فوري يعرض شبكة بكسلات مكبرة واللون الحالي والإحداثيات الدقيقة مع إبقاء التفاعل بالإصبع مباشرا وواضحا.
+3-Color Picker أداة محلية لأخذ عينات الألوان ومصممة للشاشات اللمسية. يجمع المنتقي العائم بين حلقة هدف قابلة للسحب ومكبر فوري يعرض شبكة بكسلات مكبرة واللون الحالي والإحداثيات الدقيقة مع إبقاء التفاعل بالإصبع مباشرا وواضحا.
 
 يمكن تشغيل ملف APK نفسه بصورة مستقلة من المشغل أو يكتشفه AutoJs6 كثالث أداة موسعة في اللوحة الجانبية. لا يحتاج الوضع المستقل إلى AutoJs6.
+
+يستخدم الإصدار 2.0 معرف التطبيق الجديد io.github.supermonster003.autojs6.plugin.three.color.picker. يثبته Android كتطبيق مستقل ويمكن إبقاء التطبيق القديم. لا تنتقل الإعدادات تلقائيا. امنح الأذونات مجددا واستخدم AutoJs6 versionCode 5316 أو أحدث لوضع المكون الإضافي. يبقى اسم أداة التقاط ألوان الشاشة في لوحة AutoJs6 كما هو.
 
 ******
 
@@ -50,11 +58,16 @@ Screen Color Picker أداة محلية لأخذ عينات الألوان وم�
 
 ### الاستخدام المستقل
 
+<picture>
+  <source srcset="https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/docs/images/home-dark.png?raw=true" media="(prefers-color-scheme: dark)" />
+  <img src="https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/docs/images/home-light.png?raw=true" alt="3-Color Picker home" width="280" />
+</picture>
+
 استخدم المنتقي دون AutoJs6
 
 توحيد الإعدادات المستقلة بترتيب اللغة والوضع الليلي ولون السمة ورمز التشغيل. اتباع AutoJs6 افتراضيا مع الرجوع إلى إعدادات النظام وأسطح محايدة وألوان متناسقة للعناصر. تحفظ الخيارات بعد التأكيد فقط مع معاينة HEX/RGB. يصبح الرمز المتكيف التلقائي هو الافتراضي مع الحفاظ على الخيارات الصريحة عند التحديث.:
 
-1. افتح Screen Color Picker من مشغل النظام.
+1. افتح 3-Color Picker من مشغل النظام.
 2. اضغط تشغيل منتقي الألوان واتبع الشرح للسماح بالظهور فوق التطبيقات الأخرى.
 3. اسمح بالتقاط الشاشة الحالي في طلب نظام Android.
 4. انتقل إلى التطبيق المطلوب واسحب حلقة الهدف إلى البكسل المطلوب ثم مرر على قرص المكبر للضبط الدقيق.
@@ -67,7 +80,7 @@ Screen Color Picker أداة محلية لأخذ عينات الألوان وم�
 بعد التثبيت يكتشف AutoJs6 التطبيق عبر عقد المكون الإضافي الرسمي ولا يعرض أداته في اللوحة الجانبية إلا عندما يكون المكون الإضافي مفعلا في مركز المكونات الإضافية:
 
 1. ثبت ملف APK للمكون الإضافي. لا يلزم فتح مدخل المشغل أولا.
-2. افتح مركز المكونات الإضافية في AutoJs6 وتأكد من تمكين Screen Color Picker. وافق على المكون الإضافي إذا طلب منك ذلك.
+2. افتح مركز المكونات الإضافية في AutoJs6 وتأكد من تمكين 3-Color Picker. وافق على المكون الإضافي إذا طلب منك ذلك.
 3. افتح اللوحة الجانبية في AutoJs6. يظهر Screen Color Picker كالعنصر الثالث ضمن الأدوات الموسعة, ويكون مفتاح تشغيله متوقفا افتراضيا.
 4. أكمل موافقة الظهور والتقاط الشاشة عند أول استخدام.
 5. أوقف مفتاح اللوحة أو استخدم الواجهة العائمة أو إجراء الإشعار للإيقاف.
@@ -96,7 +109,7 @@ Screen Color Picker أداة محلية لأخذ عينات الألوان وم�
 | الوضع | الحد الأدنى |
 |---|---|
 | تطبيق مستقل | Android 7.0 (API 24) or later |
-| أداة AutoJs6 موسعة | AutoJs6 versionCode 5278 or later |
+| أداة AutoJs6 موسعة | AutoJs6 versionCode 5316 or later |
 
 ******
 
@@ -105,20 +118,29 @@ Screen Color Picker أداة محلية لأخذ عينات الألوان وم�
 التفاصيل التالية لمطوري المضيف والمكون الإضافي. خدمة Binder و Wake Activity محميتان بواسطة org.autojs.permission.PLUGIN بينما لا يتطلب مدخل المشغل هذا الإذن.
 
 ```text
-application id: io.github.supermonster003.autojs6.plugin.screencolorpicker
-plugin id / engine / category: screen-color-picker
+application id: io.github.supermonster003.autojs6.plugin.three.color.picker
+plugin id / INFO category: three-color-picker
+engine / capture service category: screen-color-picker
 variant: default
 service action: org.autojs.plugin.SCREEN_COLOR_PICKER
 wake action: org.autojs.plugin.action.WAKE
 binder: org.autojs.plugin.screencolorpicker.api.IScreenColorPickerPlugin
 contract version: 1
-minimum host versionCode: 5278
+minimum host versionCode: 5316
 native libraries: none
 ```
 
 ******
 
 ### سجل الإصدارات
+
+#### v2.0.0
+
+_2026/10/03_
+
+- `تلميح` يستخدم الإصدار 2.0 معرف التطبيق الجديد io.github.supermonster003.autojs6.plugin.three.color.picker. يثبته Android كتطبيق مستقل ويمكن إبقاء التطبيق القديم. لا تنتقل الإعدادات تلقائيا. امنح الأذونات مجددا واستخدم AutoJs6 versionCode 5316 أو أحدث لوضع المكون الإضافي. يبقى اسم أداة التقاط ألوان الشاشة في لوحة AutoJs6 كما هو
+- `تحسين` إعادة تسمية Screen Color Picker إلى 3-Color Picker مع شاشة رئيسية جديدة وأيقونات فاتحة وداكنة والإبقاء على أوضاع أيقونة المشغل الأربعة
+- `تحسين` إضافة مرجع التصميم MT Manager (bm.mt.plus) v2.26.9 والشكر وسياسة التعامل مع اعتراضات أصحاب الحقوق إلى الإعدادات ووثائق المشروع
 
 #### v1.2.0
 
@@ -133,13 +155,7 @@ _2026/09/19_
 - `إصلاح` تحذيرات قراءة SDK XML v4 مع AGP 9.1 وتشغيل فحص محاذاة مكتبات APK الأصلية خطأ عند تجميع اختبارات JVM, باستخدام إضافات البناء المشتركة 1.8.3
 - `تحسين` بعد compileSdk, رفع targetSdk إلى 37 (Android 17), لا يعتمد سلوك المكون الإضافي على الهدف الجديد
 
-#### v1.1.2
-
-_2026/09/16_
-
-- `إصلاح` إغلاق مربع حوار إذن التراكب القديم عند إعادة إنشاء الشاشة لمنع بقاء النوافذ وتعارض التركيز
-
-[عرض CHANGELOG الكامل](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-ar.md)
+[عرض CHANGELOG الكامل](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-ar.md)
 
 ******
 
@@ -160,11 +176,21 @@ py .python/generate_markdown.py --check
 
 ******
 
+### مرجع التصميم والشكر
+
+يستند التصميم الحالي إلى MT Manager (bm.mt.plus) v2.26.9, خاصة تفاعلات منتقي ألوان الشاشة العائم. نشكر مطوريه على عملهم. تتم صيانة هذا المشروع بشكل مستقل ولا يعني هذا الشكر وجود ارتباط أو تأييد أو إذن. يمكن لأصحاب الحقوق التواصل عبر Issues المشروع. سنراجع الملاحظات ونتعاون في تصحيح النسبة أو الاستبدال أو الإزالة حسب الحالة.
+
+[MT Manager](https://mt.cc/) · [v2.26.9](https://mt.cc/releases/)
+
+وثائق المشروع: [Design reference](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/docs/design-reference.md) · [Rights and takedown cooperation](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/RIGHTS_AND_TAKEDOWN.md)
+
+******
+
 ### الترخيص
 
 كود المشروع مرخص بموجب Mozilla Public License 2.0.
 
-[LICENSE](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/LICENSE)
+[LICENSE](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/LICENSE)
 
 
-[16 KB page alignment and build verification](https://github.com/SuperMonster003/AutoJs6-Plugin-Screen-Color-Picker/blob/master/docs/16kb.md)
+[16 KB page alignment and build verification](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/docs/16kb.md)

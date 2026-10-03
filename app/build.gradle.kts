@@ -11,7 +11,7 @@ plugins {
     id("com.android.application")
 }
 
-val globalApplicationId = "io.github.supermonster003.autojs6.plugin.screencolorpicker"
+val globalApplicationId = "io.github.supermonster003.autojs6.plugin.three.color.picker"
 // Explicit local UI validation only: preserve the normal debug signer and its installed data.
 val officialUiValidation = providers.gradleProperty("officialUiValidation").orNull == "true"
 val releaseProperties = Properties().apply {
@@ -41,7 +41,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         if (officialUiValidation) testApplicationId = "$globalApplicationId.test.official"
 
-        resValue("string", "app_name", "Screen Color Picker")
+        resValue("string", "app_name", "3-Color Picker")
         resValue("string", "plugin_author", "SuperMonster003")
         resValue("string", "plugin_version_date", buildDate)
     }

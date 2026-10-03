@@ -4,6 +4,14 @@
 
 ******
 
+# v2.0.0
+
+_2026/10/03_
+
+- `提示` 2.0 版本采用新包名 io.github.supermonster003.autojs6.plugin.three.color.picker. Android 会将其视为独立应用, 旧版可保留并存, 设置不会自动迁移. 新版需重新授权, 插件模式要求 AutoJs6 versionCode 5316 或更高. 宿主抽屉中的 "屏幕取色" 文案保持不变
+- `优化` Screen Color Picker 更名为 3-Color Picker, 重新设计主页, 更换亮暗图标并保留四种启动器图标模式
+- `优化` 设置与项目文档增加 MT 管理器 (bm.mt.plus) v2.26.9 设计参考说明, 致谢与权利异议处理及侵权配合说明
+
 # v1.2.0
 
 _2026/09/30_

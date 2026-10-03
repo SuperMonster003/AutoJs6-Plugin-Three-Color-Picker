@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/SuperMonster003/AutoJs6",
+  "sourceCommit": "1e5def27d64e9d21504a62453a7c68fdd409988c",
+  "sourceModule": "plugin-api/screen-color-picker-api",
+  "artifact": "screen-color-picker-api.aar",
+  "size": 7752,
+  "sha256": "a80504c992637842a6a9fe1453d95650d565e3e648c9a72d2b2cb07d34729ec7",
+  "contractVersion": 1,
+  "minimumHostVersionCode": 5316,
+  "license": "MPL-2.0"
+}

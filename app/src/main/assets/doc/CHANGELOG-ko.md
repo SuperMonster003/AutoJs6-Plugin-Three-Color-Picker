@@ -4,6 +4,14 @@
 
 ******
 
+# v2.0.0
+
+_2026/10/03_
+
+- `안내` 2.0은 새 앱 ID io.github.supermonster003.autojs6.plugin.three.color.picker를 사용합니다. Android에서 별도 앱으로 설치되며 기존 앱과 함께 사용할 수 있습니다. 설정은 자동 이전되지 않습니다. 권한을 다시 허용하고 플러그인 모드에는 AutoJs6 versionCode 5316 이상을 사용하세요. AutoJs6 서랍의 화면 색상 추출 문구는 유지됩니다
+- `개선` Screen Color Picker를 3-Color Picker로 변경하고 홈 화면과 밝은/어두운 아이콘을 새로 디자인. 네 가지 런처 아이콘 모드 유지
+- `개선` 설정과 프로젝트 문서에 MT Manager (bm.mt.plus) v2.26.9 디자인 참고, 감사 및 권리 관련 요청 처리 방침 제공
+
 # v1.2.0
 
 _2026/09/30_
