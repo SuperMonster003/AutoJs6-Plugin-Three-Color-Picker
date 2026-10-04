@@ -134,6 +134,12 @@ native libraries: none
 
 ### 發行歷史
 
+#### v2.0.1
+
+_2026/10/04_
+
+- `改善` 外掛程式中心圖示採用統一工作台調整後的尺寸, 位置, 明暗圖稿與圓形底色, 保留可重建原稿和參數
+
 #### v2.0.0
 
 _2026/10/03_
@@ -148,13 +154,6 @@ _2026/10/03_
 _2026/09/30_
 
 - `新增` 統一獨立設定頁面, 按語言, 夜間模式, 主題色, 啟動器圖示排列. 外觀預設跟隨 AutoJs6, 無法使用時回退系統設定, 使用中性底色並補齊控制項著色. 選擇經確定後儲存, 新增統一 HEX/RGB 主題預覽; 啟動器預設自適應自動, 升級保留明確選擇.
-
-#### v1.1.3
-
-_2026/09/19_
-
-- `修正` AGP 9.1 建置時的 SDK XML v4 解析警告及 JVM 單元測試組裝工作誤觸發 APK 原生程式庫對齊檢查的問題 (共用建置外掛 1.8.3)
-- `改善` 繼 compileSdk 之後將 targetSdk 提升到 37 (Android 17), 外掛程式行為不受新目標版本影響
 
 [檢視完整 CHANGELOG](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-zh-Hant-TW.md)
 

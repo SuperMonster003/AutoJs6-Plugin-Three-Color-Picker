@@ -134,6 +134,12 @@ native libraries: none
 
 ### Release history
 
+#### v2.0.1
+
+_2026/10/04_
+
+- `Improved` Plugin Center icons use the sizes, positions, light and dark artwork, and circular backgrounds adjusted in Icon Studio, retaining reproducible sources and parameters
+
 #### v2.0.0
 
 _2026/10/03_
@@ -148,13 +154,6 @@ _2026/10/03_
 _2026/09/30_
 
 - `Added` Unify standalone settings with language, night mode, theme color and launcher icon in this order. Appearance follows AutoJs6 by default with system fallback, neutral surfaces and complete control tinting. Choices apply only after confirmation; add a shared HEX/RGB theme preview and make adaptive automatic the launcher default while preserving explicit choices during upgrades.
-
-#### v1.1.3
-
-_2026/09/19_
-
-- `Fixed` SDK XML v4 parsing warnings with AGP 9.1 and APK native alignment checks incorrectly triggered by JVM unit-test assembly tasks, using shared build plugins 1.8.3
-- `Improved` Raise targetSdk to 37 (Android 17) after compileSdk; the plugin's behavior does not depend on the new target
 
 [View the complete CHANGELOG](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-en.md)
 
