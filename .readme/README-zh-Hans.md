@@ -134,6 +134,12 @@ native libraries: none
 
 ### 发行历史
 
+#### v2.0.1
+
+_2026/10/04_
+
+- `优化` 插件中心图标采用统一工作台调整后的尺寸, 位置, 亮暗图稿与圆形底色, 保留可重建原稿和参数
+
 #### v2.0.0
 
 _2026/10/03_
@@ -148,13 +154,6 @@ _2026/10/03_
 _2026/09/30_
 
 - `新增` 统一独立设置页面, 按语言, 夜间模式, 主题色, 启动器图标排列. 外观默认跟随 AutoJs6, 不可用时回退系统配置, 使用中性底色并补齐控件着色. 选择经确定后保存, 增加统一 HEX/RGB 主题预览; 启动器默认自适应自动, 升级保留明确选择.
-
-#### v1.1.3
-
-_2026/09/19_
-
-- `修复` AGP 9.1 构建时的 SDK XML v4 解析警告, 以及 JVM 单元测试误触发 APK 原生库对齐检查的问题 (共享构建插件 1.8.3)
-- `优化` targetSdk 升级至 37 (Android 17)
 
 [查看完整 CHANGELOG](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-zh-Hans.md)
 

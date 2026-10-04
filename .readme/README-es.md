@@ -134,6 +134,12 @@ native libraries: none
 
 ### Historial de versiones
 
+#### v2.0.1
+
+_2026/10/04_
+
+- `Mejorado` Los iconos del centro de plugins usan los tamaños, posiciones, imágenes claras y oscuras y fondos circulares ajustados en Icon Studio, conservando fuentes y parámetros reproducibles
+
 #### v2.0.0
 
 _2026/10/03_
@@ -148,13 +154,6 @@ _2026/10/03_
 _2026/09/30_
 
 - `Añadido` Unificar los ajustes independientes: idioma, modo nocturno, color e icono. Seguir AutoJs6 de forma predeterminada con alternativa del sistema, superficies neutras y controles adaptados. Aplicar los cambios tras confirmar, ofrecer una vista previa HEX/RGB y usar el modo adaptable automático por defecto, conservando las elecciones explícitas al actualizar.
-
-#### v1.1.3
-
-_2026/09/19_
-
-- `Corregido` Advertencias de lectura de SDK XML v4 con AGP 9.1 y comprobaciones de alineación nativa de APK activadas por error al ensamblar pruebas unitarias JVM, mediante los plugins de compilación compartidos 1.8.3
-- `Mejorado` Tras compileSdk, targetSdk sube a 37 (Android 17); el comportamiento del plugin no depende del nuevo objetivo
 
 [Ver el CHANGELOG completo](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-es.md)
 
