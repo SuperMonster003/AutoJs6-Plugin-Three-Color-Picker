@@ -9,7 +9,7 @@
     <string name="app_settings_follow_system">Следовать системе</string>
     <string name="app_settings_language">Язык</string>
     <string name="app_settings_theme_color">Цвет темы</string>
-    <string name="app_settings_updates">Updates</string>
+    <string name="app_settings_updates">Обновления</string>
     <string name="clipboard_label_color">Цвет экрана</string>
     <string name="content_desc_magnifier">Лупа цвета</string>
     <string name="content_desc_target_ring">Кольцо выбора точки</string>

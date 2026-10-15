@@ -9,7 +9,7 @@
     <string name="app_settings_follow_system">시스템 따르기</string>
     <string name="app_settings_language">언어</string>
     <string name="app_settings_theme_color">테마 색상</string>
-    <string name="app_settings_updates">Updates</string>
+    <string name="app_settings_updates">업데이트</string>
     <string name="clipboard_label_color">화면 색상</string>
     <string name="content_desc_magnifier">색상 확대경</string>
     <string name="content_desc_target_ring">샘플링 타깃 링</string>
