@@ -136,9 +136,10 @@ native libraries: none
 
 #### v2.0.1
 
-_2026/10/15_
+_2026/10/17_
 
 - `Fixed` Complete missing translations in update settings
+- `Fixed` In the Arabic interface, 3-Color Picker no longer appears reversed as Color Picker-3
 - `Improved` Plugin Center icons use the sizes, positions, light and dark artwork, and circular backgrounds adjusted in Icon Studio, retaining reproducible sources and parameters
 - `Improved` Android App info icons share Icon Studio artwork and light/dark backgrounds while preserving transparent Plugin Center artwork and existing launcher choices
 
