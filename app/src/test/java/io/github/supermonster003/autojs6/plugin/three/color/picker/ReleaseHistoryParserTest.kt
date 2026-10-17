@@ -73,6 +73,23 @@ class ReleaseHistoryParserTest {
         assertEquals(listOf(ReleaseHistoryItem("Fixed", "$isolated code")), versions.single().items)
     }
 
+    @Test fun lineBreaksGoBeforeTheDotsOfLongIdentifiersOnly() {
+        val id = "io.github.supermonster003.autojs6.plugin.three.color.picker"
+        val text = "Version 2.0 uses the new application ID $id. MT Manager (bm.mt.plus) v2.26.9, AGP 9.1, HEX/RGB."
+        val breakable = ReleaseHistoryLineBreaks.insert(text)
+        val zwsp = Char(0x200B)
+
+        assertEquals(text.replace(id, id.replace(".", "$zwsp.").replaceFirst("io$zwsp.", "io.")), breakable)
+        assertEquals(6, breakable.count { it == zwsp })
+        assertEquals("org.example.thing", ReleaseHistoryLineBreaks.insert("org.example.thing"))
+        assertEquals("org.supermonster003$zwsp.autojs6$zwsp.picker", ReleaseHistoryLineBreaks.insert("org.supermonster003.autojs6.picker"))
+        assertEquals("example$zwsp.supermonster003$zwsp.picker", ReleaseHistoryLineBreaks.insert("example.supermonster003.picker"))
+        assertTrue(ReleaseHistoryLineBreaks.contains(breakable))
+        assertFalse(ReleaseHistoryLineBreaks.contains(text))
+        assertEquals(text, ReleaseHistoryLineBreaks.remove(breakable))
+        assertEquals("", ReleaseHistoryLineBreaks.insert(""))
+    }
+
     @Test fun everyBundledChangelogParsesCompletely() {
         val docs = File("src/main/assets/doc")
         val versionName = File("../version.properties").readLines()
@@ -95,8 +112,20 @@ class ReleaseHistoryParserTest {
             assertTrue(asset, versions.flatMap { it.items }.all { it.tag != null && it.text.isNotEmpty() && '`' !in it.text })
             assertEquals(asset, lines.count { it.startsWith("- ") }, versions.sumOf { it.items.size })
             assertEquals(asset, markdown.count { it == Char(0x2068) }, versions.flatMap { it.items }.sumOf { item -> item.text.count { it == Char(0x2068) } })
+            for (item in versions.flatMap { it.items }) {
+                assertFalse(asset, ReleaseHistoryLineBreaks.contains(item.text))
+                assertEquals(asset, item.text, ReleaseHistoryLineBreaks.remove(ReleaseHistoryLineBreaks.insert(item.text)))
+            }
+            assertTrue(asset, versions.flatMap { it.items }.any { item -> "picker" in item.text && ReleaseHistoryLineBreaks.contains(ReleaseHistoryLineBreaks.insert(item.text)) })
             versions.map { Triple(it.version, it.date, it.items.size) }
         }
+        // In right-to-left text, punctuation right after a long dotted identifier is drawn at its left edge and reads as part of it.
+        val arabic = docs.resolve("CHANGELOG-ar.md").readText()
+        assertEquals(emptyList<String>(), LONG_IDENTIFIER_BEFORE_PUNCTUATION.findAll(arabic).map { it.value }.filter { it.length > 24 }.toList())
         shapes.forEachIndexed { index, shape -> assertEquals(assets[index], shapes.first(), shape) }
+    }
+
+    private companion object {
+        val LONG_IDENTIFIER_BEFORE_PUNCTUATION = Regex("""[A-Za-z][A-Za-z0-9_]*(?:\.[A-Za-z][A-Za-z0-9_]*){2,}[.,;:!?](?![A-Za-z0-9_])""")
     }
 }

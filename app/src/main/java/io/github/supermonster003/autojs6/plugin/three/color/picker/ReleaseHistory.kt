@@ -1,10 +1,14 @@
 package io.github.supermonster003.autojs6.plugin.three.color.picker
 
 import android.app.Activity
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.graphics.Typeface
 import android.view.View
 import android.widget.LinearLayout
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.AppCompatTextView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import android.widget.ScrollView
 import java.io.IOException
@@ -81,10 +85,24 @@ private fun Activity.releaseHistoryVersion(ui: SettingsUi, version: ReleaseHisto
                     setPaddingRelative(ui.dp(8),ui.dp(2),ui.dp(8),ui.dp(2))
                 },LinearLayout.LayoutParams(-2,-2).apply { marginEnd=ui.dp(8) })
             }
-            addView(ui.text(item.text,14f).apply {
+            addView(ReleaseHistoryEntryText(context).apply {
+                text=ReleaseHistoryLineBreaks.insert(item.text); textSize=14f
+                setTextColor(ui.palette.text); setLinkTextColor(ui.palette.accent); highlightColor=ui.palette.ripple
                 textAlignment=View.TEXT_ALIGNMENT_VIEW_START
                 setLineSpacing(ui.dp(2).toFloat(),1f); setTextIsSelectable(true)
             },LinearLayout.LayoutParams(0,-2,1f))
         },LinearLayout.LayoutParams(-1,-2).apply { topMargin=ui.dp(10) })
+    }
+}
+
+/** Copies an entry without the zero width spaces [ReleaseHistoryLineBreaks] adds for wrapping. */
+private class ReleaseHistoryEntryText(context: Context) : AppCompatTextView(context) {
+    override fun onTextContextMenuItem(id: Int): Boolean {
+        val selected=if(id==android.R.id.copy && selectionStart>=0 && selectionEnd>=0) text.subSequence(minOf(selectionStart,selectionEnd),maxOf(selectionStart,selectionEnd)) else null
+        val handled=super.onTextContextMenuItem(id)
+        if(handled && selected!=null && ReleaseHistoryLineBreaks.contains(selected)) {
+            context.getSystemService(ClipboardManager::class.java)?.setPrimaryClip(ClipData.newPlainText(null,ReleaseHistoryLineBreaks.remove(selected)))
+        }
+        return handled
     }
 }

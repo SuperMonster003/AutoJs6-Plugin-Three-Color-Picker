@@ -47,3 +47,31 @@ internal object ReleaseHistoryParser {
         return versions
     }
 }
+
+/**
+ * A long dotted identifier such as the application ID has no line break opportunity, so a narrow
+ * dialog splits it mid-word. Zero width spaces before its dots let it wrap there instead (the dot
+ * then starts the next line), except after a short leading segment such as `io` that would be left
+ * alone at a line end; [remove] takes them out again for copying.
+ */
+internal object ReleaseHistoryLineBreaks {
+    private val BREAK = Char(0x200B)
+    private val DOTTED = Regex("""[A-Za-z][A-Za-z0-9_]*(?:\.[A-Za-z][A-Za-z0-9_]*){2,}""")
+    private const val MIN_LENGTH = 24
+    private const val MIN_LEADING = 4
+
+    fun insert(text: String): String = DOTTED.replace(text) { match ->
+        if (match.value.length < MIN_LENGTH) return@replace match.value
+        val segments = match.value.split('.')
+        buildString {
+            segments.forEachIndexed { index, segment ->
+                if (index == 1 && segments[0].length < MIN_LEADING) append('.') else if (index > 0) append("$BREAK.")
+                append(segment)
+            }
+        }
+    }
+
+    fun remove(text: CharSequence): String = text.toString().replace(BREAK.toString(), "")
+
+    fun contains(text: CharSequence): Boolean = BREAK in text
+}
