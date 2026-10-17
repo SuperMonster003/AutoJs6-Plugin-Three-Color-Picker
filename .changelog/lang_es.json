@@ -13,7 +13,8 @@
       ],
       "fix": [
         "Completar las traducciones que faltaban en los ajustes de actualización",
-        "En la interfaz en árabe, 3-Color Picker ya no aparece invertido como Color Picker-3"
+        "En la interfaz en árabe, 3-Color Picker ya no aparece invertido como Color Picker-3",
+        "El historial de versiones ahora agrupa los cambios por versión con fechas y tipos de cambio, en lugar de mostrar símbolos de formato sin procesar"
       ]
     },
     "v2.0.0": {

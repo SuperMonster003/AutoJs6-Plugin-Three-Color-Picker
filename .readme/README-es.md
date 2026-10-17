@@ -140,6 +140,7 @@ _2026/10/17_
 
 - `Corregido` Completar las traducciones que faltaban en los ajustes de actualización
 - `Corregido` En la interfaz en árabe, 3-Color Picker ya no aparece invertido como Color Picker-3
+- `Corregido` El historial de versiones ahora agrupa los cambios por versión con fechas y tipos de cambio, en lugar de mostrar símbolos de formato sin procesar
 - `Mejorado` Los iconos del centro de plugins usan los tamaños, posiciones, imágenes claras y oscuras y fondos circulares ajustados en Icon Studio, conservando fuentes y parámetros reproducibles
 - `Mejorado` Los iconos de información de la aplicación de Android comparten las imágenes y los fondos claros y oscuros de Icon Studio, conservando las imágenes transparentes del centro de plugins y las opciones del lanzador
 

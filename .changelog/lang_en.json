@@ -13,7 +13,8 @@
       ],
       "fix": [
         "Complete missing translations in update settings",
-        "In the Arabic interface, 3-Color Picker no longer appears reversed as Color Picker-3"
+        "In the Arabic interface, 3-Color Picker no longer appears reversed as Color Picker-3",
+        "Release history now groups changes by version with dates and change types, instead of showing raw formatting symbols"
       ]
     },
     "v2.0.0": {
