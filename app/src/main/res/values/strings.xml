@@ -42,7 +42,12 @@
     <string name="notification_title_screen_color_picker">Screen color picker is active</string>
     <string name="plugin_description">Samples colors anywhere on the screen with a touch-friendly floating picker</string>
     <string name="release_history">Release history</string>
-    <string name="release_history_unavailable">Release history is unavailable</string>
+    <string name="release_history_collapse_all">Collapse all</string>
+    <string name="release_history_collapsed">Collapsed</string>
+    <string name="release_history_expand_all">Expand all</string>
+    <string name="release_history_expanded">Expanded</string>
+    <string name="release_history_summary">Read the release history included with this app</string>
+    <string name="release_history_unavailable">Unable to load the release history</string>
     <string name="settings_apply_failed">Could not apply this setting. Please try again.</string>
     <string name="settings_title">Settings</string>
     <string name="text_active">Active</string>

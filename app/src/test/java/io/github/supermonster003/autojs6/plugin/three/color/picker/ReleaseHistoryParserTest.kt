@@ -1,8 +1,11 @@
 package io.github.supermonster003.autojs6.plugin.three.color.picker
 
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.io.File
+import java.util.Locale
 
 class ReleaseHistoryParserTest {
     @Test fun generatedDialectBecomesOneEntryPerVersion() {
@@ -15,16 +18,17 @@ class ReleaseHistoryParserTest {
 
             # v2.0.1
 
-            _2026/10/17_
+            ###### 2026/10/17
 
-            - `Fixed` Show the `Release history` as versions
-            - `Improved` Icons
+            * `Fixed` Show the `Release history` as versions
+            * `Improved` Icons
 
             # v2.0.0
 
-            _2026/10/03_
+            ###### 2026/10/03
 
-            - `Hint` A hint
+            * `Hint` A hint
+            * Untagged note
         """.trimIndent()
 
         val versions = ReleaseHistoryParser.parse(markdown)
@@ -35,40 +39,50 @@ class ReleaseHistoryParserTest {
             listOf(ReleaseHistoryItem("Fixed", "Show the Release history as versions"), ReleaseHistoryItem("Improved", "Icons")),
             versions[0].items,
         )
-        assertEquals(listOf(ReleaseHistoryItem("Hint", "A hint")), versions[1].items)
+        assertEquals(listOf(ReleaseHistoryItem("Hint", "A hint"), ReleaseHistoryItem(null, "Untagged note")), versions[1].items)
         assertEquals(versions, ReleaseHistoryParser.parse(markdown.replace("\n", "\r\n")))
     }
 
-    @Test fun bannerStrayLinesAndUntaggedBulletsAreHandled() {
+    @Test fun acceptsTheDoubleHashHeadingAndIgnoresEverythingElse() {
         val markdown = """
             ### Release history
             # Release history
-            - `Ignored` before any version
-            _ignored date_
+            * `Ignored` before any version
+            ###### ignored date
 
-            # v1.0.0
+            ## v1.0.0
 
             Free paragraph
-            - Untagged item with a lone ` mark
-            -
-            _not a date after items_
-            ## v0.9.0
+            - `Ignored` dash bullet
+            * Untagged item with a lone ` mark
+            *
             # 0.8.0
         """.trimIndent()
 
         val versions = ReleaseHistoryParser.parse(markdown)
 
-        assertEquals(listOf("v1.0.0", "0.8.0"), versions.map { it.version })
-        assertNull(versions[0].date)
+        assertEquals(listOf("v1.0.0"), versions.map { it.version })
+        assertEquals(null, versions[0].date)
         assertEquals(listOf(ReleaseHistoryItem(null, "Untagged item with a lone ` mark")), versions[0].items)
-        assertEquals(emptyList<ReleaseHistoryItem>(), versions[1].items)
-        assertEquals(emptyList<ReleaseHistoryVersion>(), ReleaseHistoryParser.parse(""))
-        assertEquals(emptyList<ReleaseHistoryVersion>(), ReleaseHistoryParser.parse("******\n\n### Release history\n\n******"))
+        assertEquals(emptyList<ReleaseHistoryEntry>(), ReleaseHistoryParser.parse(""))
+        assertEquals(emptyList<ReleaseHistoryEntry>(), ReleaseHistoryParser.parse("******\n\n### Release history\n\n******"))
+    }
+
+    /** The page names each category once and lists its items beneath; the collapsed summary counts them. */
+    @Test fun groupsItemsByCategoryInTheOrderTheyFirstAppear() {
+        val entry = ReleaseHistoryParser.parse(
+            "# v1.2.0\n\n* `Hint` A\n* `Added` B\n* `Added` C\n* `Fixed` D\n* `Added` E\n* Untagged F\n",
+        ).single()
+        assertEquals(
+            listOf("Hint" to listOf("A"), "Added" to listOf("B", "C", "E"), "Fixed" to listOf("D"), null to listOf("Untagged F")),
+            entry.groups.map { it.tag to it.items },
+        )
+        assertEquals(listOf("Hint" to 1, "Added" to 3, "Fixed" to 1), entry.categoryCounts)
     }
 
     @Test fun bidiIsolatesAroundBrandNamesAreKept() {
         val isolated = "${Char(0x2068)}3-Color Picker${Char(0x2069)}"
-        val versions = ReleaseHistoryParser.parse("# v2.0.1\n\n_2026/10/17_\n\n- `Fixed` $isolated `code`")
+        val versions = ReleaseHistoryParser.parse("# v2.0.1\n\n###### 2026/10/17\n\n* `Fixed` $isolated `code`")
 
         assertEquals(listOf(ReleaseHistoryItem("Fixed", "$isolated code")), versions.single().items)
     }
@@ -84,9 +98,7 @@ class ReleaseHistoryParserTest {
         assertEquals("org.example.thing", ReleaseHistoryLineBreaks.insert("org.example.thing"))
         assertEquals("org.supermonster003$zwsp.autojs6$zwsp.picker", ReleaseHistoryLineBreaks.insert("org.supermonster003.autojs6.picker"))
         assertEquals("example$zwsp.supermonster003$zwsp.picker", ReleaseHistoryLineBreaks.insert("example.supermonster003.picker"))
-        assertTrue(ReleaseHistoryLineBreaks.contains(breakable))
-        assertFalse(ReleaseHistoryLineBreaks.contains(text))
-        assertEquals(text, ReleaseHistoryLineBreaks.remove(breakable))
+        assertEquals(text, breakable.replace(zwsp.toString(), ""))
         assertEquals("", ReleaseHistoryLineBreaks.insert(""))
     }
 
@@ -94,12 +106,10 @@ class ReleaseHistoryParserTest {
         val docs = File("src/main/assets/doc")
         val versionName = File("../version.properties").readLines()
             .first { it.startsWith("VERSION_NAME=") }.substringAfter('=').trim()
-        val locales = listOf(
-            Triple("ar", "", ""), Triple("en", "", ""), Triple("es", "", ""), Triple("fr", "", ""), Triple("ja", "", ""),
-            Triple("ko", "", ""), Triple("ru", "", ""), Triple("zh", "CN", "Hans"), Triple("zh", "HK", ""), Triple("zh", "TW", ""),
-        )
-        val assets = locales.map { (language, country, script) -> releaseHistoryCandidates(language, country, script).first() }
+        val locales = listOf("ar", "en", "es", "fr", "ja", "ko", "ru", "zh-Hans-CN", "zh-HK", "zh-TW").map(Locale::forLanguageTag)
+        val assets = locales.map { ReleaseHistoryAssetPolicy.candidatesFor(it).first() }
         assertEquals(10, assets.distinct().size)
+        val zwsp = Char(0x200B)
 
         val shapes = assets.map { asset ->
             val markdown = docs.resolve(asset.removePrefix("doc/")).readText()
@@ -110,13 +120,13 @@ class ReleaseHistoryParserTest {
             assertEquals(asset, "v$versionName", versions.first().version)
             assertTrue(asset, versions.all { it.date != null && it.items.isNotEmpty() })
             assertTrue(asset, versions.flatMap { it.items }.all { it.tag != null && it.text.isNotEmpty() && '`' !in it.text })
-            assertEquals(asset, lines.count { it.startsWith("- ") }, versions.sumOf { it.items.size })
+            assertEquals(asset, lines.count { it.startsWith("* ") }, versions.sumOf { it.items.size })
+            assertEquals(asset, 0, lines.count { it.startsWith("- ") || it.startsWith("_") })
             assertEquals(asset, markdown.count { it == Char(0x2068) }, versions.flatMap { it.items }.sumOf { item -> item.text.count { it == Char(0x2068) } })
             for (item in versions.flatMap { it.items }) {
-                assertFalse(asset, ReleaseHistoryLineBreaks.contains(item.text))
-                assertEquals(asset, item.text, ReleaseHistoryLineBreaks.remove(ReleaseHistoryLineBreaks.insert(item.text)))
+                assertFalse(asset, zwsp in item.text)
             }
-            assertTrue(asset, versions.flatMap { it.items }.any { item -> "picker" in item.text && ReleaseHistoryLineBreaks.contains(ReleaseHistoryLineBreaks.insert(item.text)) })
+            assertTrue(asset, versions.flatMap { it.items }.any { item -> "picker" in item.text && zwsp in ReleaseHistoryLineBreaks.insert(item.text) })
             versions.map { Triple(it.version, it.date, it.items.size) }
         }
         // In right-to-left text, punctuation right after a long dotted identifier is drawn at its left edge and reads as part of it.

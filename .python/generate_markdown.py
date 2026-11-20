@@ -49,6 +49,20 @@ CHANGELOG_ALIASES = {
     "zh-Hant-TW": ["zh-rTW", "zh-Hant-TW"],
 }
 LIST_KEYS = ["features", "standalone_steps", "host_steps", "privacy_points"]
+# Plugin-center instruction copy lives in its own keys and never borrows README fields
+# (D:/idea-projects/AUTOJS6_PLUGIN_INSTRUCTION_AGENTS.md); README validation skips them.
+INSTRUCTION_PREFIX = "instruction_"
+INSTRUCTION_LIST_KEYS = ["instruction_start_steps", "instruction_features", "instruction_script_notes", "instruction_requirements"]
+INSTRUCTION_FAQ_KEY = "instruction_faq"
+PARAGRAPH = chr(10) * 2
+INSTRUCTION_REQUIRED_KEYS = [
+    "instruction_p_what",
+    "instruction_h3_start",
+    "instruction_start_steps",
+    "instruction_h3_requirements",
+    "instruction_requirements",
+    "instruction_p_more",
+]
 CHANGELOG_CATEGORIES = ["hint", "feature", "fix", "improvement", "dependency"]
 CHANGELOG_LABELS = [f"changelog_label_{category}" for category in CHANGELOG_CATEGORIES]
 EXPECTED_ARTIFACTS = 36
@@ -170,6 +184,51 @@ def validate_languages(readmes: dict[str, dict[str, Any]]) -> None:
         for key in LIST_KEYS:
             require(isinstance(content.get(key), list) and content[key], f"{code}.{key} must be a non-empty list")
         require(shape(content) == shape(reference), f"README shape mismatch for {code}")
+        validate_instruction_language(code, content)
+
+
+def validate_instruction_language(code: str, content: dict[str, Any]) -> None:
+    for key in INSTRUCTION_REQUIRED_KEYS:
+        require(key in content, f"Instruction language {code!r} is missing {key!r}")
+    for key, value in content.items():
+        if not key.startswith(INSTRUCTION_PREFIX):
+            continue
+        if key in INSTRUCTION_LIST_KEYS:
+            require(isinstance(value, list) and value and all(isinstance(item, str) and item for item in value),
+                    f"Instruction {code!r} field {key!r} must be a non-empty list of non-empty strings")
+            texts = value
+        elif key == INSTRUCTION_FAQ_KEY:
+            require(isinstance(value, list) and value, f"Instruction {code!r} field {key!r} must be a non-empty list")
+            for index, item in enumerate(value):
+                require(isinstance(item, dict) and set(item) == {"q", "a"} and all(isinstance(text, str) and text for text in item.values()),
+                        f"Instruction {code!r} {key}[{index}] must be an object with non-empty 'q' and 'a'")
+            texts = [text for item in value for text in item.values()]
+        else:
+            require(isinstance(value, str) and value, f"Instruction {code!r} field {key!r} must be non-empty text")
+            texts = [value]
+        # UI names are quoted with ASCII double quotes; an odd count means a quote was swallowed on the way in.
+        for text in texts:
+            require(text.count('"') % 2 == 0, f"Instruction {code!r} field {key!r} has an unpaired double quote: {text[:60]!r}")
+
+
+def build_instruction_values(code: str, readmes: dict[str, dict[str, Any]], common: dict[str, Any]) -> dict[str, Any]:
+    """Only instruction_* keys reach the instruction template; facts such as {{ repo_url }} come from common.json."""
+
+    def fill(value: Any) -> Any:
+        if isinstance(value, str):
+            return TEMPLATE_PATTERN.sub(lambda match: str(common[match.group(1)]) if match.group(1) in common else match.group(0), value)
+        if isinstance(value, list):
+            return [fill(item) for item in value]
+        return {key: fill(item) for key, item in value.items()}
+
+    values = {key: fill(value) for key, value in readmes[code].items() if key.startswith(INSTRUCTION_PREFIX)}
+    for key in INSTRUCTION_LIST_KEYS:
+        if key in values:
+            values[f"placeholder_{key}"] = (numbered if key == "instruction_start_steps" else bullets)(values[key])
+    if INSTRUCTION_FAQ_KEY in values:
+        faq = [f"**{item['q']}**{PARAGRAPH}{item['a']}" for item in values[INSTRUCTION_FAQ_KEY]]
+        values[f"placeholder_{INSTRUCTION_FAQ_KEY}"] = PARAGRAPH.join(faq)
+    return values
 
 
 def validate_changelogs(changelogs: dict[str, dict[str, Any]], current_label: str) -> None:
@@ -246,10 +305,14 @@ def format_changelog(content: dict[str, Any], heading: int = 1, limit: int | Non
     for index, (version, entry) in enumerate(content["$data"].items()):
         if limit is not None and index >= limit:
             break
-        lines = [f"{'#' * heading} {version}", "", f"_{entry['released_date']}_", ""]
+        # The bundled changelog (heading 1) uses the standard dialect the release history page reads:
+        # `###### date` and `* ` bullets; the README excerpt keeps the italic date and `- ` bullets.
+        date_line = f"###### {entry['released_date']}" if heading == 1 else f"_{entry['released_date']}_"
+        bullet = "*" if heading == 1 else "-"
+        lines = [f"{'#' * heading} {version}", "", date_line, ""]
         for category in CHANGELOG_CATEGORIES:
             for item in entry.get(category, []):
-                lines.append(f"- `{labels[category]}` {item}")
+                lines.append(f"{bullet} `{labels[category]}` {item}")
         chunks.append("\n".join(lines).rstrip())
     return "\n\n".join(chunks)
 
@@ -285,7 +348,7 @@ def build_artifacts(root: Path) -> dict[Path, str]:
             latest_release=format_changelog(changelogs[code], heading=4, limit=3),
         )
         readme = render(readme_template, values)
-        instruction = render(instruction_template, values)
+        instruction = render(instruction_template, build_instruction_values(code, readmes, common))
         artifacts[readme_dir / f"README-{code}.md"] = readme
         if code == README_DEFAULT:
             artifacts[root / "README.md"] = readme

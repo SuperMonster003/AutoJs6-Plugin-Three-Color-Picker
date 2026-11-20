@@ -42,7 +42,12 @@
     <string name="notification_title_screen_color_picker">Пипетка экрана активна</string>
     <string name="plugin_description">Выбирает цвета в любой точке экрана с помощью удобной плавающей пипетки</string>
     <string name="release_history">История выпусков</string>
-    <string name="release_history_unavailable">История выпусков недоступна</string>
+    <string name="release_history_collapse_all">Свернуть всё</string>
+    <string name="release_history_collapsed">Свёрнуто</string>
+    <string name="release_history_expand_all">Развернуть всё</string>
+    <string name="release_history_expanded">Развёрнуто</string>
+    <string name="release_history_summary">Открыть встроенную историю выпусков приложения</string>
+    <string name="release_history_unavailable">Не удалось загрузить историю выпусков</string>
     <string name="settings_apply_failed">Не удалось применить настройку. Повторите попытку.</string>
     <string name="settings_title">Настройки</string>
     <string name="text_active">Активно</string>

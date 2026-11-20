@@ -1,29 +1,21 @@
-# AutoJs6 3-Color Picker
+{{ instruction_p_what }}
 
-{{ p_introduction }}
+### {{ instruction_h3_start }}
 
-{{ p_migration }}
+{{ placeholder_instruction_start_steps }}
 
-### {{ h_standalone }}
+### {{ instruction_h3_features }}
 
-{{ standalone_steps_list }}
+{{ placeholder_instruction_features }}
 
-### {{ h_host }}
+### {{ instruction_h3_requirements }}
 
-{{ host_steps_list }}
+{{ placeholder_instruction_requirements }}
 
-### {{ h_privacy }}
+### {{ instruction_h3_faq }}
 
-{{ p_privacy }}
+{{ placeholder_instruction_faq }}
 
-{{ privacy_list }}
+{{ instruction_p_design }}
 
-{{ p_permission_note }}
-
-### {{ h_design_reference }}
-
-{{ p_design_reference }}
-
-[MT Manager](https://mt.cc/) · [v2.26.9](https://mt.cc/releases/)
-
-{{ text_design_documents }}: [Design reference]({{ repo_url }}/blob/master/docs/design-reference.md) · [Rights and takedown cooperation]({{ repo_url }}/blob/master/RIGHTS_AND_TAKEDOWN.md)
+{{ instruction_p_more }}

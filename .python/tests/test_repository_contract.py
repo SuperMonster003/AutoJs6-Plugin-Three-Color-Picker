@@ -41,6 +41,28 @@ class RepositoryContractTest(unittest.TestCase):
                     placeholder = r'%(?:\d+\$)?[sdf]'
                     self.assertEqual(sorted(re.findall(placeholder, reference[key])), sorted(re.findall(placeholder, text)), (qualifier, key))
 
+    def test_plugin_instructions_share_one_shape(self):
+        shapes = {}
+        for path in sorted((ROOT / 'app/src/main/res').glob('raw*/plugin_instruction.md')):
+            text = path.read_text(encoding='utf-8')
+            lines = text.splitlines()
+            shapes[path.parent.name] = (
+                sum(line.startswith('### ') for line in lines),
+                sum(bool(re.match(r'\d+\. ', line)) for line in lines),
+                sum(line.startswith('- **') for line in lines),
+                sum(line.startswith('- ') for line in lines),
+                sum(line.startswith('**') and line.endswith('**') for line in lines),
+                text.count('"'),
+            )
+            self.assertNotIn('{{', text, path)
+            self.assertNotIn('?**', text, path)
+            for link in ('/blob/master/docs/design-reference.md)', '/blob/master/RIGHTS_AND_TAKEDOWN.md)'):
+                self.assertIn(link, text, path)
+        self.assertEqual(11, len(shapes))
+        self.assertEqual(1, len(set(shapes.values())), shapes)
+        self.assertEqual((4, 4, 7, 11, 2), shapes['raw'][:5])
+        self.assertTrue(1024 <= len((ROOT / 'app/src/main/res/raw-zh/plugin_instruction.md').read_bytes()) <= 4096)
+
     def test_generator_check_never_writes_missing_or_drifted_output(self):
         spec = importlib.util.spec_from_file_location('repository_generator', ROOT / '.python/generate_markdown.py')
         module = importlib.util.module_from_spec(spec)

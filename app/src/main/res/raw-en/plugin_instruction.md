@@ -1,42 +1,39 @@
-# AutoJs6 3-Color Picker
+3-Color Picker is a screen color picker: a draggable target ring and a live magnifier select any pixel on the screen, and its color and coordinates can then be copied as HEX or RGB. It works on its own from the launcher, or as the "Screen color picker" tool in the AutoJs6 side drawer; the screen content is processed only on the device.
 
-3-Color Picker is a local color sampling tool designed for touchscreens. Its floating picker pairs a draggable target ring with a live magnifier that shows a magnified pixel grid, the current color, and exact coordinates while keeping finger interaction direct and clear.
+### Getting started
 
-Version 2.0 uses the new application ID io.github.supermonster003.autojs6.plugin.three.color.picker. Android installs it as a separate app; the old app can remain installed and settings are not migrated automatically. Grant permissions again and use AutoJs6 versionCode 5316 or later for host integration. The AutoJs6 drawer label remains Screen color picker.
+1. Open 3-Color Picker from the launcher and tap "Start color picker".
+2. When prompted, allow it to display over other apps, then allow this screen capture.
+3. Switch to the app to sample, drag the target ring near the pixel, then slide on the magnifier disc to fine-tune.
+4. Tap the color or coordinate text on the ring to copy it; tap the × at the bottom of the ring to stop.
 
-### Standalone use
+### Main features
 
-1. Open 3-Color Picker from the system launcher.
-2. Tap Start color picker and follow the explanation to allow display over other apps.
-3. Allow the current screen capture in the Android system prompt.
-4. Switch to the app you want to sample, drag the target ring to the desired pixel, then slide on the magnifier disc to fine-tune.
-5. Tap the color or coordinate text on the magnifier to copy it, long-press the color text to switch formats, or stop the picker at any time.
+- **Floating picker**: The target ring covers long distances, while the magnifier shows the enlarged pixel grid, the current color and the coordinates; slide on the magnifier disc to move one pixel at a time.
+- **Copying colors and coordinates**: Tap the color or the coordinates to copy them, and long-press the color to switch between HEX and RGB; with "Copy numeric value only" on, the # and the R, G, B letters are left out.
+- **AutoJs6 side drawer**: Once the plugin is enabled in AutoJs6 "Plugin Center", the side drawer shows a "Screen color picker" switch that starts the picker when turned on and stops it when turned off.
+- **Picker settings**: Under "Picker settings" in "Settings", adjust "Magnifier size", "Sampling range", "Fine-tune speed" and "Show grid lines".
+- **Appearance**: "Language", "Dark mode" and "Theme color" default to "Follow AutoJs6" and can also be set separately; "Launcher icon" offers several styles.
+- **Running notification**: While the picker runs, the notification "Screen color picker is active" is shown with a "Stop" action.
+- **Release history and acknowledgements**: "Settings" also opens the "Release history" and the "Design reference and acknowledgements".
 
-### Use as an AutoJs6 tool
+### Requirements
 
-1. Install the plugin APK. You do not need to open its launcher entry first.
-2. Open AutoJs6 Plugin Center and make sure 3-Color Picker is enabled. Authorize the plugin if prompted.
-3. Open the AutoJs6 drawer. Screen Color Picker appears as the third Extended tools entry, with its runtime switch off by default.
-4. Complete overlay and screen capture consent on first use.
-5. Turn off the drawer switch, use the floating UI, or use the notification action to stop.
-6. Disabling the plugin in Plugin Center hides the drawer entry. Re-enable the plugin to restore it.
+- Android 7.0 or later. Using it in the AutoJs6 side drawer requires AutoJs6 6.8.0 or later; using it on its own does not require AutoJs6.
+- The permission to display over other apps is used for the floating picker; Android asks you to confirm the screen capture each time the picker starts.
+- The notification permission is used for the running status and the "Stop" action; the picker still runs without it.
+- It does not use the network or save screenshots, and writes to the clipboard only when you tap to copy.
 
-### Permissions and privacy
+### FAQ
 
-All screen processing happens locally on the device and starts only after an explicit user action.
+**When displaying over other apps or screen capture is denied**
 
-- Screen capture: Android presents a system consent screen for each capture session
-- Display over other apps: used only for the touchable floating picker
-- Foreground service and notification: keep an active capture visible and stoppable
-- Clipboard: written only when the user taps a copy action
-- Network and storage: neither network nor shared storage permission is requested
+The start is cancelled safely and no overlay is left behind. Tap "Start color picker" again to request the permission again.
 
-Denying the overlay or screen capture permission safely cancels startup. Denying notifications shows a warning and startup continues.
+**Why "Screen color picker" is missing from the AutoJs6 side drawer**
 
-### Design reference and acknowledgements
+Make sure the plugin is enabled in AutoJs6 "Plugin Center", and authorize it if prompted. When the plugin is disabled in Plugin Center, the entry is hidden.
 
-The current design references MT Manager (bm.mt.plus) v2.26.9, especially its floating screen color picker interactions. We thank its developers for their work. This project is independently maintained; this acknowledgement does not imply affiliation, endorsement or permission. Rights holders can contact us through the project Issues. We will review concerns and cooperate with attribution corrections, replacement or removal as appropriate.
+The design references the floating screen color picker interactions of [MT Manager](https://mt.cc/) (bm.mt.plus) v2.26.9, and we thank its developers; this project is independently maintained, and the acknowledgement implies no affiliation, endorsement or permission. See the project documents [Design reference](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/docs/design-reference.md) and [Rights and takedown cooperation](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/RIGHTS_AND_TAKEDOWN.md).
 
-[MT Manager](https://mt.cc/) · [v2.26.9](https://mt.cc/releases/)
-
-Project documents: [Design reference](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/docs/design-reference.md) · [Rights and takedown cooperation](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/RIGHTS_AND_TAKEDOWN.md)
+Full details on the features and permissions are on the [project homepage](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker).

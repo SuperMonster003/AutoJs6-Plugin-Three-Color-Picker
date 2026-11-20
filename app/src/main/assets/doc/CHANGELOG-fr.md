@@ -4,73 +4,82 @@
 
 ******
 
+# v2.0.2
+
+###### 2026/11/20
+
+* `Amélioration` L'historique des versions passe d'une boîte de dialogue à une page dédiée qui se développe et se réduit par version: une version réduite affiche sa date et le nombre d'entrées par catégorie, une version développée ne nomme chaque catégorie qu'une fois; toutes les versions peuvent être développées ou réduites d'un coup, la plus récente s'ouvre développée et le nom du plugin sert de sous-titre
+* `Amélioration` Réécriture des instructions affichées dans le Centre des plugins en quatre parties: prise en main, fonctionnalités principales, prérequis et questions fréquentes
+* `Dépendance` Ajout de Jetpack Compose BOM 2026.09.00 (page Historique des versions)
+* `Dépendance` Mise à niveau des plugins de compilation partagés version 1.9.0 -> 1.9.7
+
 # v2.0.1
 
-_2026/10/17_
+###### 2026/10/17
 
-- `Correction` Compléter les traductions manquantes dans les paramètres de mise à jour
-- `Correction` Dans l'interface en arabe, 3-Color Picker ne s'affiche plus à l'envers sous la forme Color Picker-3
-- `Correction` L'historique des versions regroupe désormais les changements par version avec les dates et les types de changement, au lieu d'afficher des symboles de mise en forme bruts
-- `Amélioration` Les icônes du centre de plugins utilisent les tailles, positions, images claires et sombres et fonds circulaires réglés dans Icon Studio, avec les sources et paramètres permettant de les reproduire
-- `Amélioration` Les icônes des informations d'application Android utilisent les illustrations et les fonds clairs et sombres d'Icon Studio, en conservant les images transparentes du centre de plugins et les choix du lanceur
+* `Correction` Compléter les traductions manquantes dans les paramètres de mise à jour
+* `Correction` Dans l'interface en arabe, 3-Color Picker ne s'affiche plus à l'envers sous la forme Color Picker-3
+* `Correction` L'historique des versions regroupe désormais les changements par version avec les dates et les types de changement, au lieu d'afficher des symboles de mise en forme bruts
+* `Amélioration` Les icônes du centre de plugins utilisent les tailles, positions, images claires et sombres et fonds circulaires réglés dans Icon Studio, avec les sources et paramètres permettant de les reproduire
+* `Amélioration` Les icônes des informations d'application Android utilisent les illustrations et les fonds clairs et sombres d'Icon Studio, en conservant les images transparentes du centre de plugins et les choix du lanceur
 
 # v2.0.0
 
-_2026/10/03_
+###### 2026/10/03
 
-- `Indication` La version 2.0 utilise le nouvel identifiant io.github.supermonster003.autojs6.plugin.three.color.picker. Android l'installe comme une application distincte; l'ancienne peut rester installée et les réglages ne sont pas migrés automatiquement. Accordez à nouveau les autorisations et utilisez AutoJs6 versionCode 5316 ou ultérieur pour le mode plugin. Le libellé du tiroir AutoJs6 reste inchangé
-- `Amélioration` Screen Color Picker devient 3-Color Picker, avec un nouvel accueil, des icônes claires/sombres et quatre modes de lanceur
-- `Amélioration` Référence à MT Manager (bm.mt.plus) v2.26.9, remerciements et procédure de traitement des demandes des titulaires de droits dans les paramètres et la documentation
-- `Amélioration` Taille visuelle harmonisée des icônes du lanceur et du Centre de plugins, avec des fonds transparents et des motifs noirs, blancs ou gris neutres
+* `Astuce` La version 2.0 utilise le nouvel identifiant io.github.supermonster003.autojs6.plugin.three.color.picker. Android l'installe comme une application distincte; l'ancienne peut rester installée et les réglages ne sont pas migrés automatiquement. Accordez à nouveau les autorisations et utilisez AutoJs6 versionCode 5316 ou ultérieur pour le mode plugin. Le libellé du tiroir AutoJs6 reste inchangé
+* `Amélioration` Screen Color Picker devient 3-Color Picker, avec un nouvel accueil, des icônes claires/sombres et quatre modes de lanceur
+* `Amélioration` Référence à MT Manager (bm.mt.plus) v2.26.9, remerciements et procédure de traitement des demandes des titulaires de droits dans les paramètres et la documentation
+* `Amélioration` Taille visuelle harmonisée des icônes du lanceur et du Centre de plugins, avec des fonds transparents et des motifs noirs, blancs ou gris neutres
 
 # v1.2.0
 
-_2026/09/30_
+###### 2026/09/30
 
-- `Ajout` Uniformiser les réglages autonomes: langue, mode nuit, couleur et icône. Suivre AutoJs6 par défaut avec repli système, surfaces neutres et contrôles adaptés. Appliquer les choix après confirmation, proposer un aperçu HEX/RGB et utiliser le mode adaptatif automatique par défaut tout en préservant les choix explicites lors des mises à jour.
+* `Fonctionnalité` Uniformiser les réglages autonomes: langue, mode nuit, couleur et icône. Suivre AutoJs6 par défaut avec repli système, surfaces neutres et contrôles adaptés. Appliquer les choix après confirmation, proposer un aperçu HEX/RGB et utiliser le mode adaptatif automatique par défaut tout en préservant les choix explicites lors des mises à jour.
 
 # v1.1.3
 
-_2026/09/19_
+###### 2026/09/19
 
-- `Correction` Avertissements de lecture SDK XML v4 avec AGP 9.1 et contrôles d'alignement natif des APK déclenchés par erreur lors de l'assemblage des tests unitaires JVM, avec les plugins de compilation partagés 1.8.3
-- `Amélioration` Après compileSdk, targetSdk passe à 37 (Android 17) ; le comportement du plugin ne dépend pas de la nouvelle cible
+* `Correction` Avertissements de lecture SDK XML v4 avec AGP 9.1 et contrôles d'alignement natif des APK déclenchés par erreur lors de l'assemblage des tests unitaires JVM, avec les plugins de compilation partagés 1.8.3
+* `Amélioration` Après compileSdk, targetSdk passe à 37 (Android 17) ; le comportement du plugin ne dépend pas de la nouvelle cible
 
 # v1.1.2
 
-_2026/09/16_
+###### 2026/09/16
 
-- `Correction` Fermer l'ancienne boîte de dialogue expliquant l'autorisation de superposition lors de la recréation de l'écran pour éviter les fenêtres résiduelles et les conflits de focus
+* `Correction` Fermer l'ancienne boîte de dialogue expliquant l'autorisation de superposition lors de la recréation de l'écran pour éviter les fenêtres résiduelles et les conflits de focus
 
 # v1.1.1
 
-_2026/09/15_
+###### 2026/09/15
 
-- `Amélioration` compileSdk passe à 37 (Android 17) ; targetSdk reste à 36 jusqu'à la vérification du comportement dépendant de la cible
+* `Amélioration` compileSdk passe à 37 (Android 17) ; targetSdk reste à 36 jusqu'à la vérification du comportement dépendant de la cible
 
 # v1.1.0
 
-_2026/09/13_
+###### 2026/09/13
 
-- `Ajout` Historique local accessible depuis l'interface, avec traductions et repli en anglais
-- `Amélioration` Vérification de la signature complète, des APK attendus et de la reproductibilité de la documentation
-- `Amélioration` Conserver une icône PNG de base issue de l'icône existante et la référencer dans la documentation
+* `Fonctionnalité` Historique local accessible depuis l'interface, avec traductions et repli en anglais
+* `Amélioration` Vérification de la signature complète, des APK attendus et de la reproductibilité de la documentation
+* `Amélioration` Conserver une icône PNG de base issue de l'icône existante et la référencer dans la documentation
 
 # v1.0.1
 
-_2026/09/11_
+###### 2026/09/11
 
-- `Correction` Éviter le plantage ThemeEnforcement en appliquant explicitement un thème Material aux boutons Material créés depuis le Context de service/application
-- `Correction` N'afficher l'outil du tiroir AutoJs6 que lorsque le plugin est activé dans le Centre de plugins, puis le restaurer après réactivation
-- `Amélioration` La vérification de compilation rejette les dépendances natives involontaires et produit un rapport JSON
+* `Correction` Éviter le plantage ThemeEnforcement en appliquant explicitement un thème Material aux boutons Material créés depuis le Context de service/application
+* `Correction` N'afficher l'outil du tiroir AutoJs6 que lorsque le plugin est activé dans le Centre de plugins, puis le restaurer après réactivation
+* `Amélioration` La vérification de compilation rejette les dépendances natives involontaires et produit un rapport JSON
 
 # v1.0.0
 
-_2026/09/01_
+###### 2026/09/01
 
-- `Ajout` Exécutez le même APK depuis le lanceur ou utilisez-le comme outil étendu Sélecteur de couleur d'écran dans AutoJs6
-- `Ajout` Utilisez un sélecteur flottant tactile avec aperçu agrandi, coordonnées, HEX, RGB et HSL
-- `Ajout` Utilisez l'interface Binder contract v1 avec getInfo, getState, getStartPendingIntent et stop
-- `Ajout` Utilisez l'interface locale et la documentation en 10 langues avec un traitement des couleurs entièrement hors ligne
-- `Amélioration` Gérez explicitement les autorisations de superposition, capture d'écran, service de premier plan et notification avec une action d'arrêt
-- `Amélioration` Prenez en charge le protocole Wake d'AutoJs6 et la version hôte minimale 5278 avec CI et contrôle de dérive de la documentation
+* `Fonctionnalité` Exécutez le même APK depuis le lanceur ou utilisez-le comme outil étendu Sélecteur de couleur d'écran dans AutoJs6
+* `Fonctionnalité` Utilisez un sélecteur flottant tactile avec aperçu agrandi, coordonnées, HEX, RGB et HSL
+* `Fonctionnalité` Utilisez l'interface Binder contract v1 avec getInfo, getState, getStartPendingIntent et stop
+* `Fonctionnalité` Utilisez l'interface locale et la documentation en 10 langues avec un traitement des couleurs entièrement hors ligne
+* `Amélioration` Gérez explicitement les autorisations de superposition, capture d'écran, service de premier plan et notification avec une action d'arrêt
+* `Amélioration` Prenez en charge le protocole Wake d'AutoJs6 et la version hôte minimale 5278 avec CI et contrôle de dérive de la documentation

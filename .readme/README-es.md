@@ -134,30 +134,33 @@ native libraries: none
 
 ### Historial de versiones
 
+#### v2.0.2
+
+_2026/11/20_
+
+- `Mejora` El historial de versiones pasa de un cuadro de diálogo a una página propia que se expande y contrae por versión: una versión contraída muestra su fecha y el número de entradas por categoría, una expandida nombra cada categoría una sola vez; todas las versiones se pueden expandir o contraer a la vez, la más reciente se abre expandida y el nombre del plugin aparece como subtítulo
+- `Mejora` Las instrucciones del Centro de plugins se reescribieron en cuatro partes: primeros pasos, funciones principales, requisitos y preguntas frecuentes
+- `Dependencia` Añadir Jetpack Compose BOM 2026.09.00 (página Historial de versiones)
+- `Dependencia` Actualizar los plugins de compilación compartidos versión 1.9.0 -> 1.9.7
+
 #### v2.0.1
 
 _2026/10/17_
 
-- `Corregido` Completar las traducciones que faltaban en los ajustes de actualización
-- `Corregido` En la interfaz en árabe, 3-Color Picker ya no aparece invertido como Color Picker-3
-- `Corregido` El historial de versiones ahora agrupa los cambios por versión con fechas y tipos de cambio, en lugar de mostrar símbolos de formato sin procesar
-- `Mejorado` Los iconos del centro de plugins usan los tamaños, posiciones, imágenes claras y oscuras y fondos circulares ajustados en Icon Studio, conservando fuentes y parámetros reproducibles
-- `Mejorado` Los iconos de información de la aplicación de Android comparten las imágenes y los fondos claros y oscuros de Icon Studio, conservando las imágenes transparentes del centro de plugins y las opciones del lanzador
+- `Corrección` Completar las traducciones que faltaban en los ajustes de actualización
+- `Corrección` En la interfaz en árabe, 3-Color Picker ya no aparece invertido como Color Picker-3
+- `Corrección` El historial de versiones ahora agrupa los cambios por versión con fechas y tipos de cambio, en lugar de mostrar símbolos de formato sin procesar
+- `Mejora` Los iconos del centro de plugins usan los tamaños, posiciones, imágenes claras y oscuras y fondos circulares ajustados en Icon Studio, conservando fuentes y parámetros reproducibles
+- `Mejora` Los iconos de información de la aplicación de Android comparten las imágenes y los fondos claros y oscuros de Icon Studio, conservando las imágenes transparentes del centro de plugins y las opciones del lanzador
 
 #### v2.0.0
 
 _2026/10/03_
 
-- `Aviso` La versión 2.0 usa el nuevo ID io.github.supermonster003.autojs6.plugin.three.color.picker. Android la instala como una aplicación independiente; la anterior puede permanecer instalada y los ajustes no se migran automáticamente. Concede los permisos de nuevo y usa AutoJs6 versionCode 5316 o posterior para el modo plugin. La etiqueta del panel de AutoJs6 no cambia
-- `Mejorado` Screen Color Picker pasa a llamarse 3-Color Picker, con una nueva pantalla de inicio, iconos claros/oscuros y cuatro modos de icono del lanzador
-- `Mejorado` Referencia a MT Manager (bm.mt.plus) v2.26.9, agradecimientos y procedimiento para consultas de derechos en Ajustes y en la documentación
-- `Mejorado` Tamaño visual uniforme de los iconos del lanzador y del Centro de complementos, con fondos transparentes y diseños en blanco, negro o grises neutros
-
-#### v1.2.0
-
-_2026/09/30_
-
-- `Añadido` Unificar los ajustes independientes: idioma, modo nocturno, color e icono. Seguir AutoJs6 de forma predeterminada con alternativa del sistema, superficies neutras y controles adaptados. Aplicar los cambios tras confirmar, ofrecer una vista previa HEX/RGB y usar el modo adaptable automático por defecto, conservando las elecciones explícitas al actualizar.
+- `Sugerencia` La versión 2.0 usa el nuevo ID io.github.supermonster003.autojs6.plugin.three.color.picker. Android la instala como una aplicación independiente; la anterior puede permanecer instalada y los ajustes no se migran automáticamente. Concede los permisos de nuevo y usa AutoJs6 versionCode 5316 o posterior para el modo plugin. La etiqueta del panel de AutoJs6 no cambia
+- `Mejora` Screen Color Picker pasa a llamarse 3-Color Picker, con una nueva pantalla de inicio, iconos claros/oscuros y cuatro modos de icono del lanzador
+- `Mejora` Referencia a MT Manager (bm.mt.plus) v2.26.9, agradecimientos y procedimiento para consultas de derechos en Ajustes y en la documentación
+- `Mejora` Tamaño visual uniforme de los iconos del lanzador y del Centro de complementos, con fondos transparentes y diseños en blanco, negro o grises neutros
 
 [Ver el CHANGELOG completo](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-es.md)
 

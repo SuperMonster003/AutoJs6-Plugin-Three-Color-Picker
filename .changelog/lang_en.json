@@ -1,10 +1,21 @@
 {
   "changelog_label_hint": "Hint",
-  "changelog_label_feature": "Added",
-  "changelog_label_fix": "Fixed",
-  "changelog_label_improvement": "Improved",
+  "changelog_label_feature": "Feature",
+  "changelog_label_fix": "Fix",
+  "changelog_label_improvement": "Improvement",
   "changelog_label_dependency": "Dependency",
   "$data": {
+    "v2.0.2": {
+      "released_date": "2026/11/20",
+      "improvement": [
+        "The release history moved from a dialog to its own page that expands and collapses by version: a collapsed version shows its date and the number of entries per category, an expanded one names each category once; all versions can be expanded or collapsed at once, the newest one opens expanded, and the plugin name is shown as the subtitle",
+        "Rewrote the instructions shown in Plugin Center in four parts: getting started, main features, requirements and FAQ"
+      ],
+      "dependency": [
+        "Added Jetpack Compose BOM 2026.09.00 (release history page)",
+        "Upgraded shared build plugins version 1.9.0 -> 1.9.7"
+      ]
+    },
     "v2.0.1": {
       "released_date": "2026/10/17",
       "improvement": [

@@ -42,7 +42,12 @@
     <string name="notification_title_screen_color_picker">منتقي ألوان الشاشة نشط</string>
     <string name="plugin_description">يلتقط الألوان من أي مكان على الشاشة باستخدام منتقي عائم مناسب للمس</string>
     <string name="release_history">سجل الإصدارات</string>
-    <string name="release_history_unavailable">سجل الإصدارات غير متاح</string>
+    <string name="release_history_collapse_all">طيّ الكل</string>
+    <string name="release_history_collapsed">مطوي</string>
+    <string name="release_history_expand_all">توسيع الكل</string>
+    <string name="release_history_expanded">موسَّع</string>
+    <string name="release_history_summary">عرض سجل الإصدارات المضمن في التطبيق</string>
+    <string name="release_history_unavailable">تعذر تحميل سجل الإصدارات</string>
     <string name="settings_apply_failed">تعذر تطبيق هذا الإعداد. حاول مرة أخرى.</string>
     <string name="settings_title">الإعدادات</string>
     <string name="text_active">نشط</string>

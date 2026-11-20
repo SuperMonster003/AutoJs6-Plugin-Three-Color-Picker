@@ -134,6 +134,15 @@ native libraries: none
 
 ### Historique des versions
 
+#### v2.0.2
+
+_2026/11/20_
+
+- `Amélioration` L'historique des versions passe d'une boîte de dialogue à une page dédiée qui se développe et se réduit par version: une version réduite affiche sa date et le nombre d'entrées par catégorie, une version développée ne nomme chaque catégorie qu'une fois; toutes les versions peuvent être développées ou réduites d'un coup, la plus récente s'ouvre développée et le nom du plugin sert de sous-titre
+- `Amélioration` Réécriture des instructions affichées dans le Centre des plugins en quatre parties: prise en main, fonctionnalités principales, prérequis et questions fréquentes
+- `Dépendance` Ajout de Jetpack Compose BOM 2026.09.00 (page Historique des versions)
+- `Dépendance` Mise à niveau des plugins de compilation partagés version 1.9.0 -> 1.9.7
+
 #### v2.0.1
 
 _2026/10/17_
@@ -148,16 +157,10 @@ _2026/10/17_
 
 _2026/10/03_
 
-- `Indication` La version 2.0 utilise le nouvel identifiant io.github.supermonster003.autojs6.plugin.three.color.picker. Android l'installe comme une application distincte; l'ancienne peut rester installée et les réglages ne sont pas migrés automatiquement. Accordez à nouveau les autorisations et utilisez AutoJs6 versionCode 5316 ou ultérieur pour le mode plugin. Le libellé du tiroir AutoJs6 reste inchangé
+- `Astuce` La version 2.0 utilise le nouvel identifiant io.github.supermonster003.autojs6.plugin.three.color.picker. Android l'installe comme une application distincte; l'ancienne peut rester installée et les réglages ne sont pas migrés automatiquement. Accordez à nouveau les autorisations et utilisez AutoJs6 versionCode 5316 ou ultérieur pour le mode plugin. Le libellé du tiroir AutoJs6 reste inchangé
 - `Amélioration` Screen Color Picker devient 3-Color Picker, avec un nouvel accueil, des icônes claires/sombres et quatre modes de lanceur
 - `Amélioration` Référence à MT Manager (bm.mt.plus) v2.26.9, remerciements et procédure de traitement des demandes des titulaires de droits dans les paramètres et la documentation
 - `Amélioration` Taille visuelle harmonisée des icônes du lanceur et du Centre de plugins, avec des fonds transparents et des motifs noirs, blancs ou gris neutres
-
-#### v1.2.0
-
-_2026/09/30_
-
-- `Ajout` Uniformiser les réglages autonomes: langue, mode nuit, couleur et icône. Suivre AutoJs6 par défaut avec repli système, surfaces neutres et contrôles adaptés. Appliquer les choix après confirmation, proposer un aperçu HEX/RGB et utiliser le mode adaptatif automatique par défaut tout en préservant les choix explicites lors des mises à jour.
 
 [Voir le CHANGELOG complet](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-fr.md)
 

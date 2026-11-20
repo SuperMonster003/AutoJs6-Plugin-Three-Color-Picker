@@ -1,10 +1,21 @@
 {
-  "changelog_label_hint": "Indication",
-  "changelog_label_feature": "Ajout",
+  "changelog_label_hint": "Astuce",
+  "changelog_label_feature": "Fonctionnalité",
   "changelog_label_fix": "Correction",
   "changelog_label_improvement": "Amélioration",
   "changelog_label_dependency": "Dépendance",
   "$data": {
+    "v2.0.2": {
+      "released_date": "2026/11/20",
+      "improvement": [
+        "L'historique des versions passe d'une boîte de dialogue à une page dédiée qui se développe et se réduit par version: une version réduite affiche sa date et le nombre d'entrées par catégorie, une version développée ne nomme chaque catégorie qu'une fois; toutes les versions peuvent être développées ou réduites d'un coup, la plus récente s'ouvre développée et le nom du plugin sert de sous-titre",
+        "Réécriture des instructions affichées dans le Centre des plugins en quatre parties: prise en main, fonctionnalités principales, prérequis et questions fréquentes"
+      ],
+      "dependency": [
+        "Ajout de Jetpack Compose BOM 2026.09.00 (page Historique des versions)",
+        "Mise à niveau des plugins de compilation partagés version 1.9.0 -> 1.9.7"
+      ]
+    },
     "v2.0.1": {
       "released_date": "2026/10/17",
       "improvement": [

@@ -134,30 +134,33 @@ native libraries: none
 
 ### Release history
 
+#### v2.0.2
+
+_2026/11/20_
+
+- `Improvement` The release history moved from a dialog to its own page that expands and collapses by version: a collapsed version shows its date and the number of entries per category, an expanded one names each category once; all versions can be expanded or collapsed at once, the newest one opens expanded, and the plugin name is shown as the subtitle
+- `Improvement` Rewrote the instructions shown in Plugin Center in four parts: getting started, main features, requirements and FAQ
+- `Dependency` Added Jetpack Compose BOM 2026.09.00 (release history page)
+- `Dependency` Upgraded shared build plugins version 1.9.0 -> 1.9.7
+
 #### v2.0.1
 
 _2026/10/17_
 
-- `Fixed` Complete missing translations in update settings
-- `Fixed` In the Arabic interface, 3-Color Picker no longer appears reversed as Color Picker-3
-- `Fixed` Release history now groups changes by version with dates and change types, instead of showing raw formatting symbols
-- `Improved` Plugin Center icons use the sizes, positions, light and dark artwork, and circular backgrounds adjusted in Icon Studio, retaining reproducible sources and parameters
-- `Improved` Android App info icons share Icon Studio artwork and light/dark backgrounds while preserving transparent Plugin Center artwork and existing launcher choices
+- `Fix` Complete missing translations in update settings
+- `Fix` In the Arabic interface, 3-Color Picker no longer appears reversed as Color Picker-3
+- `Fix` Release history now groups changes by version with dates and change types, instead of showing raw formatting symbols
+- `Improvement` Plugin Center icons use the sizes, positions, light and dark artwork, and circular backgrounds adjusted in Icon Studio, retaining reproducible sources and parameters
+- `Improvement` Android App info icons share Icon Studio artwork and light/dark backgrounds while preserving transparent Plugin Center artwork and existing launcher choices
 
 #### v2.0.0
 
 _2026/10/03_
 
 - `Hint` Version 2.0 uses the new application ID io.github.supermonster003.autojs6.plugin.three.color.picker. Android installs it as a separate app; the old app can remain installed and settings are not migrated automatically. Grant permissions again and use AutoJs6 versionCode 5316 or later for host integration. The AutoJs6 drawer label remains Screen color picker
-- `Improved` Screen Color Picker is now 3-Color Picker, with a new home screen, light/dark artwork and four launcher icon modes
-- `Improved` Design reference to MT Manager (bm.mt.plus) v2.26.9, acknowledgements and a rights-concern response policy are available in Settings and the project documentation
-- `Improved` Consistent visual sizing for launcher and Plugin Center icons, with transparent backgrounds and neutral black, white or grayscale artwork
-
-#### v1.2.0
-
-_2026/09/30_
-
-- `Added` Unify standalone settings with language, night mode, theme color and launcher icon in this order. Appearance follows AutoJs6 by default with system fallback, neutral surfaces and complete control tinting. Choices apply only after confirmation; add a shared HEX/RGB theme preview and make adaptive automatic the launcher default while preserving explicit choices during upgrades.
+- `Improvement` Screen Color Picker is now 3-Color Picker, with a new home screen, light/dark artwork and four launcher icon modes
+- `Improvement` Design reference to MT Manager (bm.mt.plus) v2.26.9, acknowledgements and a rights-concern response policy are available in Settings and the project documentation
+- `Improvement` Consistent visual sizing for launcher and Plugin Center icons, with transparent backgrounds and neutral black, white or grayscale artwork
 
 [View the complete CHANGELOG](https://github.com/SuperMonster003/AutoJs6-Plugin-Three-Color-Picker/blob/master/app/src/main/assets/doc/CHANGELOG-en.md)
 

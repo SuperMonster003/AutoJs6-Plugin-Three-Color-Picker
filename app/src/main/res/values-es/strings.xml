@@ -42,7 +42,12 @@
     <string name="notification_title_screen_color_picker">El selector de color de pantalla está activo</string>
     <string name="plugin_description">Toma colores de cualquier parte de la pantalla con un selector flotante táctil</string>
     <string name="release_history">Historial de versiones</string>
-    <string name="release_history_unavailable">El historial de versiones no está disponible</string>
+    <string name="release_history_collapse_all">Contraer todo</string>
+    <string name="release_history_collapsed">Contraído</string>
+    <string name="release_history_expand_all">Expandir todo</string>
+    <string name="release_history_expanded">Expandido</string>
+    <string name="release_history_summary">Consultar el historial de versiones incluido en la aplicación</string>
+    <string name="release_history_unavailable">No se pudo cargar el historial de versiones</string>
     <string name="settings_apply_failed">No se pudo aplicar este ajuste. Inténtalo de nuevo.</string>
     <string name="settings_title">Ajustes</string>
     <string name="text_active">Activo</string>

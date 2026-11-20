@@ -78,8 +78,8 @@ class AppSettingsActivity : AppearanceActivity() {
         rows.addView(ui.switchRow(R.string.text_copy_numeric_only,PickerSettings.copyNumericOnly(this),"numeric-only") { PickerSettings.setCopyNumericOnly(this,it) })
         rows.addView(ui.text(listOf(R.string.text_picker_instruction,R.string.text_picker_instruction_copy,R.string.text_picker_instruction_close).joinToString("\n") { getString(it) },14f,true).apply { setPadding(ui.dp(24),ui.dp(14),ui.dp(24),ui.dp(24)) })
         ui.section(rows,R.string.app_settings_updates)
-        rows.addView(ui.row(R.string.release_history,packageManager.getPackageInfo(packageName,0).versionName.orEmpty(),R.drawable.ic_settings_history,"release-history") {
-            prompt=showReleaseHistory()
+        rows.addView(ui.row(R.string.release_history,getString(R.string.release_history_summary),R.drawable.ic_settings_history,"release-history") {
+            openReleaseHistory()
         })
         ui.divider(rows)
         rows.addView(ui.row(R.string.design_reference,getString(R.string.design_reference_version),R.drawable.ic_settings_history,"design-reference") {

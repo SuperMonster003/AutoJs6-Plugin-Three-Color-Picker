@@ -24,7 +24,7 @@
 
         <meta-data
             android:name="org.autojs.plugin.contract.NATIVE_PAGE_ALIGNMENT"
-            android:value="0" />
+            android:value="16384" />
 
         <meta-data
             android:name="org.autojs.plugin.WAKE_ACTIVITY"
@@ -135,6 +135,7 @@
             </intent-filter>
         </service>
         <activity android:name=".AppSettingsActivity" android:exported="false" />
+        <activity android:name=".ReleaseHistoryActivity" android:exported="false" />
         <receiver android:name=".LauncherIconUpdateReceiver" android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
